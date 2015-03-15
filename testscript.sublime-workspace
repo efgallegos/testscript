@@ -1,0 +1,779 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"input",
+				"input_file_path	statement"
+			],
+			[
+				"config",
+				"config_values"
+			],
+			[
+				"is",
+				"isfile	function"
+			],
+			[
+				"PRO",
+				"PROCESS"
+			],
+			[
+				"sr",
+				"srlife_config	import"
+			],
+			[
+				"med",
+				"medsupp_config	import"
+			],
+			[
+				"config_en",
+				"config_entries_fuwl	module"
+			],
+			[
+				"en",
+				"entity_client	statement"
+			],
+			[
+				"ser",
+				"search	function"
+			],
+			[
+				"driver",
+				"driverName	statement"
+			],
+			[
+				"Send",
+				"SendKeys	function"
+			],
+			[
+				"get",
+				"getBrowserType	function"
+			],
+			[
+				"print",
+				"print_win"
+			],
+			[
+				"uf",
+				"utf-8"
+			],
+			[
+				"_",
+				"_handle"
+			],
+			[
+				"bytes",
+				"bytes	class"
+			],
+			[
+				"pdf",
+				"pdf_save_path	statement"
+			],
+			[
+				"win",
+				"WindowFinder	class"
+			],
+			[
+				"utils",
+				"utils_browser	module"
+			],
+			[
+				"Sw",
+				"Switching"
+			],
+			[
+				"Open",
+				"openCase"
+			],
+			[
+				"fin",
+				"find_element_by_id"
+			],
+			[
+				"swit",
+				"switch_to"
+			],
+			[
+				"find",
+				"find_element_by_id"
+			],
+			[
+				"c",
+				"class	New Class"
+			],
+			[
+				"cur",
+				"current_window	statement"
+			],
+			[
+				"v",
+				"viewCaseForms	function"
+			],
+			[
+				"case",
+				"case_name	param"
+			],
+			[
+				"Vi",
+				"ViewForms"
+			],
+			[
+				"confi",
+				"config_entries	module"
+			],
+			[
+				"l",
+				"logOut	function"
+			],
+			[
+				"find_elemen",
+				"find_elements_by_link_text"
+			],
+			[
+				"try",
+				"try	Try/Except"
+			],
+			[
+				"s",
+				"search	function"
+			],
+			[
+				"su",
+				"successfully"
+			],
+			[
+				"ale",
+				"alert_is_present	class"
+			],
+			[
+				"tyr",
+				"try	Try/Except/Else"
+			],
+			[
+				"pro",
+				"product	param"
+			],
+			[
+				"con",
+				"config_entries_annuity	module"
+			],
+			[
+				"wait",
+				"WebDriverWait"
+			],
+			[
+				"wri",
+				"write	function"
+			],
+			[
+				"e",
+				"e	statement"
+			],
+			[
+				"inpu",
+				"input_xml	statement"
+			],
+			[
+				"name",
+				"namespaces"
+			],
+			[
+				"pass",
+				"password	statement"
+			],
+			[
+				"br",
+				"browser_name	param"
+			],
+			[
+				"Igo",
+				"IgoLogInException	class"
+			],
+			[
+				"def",
+				"defs	Method"
+			],
+			[
+				"user",
+				"username	param"
+			],
+			[
+				"cl",
+				"click"
+			],
+			[
+				"test",
+				"test5752"
+			],
+			[
+				"m",
+				"maximize_window	function"
+			],
+			[
+				"proxy",
+				"proxy_host	param"
+			],
+			[
+				"p",
+				"proxy_port	function"
+			],
+			[
+				"pr",
+				"proxy_port	statement"
+			],
+			[
+				"CAPABI",
+				"capabilities	param"
+			],
+			[
+				"g",
+				"getWebDriver"
+			],
+			[
+				"in",
+				"internet	module"
+			],
+			[
+				"hash",
+				"hashtable"
+			],
+			[
+				"get_",
+				"get_url	function"
+			],
+			[
+				"cra",
+				"crawl_web	function"
+			],
+			[
+				"key",
+				"keys_used	statement"
+			],
+			[
+				"ke",
+				"keys_used"
+			],
+			[
+				"time",
+				"time_execution	function"
+			],
+			[
+				"le",
+				"letters	statement"
+			],
+			[
+				"lo",
+				"lookup	function"
+			],
+			[
+				"K",
+				"keywords"
+			],
+			[
+				"C",
+				"class	keyword"
+			],
+			[
+				"crawl_web_",
+				"crawl_web_backup2	function"
+			],
+			[
+				"k",
+				"keyword	param"
+			],
+			[
+				"nex",
+				"next_depth	statement"
+			],
+			[
+				"ne",
+				"next_depth	statement"
+			],
+			[
+				"max",
+				"max_depth	param"
+			],
+			[
+				"to",
+				"tocrawl	statement"
+			],
+			[
+				"end",
+				"end_quote	statement"
+			],
+			[
+				"url",
+				"url	param"
+			],
+			[
+				"o",
+				"object	class"
+			],
+			[
+				"start",
+				"start_quote	statement"
+			],
+			[
+				"next",
+				"next_number_after_dot	statement"
+			],
+			[
+				"q",
+				"question"
+			],
+			[
+				"post",
+				"POST"
+			],
+			[
+				"P",
+				"POST"
+			],
+			[
+				"b",
+				"bgcolor	Attr"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"pa",
+				"patterns	function"
+			],
+			[
+				"Poll",
+				"PollAdmin	class"
+			],
+			[
+				"Cho",
+				"ChoiceInline	class"
+			],
+			[
+				"date",
+				"datetime	module"
+			],
+			[
+				"pub",
+				"pub_date	statement"
+			],
+			[
+				"Date",
+				"DateTimeField	class"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"anaconda",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Preferences: Settings - Default"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 160.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"python -u \"C:\\dev\\python_exercises\\ej1.py\"",
+			"help()",
+			"help",
+			"q",
+			"x",
+			"exit()",
+			"print(\"casa\")",
+			"q",
+			"exit",
+			"exit()",
+			"python manage.py runserver"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/zz_EFG/Dropbox/GitHub/testscript",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/bankers",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/igo",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/utils"
+	],
+	"file_history":
+	[
+		"/C/zz_EFG/Dropbox/GitHub/testscript/igo/igo_common.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/bankers/fuwl/fuwl_brd.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/excel_to_dic.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/config_entries.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/utils/excel_to_dic.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/test.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/testscript.sublime-project",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/utils/browser.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/batch_inport.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/utils/utils.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/testing/__init__.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/testing/test.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/testing/test_create_xml.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/test_create_xml.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/igo/__init__.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/utils/__init__.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/utils/utils_browser.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/igo_common.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/igo/igo_xml.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/utils.py",
+		"/C/zz_EFG/Dropbox/GitHub/testscript/test2.py",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/C/zz_EFG/Dropbox/dev/Selenium/create_case.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/bankers/fuwl/fuwl_brd.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/bankers/fuwl/config_entries_fuwl.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/config_entries.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/test.py",
+		"/Users/efgallegos/Dropbox/dev/Selenium/config_entries.py",
+		"/Users/efgallegos/Dropbox/dev/Selenium/create_case.py",
+		"/Users/efgallegos/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/Users/efgallegos/Dropbox/dev/Selenium/igo_common.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/igo_common.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/test_create_xml.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/igo_xml.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/bankers/annuities/config_entries_annuity.py",
+		"/C/zz_EFG/Dropbox/Automation/Bankers/run_caseImporter.bat",
+		"/C/zz_EFG/Dropbox/dev/selenium_framework.sublime-workspace",
+		"/C/zz_EFG/Dropbox/dev/Selenium/test2.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/igo_batch_inport.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/bankers/spwl/config_entries_spwl.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/bankers/medsupp/config_entries_medsupp.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/igo_config_entries.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/bankers/spwl/spwl_brd",
+		"/C/zz_EFG/Dropbox/dev/Selenium/bankers/fuwl/brd_entries.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/bankers/srlife/config_entries_srlife.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/bankers/stc/config_entries_stc.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/bankers/cb/config_entries_cb.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/utils_browser.py",
+		"/C/Users/egalleg2/Documents/My Received Files/pipe_json.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/config_entries_fuwl.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/config_entries_annuity.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/config_entries_stc.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/config_entries_srlife.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/config_entries_medsupp.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/config_entries_cb.py",
+		"/C/zz_EFG/Dropbox/dev/Selenium/utils.py",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/dev/Selenium/config_entries.py",
+		"/C/dev/Selenium/config_entries_spwl.py",
+		"/C/zz_EFG/zz_EFG_TCP/Automation/Bankers/run_caseImporter.bat",
+		"/C/dev/Selenium/igo_common.py",
+		"/C/dev/Selenium/config_entries_annuity.py",
+		"/C/dev/Selenium/config_entries_cb.py",
+		"/C/dev/Selenium/config_entries_stc.py",
+		"/C/dev/Selenium/config_entries_srlife.py",
+		"/C/dev/Selenium/config_entries_medsupp.py",
+		"/C/dev/Selenium/config_entries_fuwl.py",
+		"/C/dev/Selenium/config_entries_annuity_2014_12_16.py",
+		"/C/dev/Selenium/test.py",
+		"/C/dev/Selenium/__init__.py",
+		"/C/dev/Selenium/utils_addlibs.py",
+		"/C/dev/Selenium/igo_xml.py",
+		"/C/dev/Selenium/utils.py",
+		"/C/dev/Selenium/test2.py",
+		"/C/dev/Selenium/SendKeys.py",
+		"/C/Python34/lib/site-packages/win32com/client/__init__.py",
+		"/C/dev/Selenium/utils_browser.py",
+		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/__init__.py",
+		"/C/Python34/Lib/site-packages/win32/win32gui.pyd",
+		"/C/dev/Selenium/config_entries_spwl_20141216.py",
+		"/C/dev/Selenium/igo_xml_20141216.py",
+		"/C/dev/Selenium/spwl_config_entries.py",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Plain text.sublime-settings",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/dev/Selenium/igo_batch_inport.py",
+		"/C/zz_EFG/zz_EFG_TCP/Automation/Bankers/SPWL/run_caseImporter.bat",
+		"/C/zz_EFG/zz_EFG_TCP/Automation/Bankers/SPWL/Output/AK_14W.xml",
+		"/C/dev/Selenium/annuity_config_entries.py",
+		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/__init__.py",
+		"/C/zz_EFG/zz_EFG_TCP/Automation/Bankers/Annuity/run_caseImporter.bat",
+		"/C/Users/egalleg2/Downloads/SendKeysCtypes.py",
+		"/C/Users/egalleg2/Downloads/sendkeys-py-si-master/sendkeys-py-si-master/_sendkeys.c",
+		"/C/Users/egalleg2/Downloads/sendkeys-py-si-master/sendkeys-py-si-master/SendKeys.py",
+		"/C/Users/egalleg2/Downloads/Instaladores/SendKeys-0.3.win32-py2.7/PLATLIB/SendKeys-0.3-py2.7.egg-info",
+		"/C/Users/egalleg2/Downloads/sendkeys-py-si-master/sendkeys-py-si-master/build/lib.win32-3.4/SendKeys.py",
+		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/common/action_chains.py",
+		"/C/dev/Selenium/igo_config_entries.py",
+		"/C/dev/Selenium/igo/igo_common.py",
+		"/C/dev/Selenium/igo/igo_config_entries.py",
+		"/C/dev/Selenium/igo/igo_xml.py",
+		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/expected_conditions.py",
+		"/C/dev/Selenium/libs/browser.py",
+		"/C/dev/Selenium/igo/igo_batch_inport.py",
+		"/C/dev/Selenium/igo/config_entries_igo.py",
+		"/C/Program Files/Sublime Text 3/Packages/Python.sublime-package",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Default (Windows).sublime-keymap",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings",
+		"/C/dev/Selenium/product_annuity/config_entries_annuity.py",
+		"/C/dev/Selenium/igo/__init__.py",
+		"/C/dev/Selenium/product_annuity/__init__.py",
+		"/C/dev/Selenium/browser.py",
+		"/C/dev/Selenium/products_config/config_entries_annuity.py",
+		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/common/desired_capabilities.py",
+		"/C/dev/Selenium/libs/utils.py",
+		"/C/dev/Selenium/utils/__init__.py",
+		"/C/dev/Selenium/igo.py",
+		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/common/exceptions.py",
+		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/select.py",
+		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/wait.py",
+		"/C/dev/Selenium/products_config/__init__.py",
+		"/C/dev/Selenium/igo_xml_parser.py",
+		"/C/Users/egalleg2/Desktop/Bankers_XMLs/Annuity_XMLs/Input/LA02P.xml",
+		"/C/Python34/lib/xml/etree/ElementTree.py",
+		"/C/Users/egalleg2/Desktop/Bankers_XMLs/Annuity_XMLs/Output/CA_LA02P.xml"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"<open folders>,<open files>",
+			"<open folders>",
+			"C:\\wamp\\www\\magento3",
+			"C:\\wamp\\www\\magento"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"openCase",
+			"config_browsers",
+			"utils_browser",
+			"pep8",
+			"flavor",
+			"plan",
+			"product",
+			"importCase",
+			"pep8",
+			"importCase",
+			"pep8",
+			"importCase",
+			"python",
+			"exportCase",
+			"SendKeys",
+			"#\n",
+			"current_window",
+			"rightClickSaveLinkAs",
+			"sendkeys",
+			"viewCaseForms",
+			"case_name",
+			"F2F",
+			"importCase",
+			"DEBUG",
+			"current_windows",
+			"WebDriverWait",
+			"ViewForms",
+			"Selection \"Import\" ",
+			"caseAction",
+			"wait",
+			"verbose > 1:",
+			"case_name",
+			"LA02P",
+			"Annuity",
+			"[plan]",
+			"init",
+			"_seria",
+			"_sort",
+			"_seri",
+			"_parse_whole",
+			"{}",
+			"_escape_attrib",
+			"collections.OrderedDict()",
+			"{",
+			"update",
+			"sorted",
+			"   \n",
+			"timezone",
+			" %}\">",
+			"<h1>My First Heading</h1>\n\n<p>My first paragraph.</p>",
+			"tab",
+			"python_interpreter",
+			"sandbox",
+			"getcheckoutexpress",
+			"mpbtbaixo",
+			"getPreference()",
+			"function *call_user_func_array",
+			"class call_user_func_array",
+			"function call_user_func_array",
+			"call_user_func_array",
+			"DoPost",
+			"iframe id=\"MP-Checkout-IFrame\" ",
+			"checkout_images",
+			"item-data",
+			"amazon",
+			"https://s3.amazonaws.com/checkout_images/a83dbf0c-a18b-4004-82ab-c1c019a81f09.png",
+			"<?",
+			"https://s3.amazonaws.com/checkout_images/a83dbf0c-a18b-4004-82ab-c1c019a81f09.png",
+			"empezando",
+			"form_key",
+			"media/import",
+			"300"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"browser",
+			"plan",
+			"product",
+			"current_window",
+			"verbose:"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 167.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "testscript.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 311.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
