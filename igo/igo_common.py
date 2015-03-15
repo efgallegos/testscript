@@ -25,10 +25,10 @@ class IGO:
             2) logOut -> DONE
             3) viewMyCases -> DONE
             4) search -> DONE
-            5) viewCaseForms -> 
+            5) viewCaseForms -> PENDING
             6) deleteCase -> DONE
             7) importCase -> DONE
-            8) exportCase -> 
+            8) exportCase -> PENDING
             9) openCase -> DONE
             10) unlockCase -> PENDING
     """
