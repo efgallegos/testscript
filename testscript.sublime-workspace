@@ -368,11 +368,27 @@
 	"buffers":
 	[
 		{
-			"file": "excel_to_dic.py",
+			"file": "igo/igo_common.py",
 			"settings":
 			{
-				"buffer_size": 387,
+				"buffer_size": 32679,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "create_case.py",
+			"settings":
+			{
+				"buffer_size": 3233,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "utils/utils.py",
+			"settings":
+			{
+				"buffer_size": 3257,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -454,6 +470,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/egalleg2/Documents/GitHub/testscript/excel_to_dic.py",
 		"/C/zz_EFG/Dropbox/GitHub/testscript/igo/igo_common.py",
 		"/C/zz_EFG/Dropbox/GitHub/testscript/bankers/fuwl/fuwl_brd.py",
 		"/C/zz_EFG/Dropbox/GitHub/testscript/excel_to_dic.py",
@@ -580,8 +597,7 @@
 		"/C/dev/Selenium/products_config/__init__.py",
 		"/C/dev/Selenium/igo_xml_parser.py",
 		"/C/Users/egalleg2/Desktop/Bankers_XMLs/Annuity_XMLs/Input/LA02P.xml",
-		"/C/Python34/lib/xml/etree/ElementTree.py",
-		"/C/Users/egalleg2/Desktop/Bankers_XMLs/Annuity_XMLs/Output/CA_LA02P.xml"
+		"/C/Python34/lib/xml/etree/ElementTree.py"
 	],
 	"find":
 	{
@@ -697,35 +713,97 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "excel_to_dic.py",
+					"file": "igo/igo_common.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 387,
+						"buffer_size": 32679,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								387,
-								387
+								5932,
+								5932
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 9405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "create_case.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1759,
+								1759
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "utils/utils.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3257,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								230,
+								230
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

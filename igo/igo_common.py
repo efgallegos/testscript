@@ -31,6 +31,7 @@ class IGO:
             8) exportCase -> PENDING
             9) openCase -> DONE
             10) unlockCase -> PENDING
+            11) createNewCase -> PENDING
     """
 
     def __init__(self, driver):
