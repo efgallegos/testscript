@@ -1,53 +1,23 @@
 """STC Configuration Dictionaries"""
 
 xmls_entry = {
-     '': '',
-     }
+    'ADDR_State">|ADDR_State_itmval|EFT_State">|EFT_State_itmval|PIJurisdiction">|PIJurisdiction_itmval': "'>' + state + '<'",
+    'ProducerAddressState">|ProducerAddressStateTC|State">|State_itmval">|TPState">|TPState_itmval': "'>' + state + '<'",
+    'ADDR_State_itmtxt|EFT_State_itmtxt|TPState_itmtxt': "'>' + config_values[product]['states'][state].upper() + '<'",
+    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[product]['states'][state] + '<'",
+    'PIFullAddress': "'>123 Main St Exton, ' + state + ' 11111<'",
+    'AGENT_FullAddress': "'>123 Agent St Exton, ' + state + ' 11111<'",
+    'AGENT2_FullAddress':"'>123 Second St Exton, ' + state + ' 11111<'",
+    'AGENT_pdf_FullAddress':"'>Address Line 1, Address 2, Exton, ' + state + ', 111111111<'",
+    'pdfAGENT_FullNameAddress':"'>Agent Name 123 Agent St Exton, ' + state + ' 11111<'",
+    'ProducerCityStateZip':"'>Exton, ' + state + ' 11111-1111<'",
+    '"PIFirstName">': "'>' + state + '_' + plan + '<'",
+    '"PILastName">': "'>' + config_values[product]['name'] + '<'",
+    'PIFullName': "'>' + state + '_' + plan + ' X ' + config_values[product]['name'] + ' Sr'+ '<'",
+    'pdfReversePIName': "'>' + config_values[product]['name'] + ', ' + state + '_' + plan + ' X' + '<'",
+    'CaseDescription': "'>State=' + state + '<'"
+    }
 
-
-"""
-<Data Name="ADDR_State">AL</Data>
-<Data Name="ADDR_State_itmtxt">ALABAMA</Data>
-<Data Name="ADDR_State_itmval">AL</Data>
-<Data Name="AGENT_ADDR_State">PA</Data>
-<Data Name="AGENT_ADDR_State_itmtxt">PENNSYLVANIA</Data>
-<Data Name="AGENT_FullAddress">123 Agent St Exton, AK 11111</Data>
-<Data Name="AGENT_pdf_FullAddress">Address Line 1, Address 2, Exton, PA, 111111111</Data>
-<Data Name="AGENT2_ADDR_State">AK</Data>
-<Data Name="AGENT2_ADDR_State_itmtxt">ALASKA</Data>
-<Data Name="AGENT2_ADDR_State_itmval">AK</Data>
-<Data Name="AGENT2_FullAddress">123 Second St Exton, AK 11111</Data>
-<Data Name="BILLING_ADDR_State">AK</Data>
-<Data Name="BILLING_ADDR_State_itmtxt">ALASKA</Data>
-<Data Name="BILLING_ADDR_State_itmval">AK</Data>
-<Data Name="EFT_State">AL</Data>
-<Data Name="EFT_State_itmtxt">ALABAMA</Data>
-<Data Name="EFT_State_itmval">AL</Data>
-<Data Name="pdfAGENT_FullNameAddress">Agent Name 123 Agent St Exton, AK 11111</Data>
-<Data Name="PIADDR_State">AL</Data>
-<Data Name="PIFullAddress">123 Main St Exton, AL 11111</Data>
-
-<Data Name="PIFullName">STC X GR-N560 Sr</Data>
-<Data Name="pdfReversePIName">GR-N560, STC X</Data>
-<Data Name="PILastName">GR-N560</Data>  
-<Data Name="PIFirstName">STC</Data>
-
-<Data Name="PIJurisdiction">AL</Data>
-<Data Name="PIJurisdiction_itmtxt">Alabama</Data>
-<Data Name="PIJurisdiction_itmval">AL</Data>
-<Data Name="ProducerAddressState">PA</Data>
-<Data Name="ProducerAddressStateTC">PA</Data>
-<Data Name="ProducerCityStateZip">Exton, PA 11111-1111</Data>
-<Data Name="State">AL</Data>
-<Data Name="State_itmtxt">Alabama</Data>
-<Data Name="State_itmval">AL</Data>
-
-<Data Name="TPState">AL</Data>
-<Data Name="TPState_itmtxt">ALABAMA</Data>
-<Data Name="TPState_itmval">AL</Data>
-
-<Data Name="CaseDescription">State=AL</Data>
-"""
 
 # Product's valid states
 
