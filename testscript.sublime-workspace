@@ -367,30 +367,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "igo/igo_common.py",
-			"settings":
-			{
-				"buffer_size": 32679,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "create_case.py",
-			"settings":
-			{
-				"buffer_size": 3233,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "utils/utils.py",
-			"settings":
-			{
-				"buffer_size": 3257,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -465,11 +441,19 @@
 	[
 		"/C/Users/egalleg2/Documents/GitHub/testscript",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/fuwl",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/spwl",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/stc",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/igo",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/utils"
 	],
 	"file_history":
 	[
+		"/C/Users/egalleg2/Documents/GitHub/testscript/batch_inport.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/stc/config_entries_stc.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/fuwl/config_entries_fuwl.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/utils/utils.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/igo/igo_common.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/excel_to_dic.py",
 		"/C/zz_EFG/Dropbox/GitHub/testscript/igo/igo_common.py",
 		"/C/zz_EFG/Dropbox/GitHub/testscript/bankers/fuwl/fuwl_brd.py",
@@ -592,12 +576,7 @@
 		"/C/dev/Selenium/utils/__init__.py",
 		"/C/dev/Selenium/igo.py",
 		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/common/exceptions.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/select.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/wait.py",
-		"/C/dev/Selenium/products_config/__init__.py",
-		"/C/dev/Selenium/igo_xml_parser.py",
-		"/C/Users/egalleg2/Desktop/Bankers_XMLs/Annuity_XMLs/Input/LA02P.xml",
-		"/C/Python34/lib/xml/etree/ElementTree.py"
+		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/select.py"
 	],
 	"find":
 	{
@@ -713,99 +692,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "igo/igo_common.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 32679,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8271,
-								8271
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 10215.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "create_case.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3233,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1759,
-								1759
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "utils/utils.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3257,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								230,
-								230
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 135.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
