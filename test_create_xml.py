@@ -2,9 +2,9 @@ from igo.igo_xml import createXML, createXMLException
 
 try:
 
-    product = 'fuwl'
-    plan = '19E'
-    state = 'AK'
+    product = 'cb'
+    plan = 'GR-G220'
+    state = 'AL'
 
     full_path = createXML(product, state, plan, verbose=True)
 

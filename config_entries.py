@@ -53,4 +53,7 @@ config_values = {
     'stc': stc_config,
     'medsupp': medsupp_config,
     'srlife': srlife_config,
+    'submitted_xmls': 'SUBMITTED_XMLS',
+    'email_user':'egallegos@totalperform.com', 
+    'email_pass':'G@lle1982',
     }

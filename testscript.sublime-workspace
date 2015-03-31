@@ -441,14 +441,17 @@
 	[
 		"/C/Users/egalleg2/Documents/GitHub/testscript",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers",
-		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/fuwl",
-		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/spwl",
-		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/stc",
-		"/C/Users/egalleg2/Documents/GitHub/testscript/igo",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/cb",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/utils"
 	],
 	"file_history":
 	[
+		"/C/Users/egalleg2/Documents/GitHub/testscript/config_entries.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/igo/igo_xml.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/utils/utils_imap4.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/utils/utils_pop3.py",
+		"/C/Python34/lib/getpass.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/test_create_xml.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/batch_inport.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/stc/config_entries_stc.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/fuwl/config_entries_fuwl.py",
@@ -570,13 +573,7 @@
 		"/C/dev/Selenium/igo/__init__.py",
 		"/C/dev/Selenium/product_annuity/__init__.py",
 		"/C/dev/Selenium/browser.py",
-		"/C/dev/Selenium/products_config/config_entries_annuity.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/common/desired_capabilities.py",
-		"/C/dev/Selenium/libs/utils.py",
-		"/C/dev/Selenium/utils/__init__.py",
-		"/C/dev/Selenium/igo.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/common/exceptions.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/select.py"
+		"/C/dev/Selenium/products_config/config_entries_annuity.py"
 	],
 	"find":
 	{

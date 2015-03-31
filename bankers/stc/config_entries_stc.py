@@ -13,7 +13,7 @@ xmls_entry = {
     'ProducerCityStateZip':"'>Exton, ' + state + ' 11111-1111<'",
     '"PIFirstName">': "'>' + state + '_' + plan + '<'",
     '"PILastName">': "'>' + config_values[product]['name'] + '<'",
-    'PIFullName': "'>' + state + '_' + plan + ' X ' + config_values[product]['name'] + ' Sr'+ '<'",
+    'PIFullName': "'>' + state + '_' + plan + ' X ' + config_values[product]['name'] + ' Sr' + '<'",
     'pdfReversePIName': "'>' + config_values[product]['name'] + ', ' + state + '_' + plan + ' X' + '<'",
     'CaseDescription': "'>State=' + state + '<'"
     }
