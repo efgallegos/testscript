@@ -22,7 +22,7 @@ If your client does not support SMTP authentication, you won't be able to send m
 Also, if you're having trouble sending mail but you've confirmed that encryption is active for SMTP in your mail client, try to configure your SMTP server on a different port: 465 or 587.
 """
 
-from imaplib import IMAP4_SSL, error
+from imaplib import IMAP4_SSL
 import email, re, os
 from zipfile import ZipFile
 from config_entries import config_values
@@ -43,7 +43,7 @@ def email_login(verbose = False):
                 print('result: ', result)
                 print('message:', message[0])
             return mail
-    except error as e:
+    except Exception as e:
         print('failed to create IMAP4_SSL conection to host.')            
         raise e
     
