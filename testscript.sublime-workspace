@@ -4,12 +4,36 @@
 		"selected_items":
 		[
 			[
+				"fai",
+				"FAILED"
+			],
+			[
 				"input",
-				"input_file_path	statement"
+				"input_path_file	statement"
+			],
+			[
+				"try",
+				"try	Try/Except"
+			],
+			[
+				"r",
+				"r_fetch	statement"
+			],
+			[
+				"ex",
+				"Exception	class"
+			],
+			[
+				"file",
+				"filename	statement"
+			],
+			[
+				"email",
+				"email_logout	function"
 			],
 			[
 				"config",
-				"config_values"
+				"config_values	array"
 			],
 			[
 				"is",
@@ -130,10 +154,6 @@
 			[
 				"find_elemen",
 				"find_elements_by_link_text"
-			],
-			[
-				"try",
-				"try	Try/Except"
 			],
 			[
 				"s",
@@ -367,6 +387,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "utils/imap4.py",
+			"settings":
+			{
+				"buffer_size": 10437,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -441,22 +469,27 @@
 	[
 		"/C/Users/egalleg2/Documents/GitHub/testscript",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers",
-		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/cb",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/igo",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/utils"
 	],
 	"file_history":
 	[
-		"/C/Users/egalleg2/Documents/GitHub/testscript/config_entries.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/batch_acord_download.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/cb/config_entries_cb.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/utils/imap4.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/igo/igo_xml.py",
+		"/C/Python34/lib/site-packages/lxml/__init__.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/utils/utils_imap4.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/igo/igo_common.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/stc/config_entries_stc.py",
+		"/C/Users/egalleg2/Documents/GitHub/testscript/config_entries.py",
+		"/C/Python34/lib/zipfile.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/utils/utils_pop3.py",
 		"/C/Python34/lib/getpass.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/test_create_xml.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/batch_inport.py",
-		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/stc/config_entries_stc.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/bankers/fuwl/config_entries_fuwl.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/utils/utils.py",
-		"/C/Users/egalleg2/Documents/GitHub/testscript/igo/igo_common.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/excel_to_dic.py",
 		"/C/zz_EFG/Dropbox/GitHub/testscript/igo/igo_common.py",
 		"/C/zz_EFG/Dropbox/GitHub/testscript/bankers/fuwl/fuwl_brd.py",
@@ -568,12 +601,7 @@
 		"/C/dev/Selenium/igo/config_entries_igo.py",
 		"/C/Program Files/Sublime Text 3/Packages/Python.sublime-package",
 		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Default (Windows).sublime-keymap",
-		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings",
-		"/C/dev/Selenium/product_annuity/config_entries_annuity.py",
-		"/C/dev/Selenium/igo/__init__.py",
-		"/C/dev/Selenium/product_annuity/__init__.py",
-		"/C/dev/Selenium/browser.py",
-		"/C/dev/Selenium/products_config/config_entries_annuity.py"
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings"
 	],
 	"find":
 	{
@@ -689,8 +717,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "utils/imap4.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								646,
+								646
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

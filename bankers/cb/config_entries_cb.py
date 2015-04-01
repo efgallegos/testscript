@@ -11,10 +11,10 @@ xmls_entry = {
     'AGENT_pdf_FullAddress':"'>Address Line 1, Address 2, Exton, ' + state + ', 111111111<'",
     'pdfAGENT_FullNameAddress':"'>Agent Name 123 Agent St Exton, ' + state + ' 11111<'",
     'ProducerCityStateZip':"'>Exton, ' + state + ' 11111-1111<'",
-    '"PIFirstName">': "'>' + state + '_' + plan + '<'",
+    '"PIFirstName">': "'>' + state + '_' + config_values[product]['plans'][plan]['full_name'] + '<'",
     '"PILastName">': "'>' + config_values[product]['name'] + '<'",
-    'PIFullName': "'>' + state + '_' + plan + ' X ' + config_values[product]['name'] + ' Sr' + '<'",
-    'pdfReversePIName': "'>' + config_values[product]['name'] + ', ' + state + '_' + plan + ' X' + '<'",
+    'PIFullName': "'>' + state + '_' + config_values[product]['plans'][plan]['full_name'] + ' X ' + config_values[product]['name'] + ' Sr' + '<'",
+    'pdfReversePIName': "'>' + config_values[product]['name'] + ', ' + state + '_' + config_values[product]['plans'][plan]['full_name'] + ' X' + '<'",
     'CaseDescription': "'>State=' + state + '<'"
     }
 
@@ -79,13 +79,13 @@ states = {
 # Product's valid plans
 
 plans = {
-    'GR-G220': {'full_name': 'GR-G220',
+    'GR-G220': {'full_name': 'G220',
                 'file_name': 'GR-G220'},
-    'GR-G222': {'full_name': 'GR-G222',
+    'GR-G222': {'full_name': 'G222',
                 'file_name': 'GR-G222'},
-    'GR-G224': {'full_name': 'GR-G224',
+    'GR-G224': {'full_name': 'G224',
                 'file_name': 'GR-G224'},
-    'BLNY-GR-G224': {'full_name': 'BLNY-GR-G224',
+    'BLNY-GR-G224': {'full_name': 'G224',
                      'file_name': 'BLNY-GR-G224'}
     }
 
