@@ -45,3 +45,5 @@ Temporary Items
 *.pyc
 
 *.sublime-project
+
+*.sublime-workspace
