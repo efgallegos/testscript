@@ -42,8 +42,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Python compile files
 *.pyc
 
+# Sublime setup project files
 *.sublime-project
-
 *.sublime-workspace
