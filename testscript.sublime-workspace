@@ -367,13 +367,41 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "test.html",
+			"settings":
+			{
+				"buffer_size": 132,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 247.0,
 		"selected_items":
 		[
+			[
+				"plack",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"auto",
+				"Autoprefix CSS"
+			],
+			[
+				"aut",
+				"Autoprefix CSS"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
 			[
 				"anaconda",
 				"Anaconda: Autoformat PEP8 Errors"
@@ -385,10 +413,6 @@
 			[
 				"Package Control: ",
 				"Package Control: List Packages"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"install ",
@@ -407,7 +431,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 400.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -446,10 +470,19 @@
 	],
 	"file_history":
 	[
+		"/Users/efgallegos/GitHub/testscript/style.css",
+		"/Users/efgallegos/GitHub/testscript/test.html",
+		"/Users/efgallegos/GitHub/testscript/test.py",
+		"/Users/efgallegos/GitHub/testscript/create_case.py",
+		"/Users/efgallegos/GitHub/testscript/igo/igo_common.py",
+		"/Users/efgallegos/GitHub/testscript/batch_acord_download.py",
+		"/Users/efgallegos/GitHub/testscript/bankers/annuities/config_entries_annuity.py",
+		"/Users/efgallegos/GitHub/testscript/test.js",
+		"/Users/efgallegos/GitHub/testscript/config_entries.py",
+		"/Users/efgallegos/GitHub/testscript/batch_inport.py",
 		"/Users/efgallegos/.bash_profile",
 		"/Users/efgallegos/GitHub/testscript/.gitignore",
 		"/Users/efgallegos/GitHub/testscript/utils/utils.py",
-		"/Users/efgallegos/GitHub/testscript/igo/igo_common.py",
 		"/C/Users/egalleg2/Documents/GitHub/testscript/excel_to_dic.py",
 		"/C/zz_EFG/Dropbox/GitHub/testscript/igo/igo_common.py",
 		"/C/zz_EFG/Dropbox/GitHub/testscript/bankers/fuwl/fuwl_brd.py",
@@ -564,16 +597,7 @@
 		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings",
 		"/C/dev/Selenium/product_annuity/config_entries_annuity.py",
 		"/C/dev/Selenium/igo/__init__.py",
-		"/C/dev/Selenium/product_annuity/__init__.py",
-		"/C/dev/Selenium/browser.py",
-		"/C/dev/Selenium/products_config/config_entries_annuity.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/common/desired_capabilities.py",
-		"/C/dev/Selenium/libs/utils.py",
-		"/C/dev/Selenium/utils/__init__.py",
-		"/C/dev/Selenium/igo.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/common/exceptions.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/select.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/wait.py"
+		"/C/dev/Selenium/product_annuity/__init__.py"
 	],
 	"find":
 	{
@@ -595,6 +619,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"main",
 			"openCase",
 			"config_browsers",
 			"utils_browser",
@@ -689,8 +714,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								116,
+								116
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -744,6 +798,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"igo",
+				"igo/igo_common.py"
+			],
+			[
+				"test",
+				"test.py"
+			],
+			[
+				"create",
+				"create_case.py"
+			]
 		],
 		"width": 0.0
 	},

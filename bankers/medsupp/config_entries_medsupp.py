@@ -2,12 +2,12 @@
 
 xmls_entry = {
     '"EFT_States"|"EFT_States_itmval"|"PIADDR_State"|"PIADDR_State_itmval"|"PIJurisdiction"|"PIJurisdiction_itmval"|"State"|"State_itmval"': "'>' + state + '<'",
-    '"EFT_States_itmtxt"|"PIADDR_State_itmtxt"': "'>' + config_values[product]['states'][state].upper() + '<'",
-    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[product]['states'][state] + '<'",
+    '"EFT_States_itmtxt"|"PIADDR_State_itmtxt"': "'>' + config_values[carrier][product]['states'][state].upper() + '<'",
+    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state] + '<'",
     '"PIFullAddress">': "'>123 Main St Exton, ' + state + ' 11111<'",
     '"PIFirstName"|"pdfPIAdjFirstName">': "'>' + state + '_' + ''plan'' + '<'",    
-    '"PILastName"|"pdfPIAdjLastName">': "'>' + config_values[product]['name'] + '<'",    
-    '"PIFullName">|"APPCNT_FullName">': "'>' + state + '_' + ''plan'' + config_values[product]['name'] + '<'",
+    '"PILastName"|"pdfPIAdjLastName">': "'>' + config_values[carrier][product]['name'] + '<'",    
+    '"PIFullName">|"APPCNT_FullName">': "'>' + state + '_' + ''plan'' + config_values[carrier][product]['name'] + '<'",
      }
 
 # Product's valid states

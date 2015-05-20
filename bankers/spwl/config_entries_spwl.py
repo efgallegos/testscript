@@ -4,17 +4,17 @@
 xmls_entry = {
     '"OWN_ADDR_State"|"OWN_ADDR_State_itmval"|"ADDR_State"|"ADDR_State_itmval"|ADDR_State__[1-3]{1,1}">|ADDR_State__[1-3]{1,1}_itmval">': "'>' + state + '<'",
     '"pdfBENE_State__[0-9]{1,1}[0-5]{0,1}">|"pdfOwnerState"|"PIJurisdiction"|"PIJurisdiction_itmval"|"State"|"State_itmval"': "'>' + state + '<'",
-    '"ADDR_State_itmtxt"|"OWN_ADDR_State_itmtxt"|ADDR_State__[1-3]{1,1}_itmtxt">': "'>' + config_values[product]['states'][state].upper() + '<'",
-    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[product]['states'][state] + '<'",
+    '"ADDR_State_itmtxt"|"OWN_ADDR_State_itmtxt"|ADDR_State__[1-3]{1,1}_itmtxt">': "'>' + config_values[carrier][product]['states'][state].upper() + '<'",
+    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state] + '<'",
     '"APPCNT_FullAddress"': "'>123 Owner St  Exton, '+ state +', 11111<'",
     '"PIFullAddress">': "'>123 Main St Exton, ' + state + ' 11111<'",
     '"pdfAPPCNT_CityState"': "'>Exton, ' + state + ' 11111<'",
     '"pdfCityStateZip"': "'>Exton, ' + state + ', 11111<'",
     '"CaseDescription">': "'>State=' + state + '<'",
     '"PIFirstName">': "'>' + state + '_' + plan + '<'",
-    '"PILastName">': "'>' + config_values[product]['name'] + '<'",
-    '"PIFullName">|"CWPartyName__70">': "'>' + state + '_' + plan + ' X ' + config_values[product]['name'] + ' Sr'+ '<'",
-    '"pdfReversePIName">': "'>' + config_values[product]['name'] + ', ' + state + '_' + plan + ' X' + '<'"
+    '"PILastName">': "'>' + config_values[carrier][product]['name'] + '<'",
+    '"PIFullName">|"CWPartyName__70">': "'>' + state + '_' + plan + ' X ' + config_values[carrier][product]['name'] + ' Sr'+ '<'",
+    '"pdfReversePIName">': "'>' + config_values[carrier][product]['name'] + ', ' + state + '_' + plan + ' X' + '<'"
     }
 
 

@@ -97,32 +97,51 @@ class IGO:
         except NoSuchElementException as e:
             raise IgoCaseActionException('Case Action Exception: An unknow error took place in the caseAction function. More Details' + str(e))
 
-    def logIn(self, environment='', username='', password='', verbose=False):
+    def logIn(self, carrier, environment='', username='', password='', verbose=False):
         try:
             if verbose:
-                print("LogIn Bankers Method Start")
+                print("LogIn procedure starts")
+                print('Carrier: ', carrier)
+                print('Environment:', environment) 
+                print('Username:', username)
+                print('Password:', password)
+                print('Base_url:', base_url)
+
+            if carrier not in config_values['carriers']:
+                if verbose:
+                    print('Invalid Carrier.')
+                raise IgoLogInException('Carrier is a mandatory value for Procedure "logIn()".')
 
             if not environment:
-                environment = 'qd5'
                 if verbose:
-                    print('Using Default environment: "QD5"')
+                    print('Using Default environment: ', environment)
+                environment = config_values[carrier]['environments']['default']
+            else:
+                if environment not in config_values[carrier]['environments']:
+                    if verbose:
+                        print('Environment not valid for Carrier.')
+                    raise IgoLogInException('Environment not valid for Carrier.')
 
-            base_url = config_values[environment]
+            base_url = config_values[carrier]['environments'][environment]
 
             if not username:
-                username = config_values[environment[0:2] + '-user']
-                password = config_values[environment[0:2] + '-pass']
+                username = config_values[carrier]['users'][environment[0:2] + '-user']
+                password = config_values[carrier]['users'][environment[0:2] + '-pass']
                 if verbose:
                     print('Using default environment user and password: ', username, password)
 
             if verbose:
-                print('environment:', environment, ', username:', username, ', password:', password, ', base_url:', base_url)
+                print('Carrier: ', carrier)
+                print('Environment:', environment) 
+                print('Username:', username)
+                print('Password:', password)
+                print('Base_url:', base_url)
 
             self.driver.get(base_url)
 
             if self.driver.current_url.find("/CossEnterpriseSuite/") == -1:
                 if verbose:
-                    print('setear user y password')
+                    print('Setting User and Password')
 
                 elem = self.driver.find_element_by_name("user")
                 elem.clear()
@@ -145,6 +164,7 @@ class IGO:
         except Exception as e:
             raise IgoLogInException(str(e))
 
+
     def logOut(self, verbose=False):
         if verbose:
             print('Log Out Bankers."')
@@ -165,6 +185,7 @@ class IGO:
             print('Log out successfully.')
             print('Switching back to main windows.')
         self.driver.switch_to.window(current_window)
+
 
     def viewMyCases(self, verbose=False):
         if verbose:
@@ -190,6 +211,7 @@ class IGO:
         except NoSuchElementException as e:
             raise IgoViewMyCasesException('Unhandle error. More datils:' + str(e))
 
+
     def search(self, target, verbose=False):
         if verbose:
             print('iGO Search - target:' + target)
@@ -210,6 +232,7 @@ class IGO:
                 print('Searching target completed...')
         except NoSuchElementException as e:
             raise IgoSearchException('iGO Search Failed - More Details:' + str(e))
+
 
     def viewCaseForms(self, case_name, verbose=False):
         if verbose:
@@ -294,9 +317,11 @@ class IGO:
                             print('Starting PDF download...')
 
                         # TODO: Rutina para descargar el PDF. Usar libreria standar de python para manipular el Windows dialgo.
-                        pdf_save_path = config_values['base_path'] + \
-                                        config_values['annuity']['product_path'] + \
-                                        config_values['annuity']['form_path'] + \
+                        pdf_save_path = config_values[carrier]['carrier_path'] + \
+                                        config_values['os_path_separator'] + \
+                                        config_values[carrier][product]['product_path'] + \
+                                        config_values['os_path_separator'] + \
+                                        config_values[carrier][product]['form_path'] + \
                                         case_name + '.pdf'
 
                         if verbose:
@@ -327,48 +352,43 @@ class IGO:
                 print('View Froms - Unhandle exception.')
             raise IgoCaseViewException('View Form - Unhandle exception.')
 
-    def importCase(self, product, state, plan, verbose=False):
-        if product not in config_values['products']:
+
+    def importCase(self, carrier, product, state, plan, verbose=False):
+        if carrier not in config_values['carriers']:
+            if verbose:
+                print('Skipping "import Case" process - Invalid Carrier: ' + carrier)
+            raise InvalidProductPlanState(carrier, product, plan, state)
+        if product not in config_values[carrier]['products']:
             if verbose:
                 print('Skipping "Import Case" process - Invalid product: ' + product)
-            raise InvalidProductPlanState(product, plan, state)
-        elif plan not in config_values[product]['plans']:
+            raise InvalidProductPlanState(carrier, product, plan, state)
+        elif plan not in config_values[carrier][product]['plans']:
             if verbose:
                 print('Skipping "Import Case" process - Invalid plan: ' + plan)
-            raise InvalidProductPlanState(product, plan, state)
-        elif state not in config_values[product]['states']:
+            raise InvalidProductPlanState(carrier, product, plan, state)
+        elif state not in config_values[carrier][product]['states']:
             if verbose:
                 print('Skipping "Import Case" process - Invalid State (' + state + ') for product: ' + product)
-            raise InvalidProductPlanState(product, plan, state)
+            raise InvalidProductPlanState(carrier, product, plan, state)
         else:
             if verbose:
                 print('Stating "Import Case" process...')
-
-            """
-            file_full_path = config_values['base_path'] + \
-                config_values[product]['product_path'] + \
-                config_values['os_path_separator'] + \
-                config_values[product]['xml_output_path'] + \
-                config_values['os_path_separator'] + \
-                state + '_' + \
-                config_values[product]['plans'][plan]['file_name'] + '.xml'
-            """
             
             if verbose:
                 print('product:', product)
                 print('plan:', plan)
 
             if verbose:
-                print('Calling to createXML(product, state, plan, verbose)...')
+                print('Calling to createXML(carrier, product, state, plan, verbose)...')
 
             try:
-                file_full_path = createXML(product, state, plan, verbose)
+                file_full_path = createXML(carrier, product, state, plan, verbose)
                 if verbose:
                     print('file_full_path:', file_full_path)
             except createXMLException as e:
                 if verbose:
                     print('Function createXML() failed...')
-                raise IgoCaseImportException('Function createXML() failed. More Details:' + str(e))
+                raise IgoCaseImportExcepﬂtion('Function createXML() failed. More Details:' + str(e))
 
             current_window = self.driver.current_window_handle
 
@@ -427,7 +447,7 @@ class IGO:
                         print('Checking the case in "My View Cases".')
 
                     # case_name = "LastName, FirstName"
-                    case_name = config_values[product]['name'] + ', ' + state + '_' + plan        
+                    case_name = config_values[carrier][product]['name'] + ', ' + state + '_' + plan        
                     
 
                     if verbose:
@@ -457,6 +477,7 @@ class IGO:
                 if verbose:
                     print('Import Case - Unhandle exception.')
                 raise IgoCaseImportException('Import Case - Unhandle exception.')
+
 
     def deleteCase(self, case_name, verbose):
         try:
@@ -532,6 +553,7 @@ class IGO:
                 print('Failed to switch to Confirmation Delete alert pop up...')
             raise IgoCaseDeleteException('Failed to switch to Confirmation Delete alert pop up. More Details:' + str(e))  
 
+
     def exportCase(self, product, case_name, verbose=False):
         # TODO: This has to be implemented
 
@@ -557,9 +579,9 @@ class IGO:
         if verbose:
             print('Current windows: ' + current_window)
 
-        file_full_path = config_values['base_path'] + \
-                         config_values[product]['product_path'] + \
-                         config_values[product]['xml_export_path'] + \
+        file_full_path = config_values[carrier]['base_path'] + \
+                         config_values[carrier][product]['product_path'] + \
+                         config_values[carrier][product]['xml_export_path'] + \
                          case_name + '.xml'
 
         if verbose:
@@ -622,6 +644,7 @@ class IGO:
                 print('Import Case - Unhandle exception.')
             raise IgoCaseExportxception('Import Case - Unhandle exception.')
 
+
     def openCase(self, case_name, verbose=False):
         if verbose:
             print('starting openCase process...')
@@ -672,10 +695,10 @@ class IgoCaseImportException(Exception):
 
 class InvalidProductPlanState(Exception):
 
-    def __init__(self, product, plan, state):
-        self.value = ('"Case Import Exception" - Details: Invalid Product/Plan/state combination. '
-                     'Product:' + product + ', Plan:' + plan + ', State:' + state + '. Please check '
-                     'the dictionary to see the valid Product/Plan/State combinations.')
+    def __init__(self, carrier, product, plan, state):
+        self.value = ('"Case Import Exception" - Details: Invalid Carrier/Product/Plan/state combination. '
+                     'Carrier:' + carrier + ', Product:' + product + ', Plan:' + plan + ', State:' + state + 
+                     '. Please check the dictionary to see the valid Product/Plan/State combinations.')
 
     def __str__(self):
         return repr(self.value)

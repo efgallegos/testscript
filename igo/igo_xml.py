@@ -4,81 +4,83 @@ import re
 from config_entries import config_values
 
 
-def updateXMLElement(line, product, state, plan):
+def updateXMLElement(line, carrier, product, state, plan, verbose=False):
     regex = re.compile(r'>[,-=a-zA-Z0-9_ ]*<')
 
-    for entry in config_values[product]['xmls_entry']:
+    for entry in config_values[carrier][product]['xmls_entry']:
         if re.search(entry, line):
-            string = eval(config_values[product]['xmls_entry'][entry])
+            string = eval(config_values[carrier][product]['xmls_entry'][entry])
             return regex.sub(string, line)
     else:
         return line
 
 
-def createXML(product, state, plan, verbose=False):
+def createXML(carrier, product, state, plan, verbose=False):
     try:
         if verbose:
+            print('Carrier: ' + carrier)
             print('Product: ' + product)
             print('State: ' + state)
             print('Plan: ' + plan)
 
         input_xml_path = config_values['base_path'] + \
-            config_values[product]['product_path'] + \
+            config_values[carrier]['carrier_path'] + \
             config_values['os_path_separator'] + \
-            config_values[product]['xml_input_path'] + \
+            config_values[carrier][product]['product_path'] + \
             config_values['os_path_separator'] + \
-            config_values[product]['plans'][plan]['file_name'] + '.xml'
+            config_values[carrier][product]['xml_input_path'] + \
+            config_values['os_path_separator'] + \
+            config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
 
         output_xml_path = config_values['base_path'] + \
-            config_values[product]['product_path'] + \
+            config_values[carrier]['carrier_path'] + \
             config_values['os_path_separator'] + \
-            config_values[product]['xml_output_path'] + \
+            config_values[carrier][product]['product_path'] + \
+            config_values['os_path_separator'] + \
+            config_values[carrier][product]['xml_output_path'] + \
             config_values['os_path_separator'] + \
             state + '_' + \
-            config_values[product]['plans'][plan]['file_name'] + '.xml'
+            config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
 
         if verbose:
             print('input file path: ' + input_xml_path)
             print('output file path: ' + output_xml_path)
 
-        input_file = open(input_xml_path, 'r')
-        output_file = open(output_xml_path, 'w')
+        with open(input_xml_path, 'r') as input_file:
+            with open(output_xml_path, 'w') as output_file:
+                if verbose:
+                    print('files opened successfully.')
 
-        if verbose:
-            print('files opened successfully.')
+                entity_client = False
 
-        entity_client = False
+                for line in input_file:
+                    if entity_client:
+                        updateLine = updateXMLElement(line, carrier, product, state, plan)
+                    else:
+                        entity_client = re.search('EntityName="Client"', line)
+                        updateLine = line
 
-        for line in input_file:
-            if entity_client:
-                updateLine = updateXMLElement(line, product, state, plan)
-            else:
-                entity_client = re.search('EntityName="Client"', line)
-                updateLine = line
+                    if verbose:
+                        print(updateLine)
 
-            if verbose:
-                print(updateLine)
+                    output_file.write(updateLine)
 
-            output_file.write(updateLine)
+                if verbose:
+                    print('Files were closed successfully.')
 
-        input_file.close()
-        output_file.close()
+                return output_xml_path
 
-        if verbose:
-            print('Files were closed successfully.')
-
-        return output_xml_path
     except Exception as e:
         if verbose:
             print('Function CreateXML() failed.')
-        raise createXMLException(str(e), product, state, plan)
+        raise createXMLException(str(e), carrier, product, state, plan)
 
 
 class createXMLException(Exception):
 
-    def __init__(self, value, product, state, plan):
-        self.value = '"Function CreateXML() failed." - Product:' + \
-                      product + ', Plan:' + plan + ', Sate:' + state + \
+    def __init__(self, value, carrier, product, state, plan):
+        self.value = '"Function CreateXML() failed." - Carrier: ' + carrier + \
+                     ', Product:' + product + ', Plan:' + plan + ', Sate:' + state + \
                       '.\nDetails: ' + value
 
     def __str__(self):

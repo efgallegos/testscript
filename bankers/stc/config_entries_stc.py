@@ -3,8 +3,8 @@
 xmls_entry = {
     'ADDR_State">|ADDR_State_itmval|EFT_State">|EFT_State_itmval|PIJurisdiction">|PIJurisdiction_itmval': "'>' + state + '<'",
     'ProducerAddressState">|ProducerAddressStateTC|State">|State_itmval">|TPState">|TPState_itmval': "'>' + state + '<'",
-    'ADDR_State_itmtxt|EFT_State_itmtxt|TPState_itmtxt': "'>' + config_values[product]['states'][state].upper() + '<'",
-    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[product]['states'][state] + '<'",
+    'ADDR_State_itmtxt|EFT_State_itmtxt|TPState_itmtxt': "'>' + config_values[carrier][product]['states'][state].upper() + '<'",
+    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state] + '<'",
     'PIFullAddress': "'>123 Main St Exton, ' + state + ' 11111<'",
     'AGENT_FullAddress': "'>123 Agent St Exton, ' + state + ' 11111<'",
     'AGENT2_FullAddress':"'>123 Second St Exton, ' + state + ' 11111<'",
@@ -12,9 +12,9 @@ xmls_entry = {
     'pdfAGENT_FullNameAddress':"'>Agent Name 123 Agent St Exton, ' + state + ' 11111<'",
     'ProducerCityStateZip':"'>Exton, ' + state + ' 11111-1111<'",
     '"PIFirstName">': "'>' + state + '_' + plan + '<'",
-    '"PILastName">': "'>' + config_values[product]['name'] + '<'",
-    'PIFullName': "'>' + state + '_' + plan + ' X ' + config_values[product]['name'] + ' Sr' + '<'",
-    'pdfReversePIName': "'>' + config_values[product]['name'] + ', ' + state + '_' + plan + ' X' + '<'",
+    '"PILastName">': "'>' + config_values[carrier][product]['name'] + '<'",
+    'PIFullName': "'>' + state + '_' + plan + ' X ' + config_values[carrier][product]['name'] + ' Sr' + '<'",
+    'pdfReversePIName': "'>' + config_values[carrier][product]['name'] + ', ' + state + '_' + plan + ' X' + '<'",
     'CaseDescription': "'>State=' + state + '<'"
     }
 

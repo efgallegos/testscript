@@ -11,14 +11,15 @@ def batch_inport(arguments):
     print("################################################################################")
     print("Parameters:")
     print("Browser: ", arguments[0])
-    print("Environment: ", arguments[1])
-    print("Product: ", arguments[2])
-    print("State: ", arguments[3])
-    print("Plan: ", arguments[4])
+    print("Carrier: ", arguments[1])
+    print("Environment: ", arguments[2])
+    print("Product: ", arguments[3])
+    print("State: ", arguments[4])
+    print("Plan: ", arguments[5])
     print("################################################################################")
     
-    if len(arguments) != 5:
-        print('error, no hay 5 argumentos')
+    if len(arguments) != 6:
+        print('error: Expecting 6 argmunets.')
         sys.exit(1)
 
     if arguments[0] in config_browsers:
@@ -27,32 +28,37 @@ def batch_inport(arguments):
         print('Invalid Browser: ' + arguments[0])
         sys.exit(1)
 
-    if arguments[1] in config_values:
-        environment = arguments[1]
+    if arguments[1] in config_values['carriers']:
+        carrier = arguments[1]
     else:
-        print('Invalid Environment: ' + arguments[1])
+        print('Invalid Carrier: ' + arguments[1])
+
+    if arguments[2] in config_values[carrier]['environments']:
+        environment = arguments[2]
+    else:
+        print('Invalid Environment: ' + arguments[2])
         sys.exit(1)
 
-    if arguments[2] in config_values['products']:
-        product = arguments[2]
+    if arguments[3] in config_values[carrier]['products']:
+        product = arguments[3]
     else:
-        print('Invalid Product: ' + arguments[2])
+        print('Invalid Product: ' + arguments[3])
         sys.exit(1)
 
-    if arguments[3] in config_values[product]['states']:
-        state = arguments[3]
+    if arguments[4] in config_values[carrier][product]['states']:
+        state = arguments[4]
     else:
         print('Invalid State for Product - ' + \
-              config_values[product]['name'] + \
-              ': ' + arguments[3])
+              config_values[carrier][product]['name'] + \
+              ': ' + arguments[4])
         sys.exit(1)
 
-    if arguments[4] in config_values[product]['plans']:
-        plan = arguments[4]
+    if arguments[5] in config_values[carrier][product]['plans']:
+        plan = arguments[5]
     else:
         print('Invalid Plan for Product - ' + \
-              config_values[product]['name'] + \
-              ': ' + arguments[4])
+              config_values[carrier][product]['name'] + \
+              ': ' + arguments[5])
         sys.exit(1)
 
     try:        
@@ -60,15 +66,16 @@ def batch_inport(arguments):
         print('driver ' + b + ' created successfully.')
         iGo = IGO(driver)
         print('IGO class instanced correctly.')
-        iGo.logIn(environment)
+        iGo.logIn(carrier, environment)
         print('logIn to ' + environment + ' successfully.')
         iGo.viewMyCases()
         print('"View My Cases" screen displayed successfully.')
         print('Import Case -> PROCESS STARTED...')
+        print('CARRIER: ' + carrier)
         print('PRODUCT: ' + product)
         print('STATE: ' + state)
         print('PLAN: ' + plan)
-        iGo.importCase(product, state, plan, verbose=True)
+        iGo.importCase(carrier, product, state, plan, verbose=True)
         print('Import Case -> PROCESS COMPLETED...')
         iGo.logOut()
         print('logOut from ' + environment + ' successfully')
