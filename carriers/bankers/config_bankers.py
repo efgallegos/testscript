@@ -1,10 +1,10 @@
-from bankers.annuities.config_entries_annuity import annuity_config
-from bankers.spwl.config_entries_spwl import spwl_config
-from bankers.fuwl.config_entries_fuwl import fuwl_config
-from bankers.cb.config_entries_cb import cb_config
-from bankers.stc.config_entries_stc import stc_config
-from bankers.medsupp.config_entries_medsupp import medsupp_config
-from bankers.srlife.config_entries_srlife import srlife_config
+from carriers.bankers.annuities.config_entries_annuity import annuity_config
+from carriers.bankers.spwl.config_entries_spwl import spwl_config
+from carriers.bankers.fuwl.config_entries_fuwl import fuwl_config
+from carriers.bankers.cb.config_entries_cb import cb_config
+from carriers.bankers.stc.config_entries_stc import stc_config
+from carriers.bankers.medsupp.config_entries_medsupp import medsupp_config
+from carriers.bankers.srlife.config_entries_srlife import srlife_config
 
 
 
