@@ -1,6 +1,6 @@
 """This file contains the functions used to creates an iGo XML file."""
 
-import re
+import re, os
 from config_entries import config_values
 
 
@@ -32,19 +32,47 @@ def createXML(carrier, product, state, plan, verbose=False):
             config_values['os_path_separator'] + \
             config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
 
-        output_xml_path = config_values['base_path'] + \
-            config_values[carrier]['carrier_path'] + \
-            config_values['os_path_separator'] + \
-            config_values[carrier][product]['product_path'] + \
-            config_values['os_path_separator'] + \
-            config_values[carrier][product]['xml_output_path'] + \
-            config_values['os_path_separator'] + \
-            state + '_' + \
-            config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
+        output_xml_folder = config_values['base_path'] + \
+                            config_values[product]['product_path'] + \
+                            config_values['os_path_separator'] + \
+                            config_values[product]['xml_output_path']
+
+        file_name = state + '_' + config_values[product]['plans'][plan]['file_name'] + '.xml'
+
+        output_xml_path = output_xml_folder + \
+                          config_values['os_path_separator'] + \
+                          file_name
+
+
+        # output_xml_path = config_values['base_path'] + \
+        #     config_values[carrier]['carrier_path'] + \
+        #     config_values['os_path_separator'] + \
+        #     config_values[carrier][product]['product_path'] + \
+        #     config_values['os_path_separator'] + \
+        #     config_values[carrier][product]['xml_output_path'] + \
+        #     config_values['os_path_separator'] + \
+        #     state + '_' + \
+        #     config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
 
         if verbose:
             print('input file path: ' + input_xml_path)
             print('output file path: ' + output_xml_path)
+
+        if os.getcwd() != output_xml_folder:
+            if verbose:
+                print('Current directory: ', os.getcwd())
+            os.chdir(output_xml_folder)
+            if verbose:
+                print('Changed currect directory to: ', output_xml_folder)
+
+        if os.path.isfile(file_name):
+            if verbose:
+                print('XML file exists and it is at: ', output_xml_folder + config_values['os_path_separator'] + file_name)
+                print('Skipping CREATE XML process...')
+            return output_xml_path
+
+        if verbose:
+            print("File was never created for this state. Starting Craete XML process.")
 
         with open(input_xml_path, 'r') as input_file:
             with open(output_xml_path, 'w') as output_file:
