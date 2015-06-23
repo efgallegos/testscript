@@ -24,7 +24,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import (WebDriverException,
                                         TimeoutException,
                                         NoSuchElementException,
-                                        NoSuchFrameException,
+                                        #NoSuchFrameException,
                                         NoAlertPresentException,
                                         NoSuchWindowException)
 from .igo_xml import createXML, createXMLException
