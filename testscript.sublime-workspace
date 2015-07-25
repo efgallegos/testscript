@@ -368,10 +368,10 @@
 	"buffers":
 	[
 		{
-			"file": "test.html",
+			"file": "utils/imap4.py",
 			"settings":
 			{
-				"buffer_size": 132,
+				"buffer_size": 10438,
 				"line_ending": "Unix"
 			}
 		}
@@ -470,8 +470,8 @@
 	],
 	"file_history":
 	[
-		"/Users/efgallegos/GitHub/testscript/style.css",
 		"/Users/efgallegos/GitHub/testscript/test.html",
+		"/Users/efgallegos/GitHub/testscript/style.css",
 		"/Users/efgallegos/GitHub/testscript/test.py",
 		"/Users/efgallegos/GitHub/testscript/create_case.py",
 		"/Users/efgallegos/GitHub/testscript/igo/igo_common.py",
@@ -719,27 +719,29 @@
 			[
 				{
 					"buffer": 0,
-					"file": "test.html",
-					"semi_transient": false,
+					"file": "utils/imap4.py",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 132,
+						"buffer_size": 10438,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								116,
-								116
+								3612,
+								3199
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1055.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

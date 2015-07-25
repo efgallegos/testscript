@@ -50,5 +50,10 @@ __pycache__/
 # Sublime setup project files
 *.sublime-project
 *.sublime-workspace
+*.sublime-workspace
 
 *.sublime-workspace
+
+*.sublime-workspace
+
+testscript.sublime-workspace
