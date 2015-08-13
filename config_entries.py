@@ -3,6 +3,7 @@
 import platform
 from igo.igo_config_entries import igo_config
 from carriers.bankers.config_bankers import bankers_config
+from carriers.lincoln.config_lincoln import lincoln_config
 
 
 def get_base_path():
@@ -22,8 +23,9 @@ config_values = {
     'os_path_separator': get_path_separator(),
     'igo_common': igo_config,
     'submitted_xmls': 'SUBMITTED_XMLS',
-    'carriers':['bankers'],
-    'bankers':bankers_config,
+    'carriers': ['bankers','lincoln'],
+    'bankers': bankers_config,
+    'lincoln': lincoln_config
     }
 
 
