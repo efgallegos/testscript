@@ -24,20 +24,20 @@ def createXML(carrier, product, state, plan, verbose=False):
             print('Plan: ' + plan)
 
         input_xml_path = config_values['base_path'] + \
-            config_values[carrier]['carrier_path'] + \
-            config_values['os_path_separator'] + \
-            config_values[carrier][product]['product_path'] + \
-            config_values['os_path_separator'] + \
-            config_values[carrier][product]['xml_input_path'] + \
-            config_values['os_path_separator'] + \
-            config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
+                         config_values[carrier]['carrier_path'] + \
+                         config_values['os_path_separator'] + \
+                         config_values[carrier][product]['product_path'] + \
+                         config_values['os_path_separator'] + \
+                         config_values[carrier][product]['xml_input_path'] + \
+                         config_values['os_path_separator'] + \
+                         config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
 
         output_xml_folder = config_values['base_path'] + \
-                            config_values[product]['product_path'] + \
+                            config_values[carrier]['carrier_path'] + \
                             config_values['os_path_separator'] + \
-                            config_values[product]['xml_output_path']
+                            config_values[carrier][product]['product_path']
 
-        file_name = state + '_' + config_values[product]['plans'][plan]['file_name'] + '.xml'
+        file_name = state + '_' + config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
 
         output_xml_path = output_xml_folder + \
                           config_values['os_path_separator'] + \
