@@ -16,7 +16,7 @@
 
 import re
 import time
-from utils.browser import *
+#from utils.browser import *
 #from utils.utils import *
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
@@ -901,6 +901,22 @@ def openCase(driver, case_name, verbose=False):
         if verbose:
             print('Failed to load "Case Information" screen for case name: ' + case_name + '. More Details: ' + str(e))
         raise IgoCaseOpenException('Failed to load "Case Information" screen for case name: ' + case_name + '. More Details: ' + str(e))
+
+
+
+def lockCase(driver, case_name, verbose=False):
+    
+    driver.get(self.base_url + "/CossEnterpriseSuite/(S(bjlkxdmstxrpbln2zugourmi))/webforms/ExistingCase.aspx")
+    driver.find_element_by_id("GridView1_ctl02_btnIgo1").click()
+    driver.find_element_by_id("btnNext").click()
+
+
+
+
+
+
+
+
 
 
 class IgoCommonException(Exception):
