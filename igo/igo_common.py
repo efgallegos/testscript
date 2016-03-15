@@ -943,7 +943,7 @@ class IgoCommonException(Exception):
     def __str__(self):
         return 'EXCEPTION PROCEDURE => ' + self.fuctionName + '\n' +\
                'Input Parameters: ' + '\n' +\
-                printParameters() +\
+                self.printParameters() +\
                'Message Detail: ' + self.messageDetails
 
 

@@ -79,13 +79,13 @@ states = {
 # Product's valid plans
 
 plans = {
-    'GR-G220': {'full_name': 'G220',
+    'GR-G220': {'full_name': 'GR-G220',
                 'file_name': 'GR-G220'},
-    'GR-G222': {'full_name': 'G222',
+    'GR-G222': {'full_name': 'GR-G222',
                 'file_name': 'GR-G222'},
-    'GR-G224': {'full_name': 'G224',
+    'GR-G224': {'full_name': 'GR-G224',
                 'file_name': 'GR-G224'},
-    'BLNY-GR-G224': {'full_name': 'G224',
+    'BLNY-GR-G224': {'full_name': 'BLNY-GR-G224',
                      'file_name': 'BLNY-GR-G224'}
     }
 

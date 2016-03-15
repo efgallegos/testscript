@@ -368,10 +368,18 @@
 	"buffers":
 	[
 		{
-			"file": "utils/utils_addlibs.py",
+			"file": "test_appium.py",
 			"settings":
 			{
-				"buffer_size": 643,
+				"buffer_size": 2294,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "carriers/bankers/config_bankers.py",
+			"settings":
+			{
+				"buffer_size": 1590,
 				"line_ending": "Unix"
 			}
 		}
@@ -466,22 +474,24 @@
 		"/Users/efgallegos/GitHub/testscript",
 		"/Users/efgallegos/GitHub/testscript/carriers",
 		"/Users/efgallegos/GitHub/testscript/carriers/bankers",
-		"/Users/efgallegos/GitHub/testscript/igo",
-		"/Users/efgallegos/GitHub/testscript/utils"
+		"/Users/efgallegos/GitHub/testscript/igo"
 	],
 	"file_history":
 	[
-		"/Users/efgallegos/GitHub/testscript/utils/browser.py",
+		"/Users/efgallegos/GitHub/testscript/server.py",
 		"/Users/efgallegos/GitHub/testscript/igo/igo_common.py",
-		"/Users/efgallegos/GitHub/testscript/carriers/bankers/fuwl/config_entries_fuwl.py",
+		"/Users/efgallegos/GitHub/testscript/test_appium.py",
 		"/Users/efgallegos/GitHub/testscript/carriers/bankers/config_bankers.py",
 		"/Users/efgallegos/GitHub/testscript/config_entries.py",
+		"/Users/efgallegos/GitHub/testscript/utils/imap4.py",
+		"/Users/efgallegos/GitHub/testscript/batch_acord_download.py",
+		"/Users/efgallegos/GitHub/testscript/utils/browser.py",
+		"/Users/efgallegos/GitHub/testscript/carriers/bankers/fuwl/config_entries_fuwl.py",
 		"/Users/efgallegos/GitHub/testscript/igo/igo_xml.py",
 		"/Users/efgallegos/GitHub/testscript/test.html",
 		"/Users/efgallegos/GitHub/testscript/style.css",
 		"/Users/efgallegos/GitHub/testscript/test.py",
 		"/Users/efgallegos/GitHub/testscript/create_case.py",
-		"/Users/efgallegos/GitHub/testscript/batch_acord_download.py",
 		"/Users/efgallegos/GitHub/testscript/bankers/annuities/config_entries_annuity.py",
 		"/Users/efgallegos/GitHub/testscript/test.js",
 		"/Users/efgallegos/GitHub/testscript/batch_inport.py",
@@ -595,10 +605,7 @@
 		"/C/dev/Selenium/igo/igo_xml.py",
 		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/expected_conditions.py",
 		"/C/dev/Selenium/libs/browser.py",
-		"/C/dev/Selenium/igo/igo_batch_inport.py",
-		"/C/dev/Selenium/igo/config_entries_igo.py",
-		"/C/Program Files/Sublime Text 3/Packages/Python.sublime-package",
-		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Default (Windows).sublime-keymap"
+		"/C/dev/Selenium/igo/igo_batch_inport.py"
 	],
 	"find":
 	{
@@ -725,19 +732,49 @@
 			[
 				{
 					"buffer": 0,
-					"file": "utils/utils_addlibs.py",
-					"semi_transient": true,
+					"file": "test_appium.py",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 643,
+						"buffer_size": 2294,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								450,
+								450
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 318.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "carriers/bankers/config_bankers.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								912,
+								974
 							]
 						],
 						"settings":
@@ -750,7 +787,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -789,7 +826,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 290.0
+		"height": 150.0
 	},
 	"output.find_results":
 	{

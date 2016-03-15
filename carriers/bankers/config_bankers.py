@@ -20,8 +20,8 @@ bankers_config = {
             'default': 'http://pipepasstoigo-qd3.ipipeline.com/default.aspx?gaid=5752'
           },
     'users': {
-            'qd-user': 'test5752',
-            'qd-pass': 'test5752',
+            'qd-user': 'bankers04',
+            'qd-pass': 'bankers04',
             'td-user': 'bankers02',
             'td-pass': 'bankers02'
            },

@@ -92,7 +92,7 @@ def create_app():
             result['status'] = "Case was created successfully."
             return make_response(jsonify(result), 200)
 
-        except Exception as e:
+        except (BrowserException, Exception) as e:
             result = {}
             result['browser'] = name
             result['product'] = product
@@ -108,4 +108,4 @@ def create_app():
 app = create_app()
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1',port=8081)
+    app.run(host='0.0.0.0',port=8081)

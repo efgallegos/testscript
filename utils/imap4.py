@@ -194,6 +194,11 @@ def rename_xml(file_name, verbose = False):
         raise Exception("rename_xml - FAILED: The file wasn't renamed.")
 
 
+def search(target='CASE_MANAGER', verbose=False):
+    pass
+
+
+
 def download_submitted_xml(verbose=False):
     #log in and select the inbox
     try:
