@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 
 # List of available browser to be use by the scripts.
 
@@ -78,7 +79,9 @@ def getWebDriver(browser_name, proxy=False, verbose=False):
                     # else:
                     driver = webdriver.Ie(config_browsers[browser_name][os_name], capabilities=caps)
             else:
-                driver = webdriver.Firefox()
+                profile = FirefoxProfile()
+                profile.add_extension('/Users/efgallegos/GitHub/testscript/executables/firebug-2.0.16-fx.xpi')
+                driver = webdriver.Firefox(firefox_profile=profile)
 
         driver.maximize_window()
         driver.implicitly_wait(30)

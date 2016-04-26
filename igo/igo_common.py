@@ -18,7 +18,7 @@ import re
 import time
 #from utils.browser import *
 #from utils.utils import *
-from selenium.webdriver.support.select import Select
+#from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import (WebDriverException,
@@ -61,7 +61,7 @@ def caseAction(driver, case_name, action, verbose=False):
             print(msg)
         raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
     try:
-        if driver.current_url.find('/webforms/caselist.aspx') == -1:
+        if driver.current_url.find('/webforms/caselistresp.aspx') == -1:
             if verbose:
                 print('Navigate to "View My Cases"')
             viewMyCases(driver, verbose=verbose)
@@ -72,33 +72,20 @@ def caseAction(driver, case_name, action, verbose=False):
                 print('Searching cases by First Name:' + first_name)
             search(driver, first_name, verbose=verbose)
 
+            if verbose:
+                print('Verifing search returned cases.')
             if driver.find_elements_by_link_text(case_name):
                 if verbose:
-                    print('Case Name: "' + case_name + '" was found.')
-                    print("Looking for Case Name:" + case_name + "'s Row_id.")
-
-                e = driver.find_elements_by_link_text(case_name)[0]
-                parent = e.find_element_by_xpath('..')
-                cd = parent.find_elements_by_link_text('Case Details')[0]
-                row_id = cd.get_attribute('id')[3:cd.get_attribute('id').find('_', 3)]
-
+                    print('Case "',case_name,'" was found.')
+                e = driver.find_element_by_link_text(case_name)
+                parent = e.find_element_by_xpath('..').find_element_by_xpath('..').find_element_by_xpath('..')
+                b = parent.find_element_by_tag_name('button')
                 if verbose:
-                    print('Action to execute:' + action)
-                    print('Row_id: ' + row_id)
-
-                if action != 'ViewForms':
-                    case_action_id = 'gc_' + row_id + '_ddlGridActions'
-                    if verbose:
-                        print('Case Action Id: ' + case_action_id)
-                        print('Selecting action" ' + action + '" in the case action dropdown for case name:' + case_name)
-
-                    Select(driver.find_element_by_id(case_action_id)).select_by_value(action)
-                else:
-                    case_action_id = 'gc$' + row_id + '$ctl05'
-                    if verbose:
-                        print('Case Action Id: ' + case_action_id)
-                        print('Executing action" ' + action + '" for case name:' +case_name)
-                    driver.find_element_by_name(case_action_id).click()
+                    print('Clicking on the Case Action dropdown.')
+                b.click()
+                if verbose:
+                    print('Clicking on the Case Action option: ', action)
+                b.find_element_by_xpath('..').find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
             else:
                 msg = 'Case Name: "' + case_name + '" was not found in the "View My Cases" screen'
                 if verbose:
@@ -107,7 +94,9 @@ def caseAction(driver, case_name, action, verbose=False):
         else:
             if verbose:
                 print('Selection "Import" in the case action dropdown')
-            Select(driver.find_element_by_id('ddAct')).select_by_value(action)
+            
+            driver.find_element_by_id("pnlActions").click()
+            driver.find_element_by_id("pnlActions").find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
 
     except NoSuchElementException as e:
         msg = 'NoSuchElementException Selenium Exception: Element not found by the Selenium Driver. More Details: ' + repr(e)
@@ -166,7 +155,7 @@ def logIn(driver, carrier, environment='', username='', password='', verbose=Fal
     if not environment:
         if verbose:
             print('Using Default environment: ', environment)
-        environment = config_values[carrier]['environments']['default']
+        environment = 'default'
     else:
         if environment not in config_values[carrier]['environments']:
             msg = 'LogIn Failed. Environment "' + environment + '"not valid for carrier "' + carrier +". Please check the config_values[carrier]['environments'] dictionary."
@@ -255,23 +244,32 @@ def logOut(driver, verbose=False):
     if verbose:
         print('Log Out procedure starts."')
     try:
+        if verbose:
+            print('User options displayed.')
+        driver.find_element_by_id('ctrlBanner_lnkUserMenu').click()
         driver.find_element_by_id("lnkSignOut").click()
 
-        current_window = driver.current_window_handle
+        #current_window = driver.current_window_handle
 
-        for winHandle in driver.window_handles:
-            driver.switch_to.window(winHandle)
-            if driver.title == 'Sign Out?':
-                if verbose:
-                    print('Pop Up Displayed.')
-                    print('Pop Up Title:' + driver.title)
-                driver.find_element_by_css_selector("input.csd_button").click()
-                break
+        #for winHandle in driver.window_handles:
+        #    driver.switch_to.window(winHandle)
+        #    if driver.title == 'Sign Out?':
+        #        if verbose:
+        #            print('Pop Up Displayed.')
+        #            print('Pop Up Title:' + driver.title)
+        #        driver.find_element_by_css_selector("input.csd_button").click()
+        #        break
 
         if verbose:
-            print('Log out successfully.')
-            print('Switching back to main windows.')
-        driver.switch_to.window(current_window)
+            print('Log out option selected.')
+
+        elem = driver.find_element_by_xpath("//body[@id='documentBody']/div[9]/div/div/div/h4")
+
+        if elem.text == 'Sign Out?':
+            if verbose:
+                print('Inline Pop up was displayed.')
+                print('Inline pop up title: ', elem.text)
+            driver.find_element_by_css_selector('html body#documentBody.blue.modal-open div.modal.logoff.fade.in div.modal-dialog div.modal-content div.modal-footer div.text-center button.btn.btn-primary.btn-log-off').text
 
     except Exception as e:
         msg = 'LogOut Failed. An unknown exception has occured. More details: ' + repr(e)
@@ -302,20 +300,20 @@ def viewMyCases(driver, verbose=False):
         if driver.find_elements_by_id('mycases-button'):
             driver.find_element_by_id('mycases-button').click()
             if verbose:
-                print('Navigating to "View My Cases" - Completed 1')
+                print('Navigating to "View My Cases" - Completed')
 
         elif driver.find_elements_by_id('spanMyCases'):
             driver.find_element_by_id('spanMyCases').click()
 
             if verbose:
                 print('Navigating to "View My Cases" - Completed')
-        try:
-            WebDriverWait(driver, 30).until(lambda x: x.find_element_by_id("gc_btnNewCase"))
-        except TimeoutException as e:
-            msg = 'viewMyCases Failed. The "View My Cases" screen was not loaded and a Timeout Exception took place. More datils:' + repr(e)
-            if verbose:
-                print(msg)
-            raise IgoCommonException('viewMyCases', None, msg)
+
+        WebDriverWait(driver, 30).until(lambda x: x.find_element_by_id("btnNewCase"))
+    except TimeoutException as e:
+        msg = 'viewMyCases Failed. The "View My Cases" screen was not loaded and a Timeout Exception took place. More datils:' + repr(e)
+        if verbose:
+            print(msg)
+        raise IgoCommonException('viewMyCases', None, msg)
     except Exception as e:
         msg = 'viewMyCases Failed. An unknown exception has occured. More datils:' + repr(e)
         if verbose:
@@ -345,7 +343,7 @@ def search(driver, target, verbose=False):
         print('Target:' + target)
 
     try:
-        if driver.current_url.find('/webforms/caselist.aspx') == -1:
+        if driver.current_url.find('/webforms/caselistresp.aspx') == -1:
             if verbose:
                 print('Navigate to "View My Cases"')
             viewMyCases(driver, verbose)
@@ -357,7 +355,15 @@ def search(driver, target, verbose=False):
         driver.find_element_by_id("btnSearch").click()
 
         if verbose:
-            print('Searching target completed...')
+            print('Searching target :"', target,'" finished.')
+        
+        if driver.find_elements_by_id("gc_ctrl0_lblNoDataMessage"):
+            if verbose:
+                print('No elements were found...')
+        else:
+            if verbose:
+                print('numero de elementos: ', driver.find_element_by_css_selector("span.badge.items_counter").text)                
+
     except NoSuchElementException as e:
         msg = 'Search Failed - The search element was not found. More Details:' + repr(e)
         if verbose:
@@ -511,6 +517,7 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
     # 4) state not in config_values[carrier][product]['states']                        #
     #                                                                                  #
     ####################################################################################
+    state = state.upper()
     if verbose:
         print('Stating "Import Case" process...')
         print('carrier: ', carrier)
@@ -903,20 +910,8 @@ def openCase(driver, case_name, verbose=False):
         raise IgoCaseOpenException('Failed to load "Case Information" screen for case name: ' + case_name + '. More Details: ' + str(e))
 
 
-
 def lockCase(driver, case_name, verbose=False):
-    
-    driver.get(self.base_url + "/CossEnterpriseSuite/(S(bjlkxdmstxrpbln2zugourmi))/webforms/ExistingCase.aspx")
-    driver.find_element_by_id("GridView1_ctl02_btnIgo1").click()
-    driver.find_element_by_id("btnNext").click()
-
-
-
-
-
-
-
-
+    pass
 
 
 class IgoCommonException(Exception):
