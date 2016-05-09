@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"find",
+				"find_elements_by_link_text"
+			],
+			[
+				"util",
+				"utils_addlibs	module"
+			],
+			[
+				"user",
+				"user	statement"
+			],
+			[
+				"en",
+				"environment	statement"
+			],
+			[
+				"F",
+				"FirefoxProfile	class"
+			],
+			[
+				"fi",
+				"firefox_profile	module"
+			],
+			[
+				"find_elements_",
+				"find_elements_by_link_text"
+			],
+			[
+				"te",
+				"Text"
+			],
+			[
 				"input",
 				"input_xml_path	statement"
 			],
@@ -30,10 +62,6 @@
 			[
 				"config_en",
 				"config_entries_fuwl	module"
-			],
-			[
-				"en",
-				"entity_client	statement"
 			],
 			[
 				"ser",
@@ -94,10 +122,6 @@
 			[
 				"swit",
 				"switch_to"
-			],
-			[
-				"find",
-				"find_element_by_id"
 			],
 			[
 				"c",
@@ -194,10 +218,6 @@
 			[
 				"def",
 				"defs	Method"
-			],
-			[
-				"user",
-				"username	param"
 			],
 			[
 				"cl",
@@ -368,18 +388,43 @@
 	"buffers":
 	[
 		{
-			"file": "test_appium.py",
+			"contents": "import gdata.spreadsheet.service\n\n\ndef get_spreadsheet(key, gid=0):\n    # ...\n    spreadsheets_client = gdata.spreadsheet.service.SpreadsheetsService()\n    spreadsheets_client.email = 'efgallegos@gmail.com'\n    spreadsheets_client.password = 'G@lle1982'\n    spreadsheets_client.source = \"Test\"\n    spreadsheets_client.ProgrammaticLogin()\n\n    # ...\n    entry = gd_client.GetDocumentListEntry(uri)\n    docs_auth_token = gd_client.GetClientLoginToken()\n    gd_client.SetClientLoginToken(spreadsheets_client.GetClientLoginToken())\n    gd_client.Export(entry, file_path)\n    gd_client.SetClientLoginToken(docs_auth_token) # reset the DocList auth token",
+			"file": "/Users/efgallegos/Desktop/excel.py",
+			"file_size": 674,
+			"file_write_time": 131053927270000000,
 			"settings":
 			{
-				"buffer_size": 2294,
+				"buffer_size": 648,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "carriers/bankers/config_bankers.py",
+			"contents": "from igo.igo_xml import createXML, createXMLException\n\ntry:\n    carrier = 'bankers'\n    product = 'fuwl'\n    plan = '19E'\n    state = 'AK'\n\n    full_path = createXML(carrier, product, state, plan, verbose=True)\n\n    print('full_path:', full_path)\nexcept createXMLException as e:\n    print(e)\n",
+			"file": "test_create_xml.py",
+			"file_size": 292,
+			"file_write_time": 131052266420000000,
 			"settings":
 			{
-				"buffer_size": 1590,
+				"buffer_size": 292,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\"\"\"mapping fuctions: excel to dic\"\"\"\n\nfrom pandas import *\nimport pprint\nfrom config_entries import config_values\n\n\ndef map_brd(product):\n\n    input_file_path = config_values['base_path'] + 'brd.xlsm'\n\n    print(input_file_path)\n\n    df = read_excel(input_file_path, 1, index_col=0, na_values=['NA'])\n\n    pp = pprint.PrettyPrinter(indent=4)\n    pp.pprint(df.to_dict())\n\n    \nmap_brd('fuwl')\n",
+			"file": "excel_to_dic.py",
+			"file_size": 388,
+			"file_write_time": 130765604990000000,
+			"settings":
+			{
+				"buffer_size": 392,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "batch_inport.py",
+			"settings":
+			{
+				"buffer_size": 7504,
 				"line_ending": "Unix"
 			}
 		}
@@ -387,7 +432,7 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 247.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
@@ -439,7 +484,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 449.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -474,27 +519,36 @@
 		"/Users/efgallegos/GitHub/testscript",
 		"/Users/efgallegos/GitHub/testscript/carriers",
 		"/Users/efgallegos/GitHub/testscript/carriers/bankers",
-		"/Users/efgallegos/GitHub/testscript/igo"
+		"/Users/efgallegos/GitHub/testscript/carriers/bankers/medsupp",
+		"/Users/efgallegos/GitHub/testscript/igo",
+		"/Users/efgallegos/GitHub/testscript/utils"
 	],
 	"file_history":
 	[
-		"/Users/efgallegos/GitHub/testscript/server.py",
 		"/Users/efgallegos/GitHub/testscript/igo/igo_common.py",
+		"/Users/efgallegos/GitHub/testscript/test_create_xml.py",
+		"/Users/efgallegos/GitHub/testscript/tests/utils_addlibs.py",
+		"/Users/efgallegos/GitHub/testscript/tests/test_create_xml.py",
+		"/Users/efgallegos/GitHub/testscript/tests/test.py",
+		"/Users/efgallegos/GitHub/testscript/server.py",
 		"/Users/efgallegos/GitHub/testscript/test_appium.py",
 		"/Users/efgallegos/GitHub/testscript/carriers/bankers/config_bankers.py",
+		"/Users/efgallegos/GitHub/testscript/batch_inport.py",
+		"/Users/efgallegos/GitHub/testscript/utils/browser.py",
+		"/Users/efgallegos/GitHub/testscript/test.py",
+		"/Users/efgallegos/GitHub/testscript/igo/igo_config_entries.py",
+		"/Users/efgallegos/Dropbox/Automation/Bankers/run_caseImporter_log.txt",
+		"/Users/efgallegos/GitHub/testscript/carriers/bankers/cb/config_entries_cb.py",
 		"/Users/efgallegos/GitHub/testscript/config_entries.py",
 		"/Users/efgallegos/GitHub/testscript/utils/imap4.py",
 		"/Users/efgallegos/GitHub/testscript/batch_acord_download.py",
-		"/Users/efgallegos/GitHub/testscript/utils/browser.py",
 		"/Users/efgallegos/GitHub/testscript/carriers/bankers/fuwl/config_entries_fuwl.py",
 		"/Users/efgallegos/GitHub/testscript/igo/igo_xml.py",
 		"/Users/efgallegos/GitHub/testscript/test.html",
 		"/Users/efgallegos/GitHub/testscript/style.css",
-		"/Users/efgallegos/GitHub/testscript/test.py",
 		"/Users/efgallegos/GitHub/testscript/create_case.py",
 		"/Users/efgallegos/GitHub/testscript/bankers/annuities/config_entries_annuity.py",
 		"/Users/efgallegos/GitHub/testscript/test.js",
-		"/Users/efgallegos/GitHub/testscript/batch_inport.py",
 		"/Users/efgallegos/.bash_profile",
 		"/Users/efgallegos/GitHub/testscript/.gitignore",
 		"/Users/efgallegos/GitHub/testscript/utils/utils.py",
@@ -598,14 +652,7 @@
 		"/C/Users/egalleg2/Downloads/sendkeys-py-si-master/sendkeys-py-si-master/SendKeys.py",
 		"/C/Users/egalleg2/Downloads/Instaladores/SendKeys-0.3.win32-py2.7/PLATLIB/SendKeys-0.3-py2.7.egg-info",
 		"/C/Users/egalleg2/Downloads/sendkeys-py-si-master/sendkeys-py-si-master/build/lib.win32-3.4/SendKeys.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/common/action_chains.py",
-		"/C/dev/Selenium/igo_config_entries.py",
-		"/C/dev/Selenium/igo/igo_common.py",
-		"/C/dev/Selenium/igo/igo_config_entries.py",
-		"/C/dev/Selenium/igo/igo_xml.py",
-		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/support/expected_conditions.py",
-		"/C/dev/Selenium/libs/browser.py",
-		"/C/dev/Selenium/igo/igo_batch_inport.py"
+		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/webdriver/common/action_chains.py"
 	],
 	"find":
 	{
@@ -627,6 +674,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\\r\\n",
+			"\\n",
+			"login",
+			"logout",
+			"logou",
+			"inport",
+			"search",
+			"viewMyCases",
 			"LogIn",
 			"config_browsers",
 			"getWebDriver",
@@ -712,6 +767,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			",",
 			"browser",
 			"plan",
 			"product",
@@ -727,67 +783,121 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "test_appium.py",
+					"file": "/Users/efgallegos/Desktop/excel.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2294,
+						"buffer_size": 648,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								450,
-								450
+								67,
+								67
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 318.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "carriers/bankers/config_bankers.py",
-					"semi_transient": true,
+					"file": "test_create_xml.py",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1590,
+						"buffer_size": 292,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								912,
-								974
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "excel_to_dic.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								371,
+								371
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "batch_inport.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 7504,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2455,
+								2465
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1662.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -826,7 +936,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 150.0
+		"height": 249.0
 	},
 	"output.find_results":
 	{
@@ -835,7 +945,7 @@
 	"project": "testscript.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 64.0
 	},
 	"save_all_on_build": false,
 	"select_file":

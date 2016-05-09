@@ -35,27 +35,29 @@ def batch_inport(arguments):
     # start time counter to track the script duration.
     start_time = datetime.now()
 
+    # Validate the number of parameters
+    if len(arguments) != 8:
+        # Printing exception for LOG
+        print('Error: Expecting 8 argmunets.')
+        # Exiting batch with status failed.
+        sys.exit(1)
+
     print("################################################################################")
     print('Start time:', str(start_time))
     print("Parameters list:")
     print("Browser: ", arguments[0])
     print("Carrier: ", arguments[1])
     print("Environment: ", arguments[2])
-    print("Product: ", arguments[3])
-    print("State: ", arguments[4])
-    print("Plan: ", arguments[5])
+    print("User: ", arguments[3])
+    print("Pass: ", arguments[4])
+    print("Product: ", arguments[5])
+    print("State: ", arguments[6])
+    print("Plan: ", arguments[7])
     print("################################################################################")
-
-    # Validate the number of parameters
-    if len(arguments) != 6:
-        # Printing exception for LOG
-        print('error: Expecting 6 argmunets.')
-        # Exiting batch with status failed.
-        sys.exit(1)
 
     # Validate the browser parameter to match on of the valid browser: IE, Frifox, Chrome
     if arguments[0] in config_browsers:
-        b = arguments[0]
+        browser = arguments[0]
     else:
         # Printing exception for LOG
         print('Invalid Browser: ' + arguments[0])
@@ -80,43 +82,61 @@ def batch_inport(arguments):
         # Exiting batch with status failed.
         sys.exit(1)
 
-    # Validate the product parameter to match on of the valid products.
-    if arguments[3] in config_values[carrier]['products']:
-        product = arguments[3]
+    # Validate the user parameter to match on of the valid users for that Carrier and Environment.
+    if arguments[3] in config_values[carrier]['users'][environment[0:2] +'-user-list']:
+        username = arguments[3]
     else:
         # Printing exception for LOG
-        print('Invalid Product: ' + arguments[3])
+        print('Invalid User: ' + arguments[3])
+        # Exiting batch with status failed.
+        sys.exit(1)
+
+    # Validate the password parameter to not be null/empty
+    if len(arguments[4]) > 0:
+        password = arguments[4]
+    else:
+        # Printing exception for LOG
+        print("Passowrd can't be empty.")
+        # Exiting batch with status failed.
+        sys.exit(1)
+
+    # Validate the product parameter to match on of the valid products.
+    if arguments[5] in config_values[carrier]['products']:
+        product = arguments[5]
+    else:
+        # Printing exception for LOG
+        print('Invalid Product: ' + arguments[5])
         # Exiting batch with status failed.
         sys.exit(1)
 
     # Validate the state parameter to match on of the valid states.
-    if arguments[4] in config_values[carrier][product]['states']:
-        state = arguments[4]
+    if arguments[6] in config_values[carrier][product]['states']:
+        state = arguments[6]
     else:
         # Printing exception for LOG
         print('Invalid State for Product - ' + \
               config_values[carrier][product]['name'] + \
-              ': ' + arguments[4])
+              ': ' + arguments[6])
         # Exiting batch with status failed.
         sys.exit(1)
 
     # Validate the plan parameter to match on of the valid plans.
-    if arguments[5] in config_values[carrier][product]['plans']:
-        plan = arguments[5]
+    if arguments[7] in config_values[carrier][product]['plans']:
+        plan = arguments[7]
     else:
         # Printing exception for LOG
         print('Invalid Plan for Product - ' + \
               config_values[carrier][product]['name'] + \
-              ': ' + arguments[5])
+              ': ' + arguments[7])
         # Exiting batch with status failed.
         sys.exit(1)
 
     # Starts script execution
     try:
-        driver = getWebDriver(b)
-        print('driver ' + b + ' created successfully.')
-        logIn(driver, carrier, environment)
-        print('logIn to ' + environment + ' successfully.')
+        driver = getWebDriver(browser)
+        print('driver ' + browser + ' created successfully.')
+        logIn(driver, carrier, environment, username, password)
+        print('logIn to ' + environment + ' with user ' + username + ' successfully.')
         viewMyCases(driver)
         print('"View My Cases" screen displayed successfully.')
         print('Import Case -> PROCESS STARTED...')
@@ -126,7 +146,7 @@ def batch_inport(arguments):
         print('PLAN: ' + plan)
         importCase(driver, carrier, product, state, plan, verbose=True)
         print('Import Case -> PROCESS COMPLETED...')
-        logOut(driver)
+        logOut(driver, verbose=True)
         print('logOut from ' + environment + ' successfully')
         print('End time:', str(datetime.now()))
         print('Execution time:', str(datetime.now()-start_time))

@@ -17,15 +17,17 @@ bankers_config = {
             'td1': 'https://pipepasstoigo-test.ipipeline.com/default.aspx?gaid=5752',
             'td2': 'https://pipepasstoigo-td2.ipipeline.com/default.aspx?gaid=5752',
             'td3': 'https://pipepasstoigo-td3.ipipeline.com/default.aspx?gaid=5752',
-            'default': 'http://pipepasstoigo-qd3.ipipeline.com/default.aspx?gaid=5752'
+            'default': 'http://pipepasstoigo-qd5.ipipeline.com/default.aspx?gaid=5752'
           },
     'users': {
-            'qd-user': 'bankers04',
-            'qd-pass': 'bankers04',
-            'td-user': 'bankers02',
-            'td-pass': 'bankers02'
+            'qd-user': 'tombqd5',
+            'qd-pass': 'password1',
+            'td-user': 'bankers05',
+            'td-pass': 'bankers05',
+            'qd-user-list': ['test5752', 'bankers01', 'bankers02', 'bankers03', 'bankers04', 'bankers05', 'tombqd5'],
+            'td-user-list': ['bankers01', 'bankers02', 'bankers03', 'bankers04', 'bankers05'],
            },
-    'products': ['annuity','spwl','fuwl','cb','stc','medsupp','srlife'],
+    'products': ['annuity', 'spwl', 'fuwl', 'cb', 'stc', 'medsupp', 'srlife'],
     'annuity': annuity_config,
     'spwl': spwl_config,
     'fuwl': fuwl_config,
