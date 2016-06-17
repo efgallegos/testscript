@@ -35,24 +35,15 @@ def createXML(carrier, product, state, plan, verbose=False):
         output_xml_folder = config_values['base_path'] + \
                             config_values[carrier]['carrier_path'] + \
                             config_values['os_path_separator'] + \
-                            config_values[carrier][product]['product_path']
+                            config_values[carrier][product]['product_path'] + \
+                            config_values['os_path_separator'] + \
+                            config_values[carrier][product]['xml_output_path']
 
         file_name = state + '_' + config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
 
         output_xml_path = output_xml_folder + \
                           config_values['os_path_separator'] + \
                           file_name
-
-
-        # output_xml_path = config_values['base_path'] + \
-        #     config_values[carrier]['carrier_path'] + \
-        #     config_values['os_path_separator'] + \
-        #     config_values[carrier][product]['product_path'] + \
-        #     config_values['os_path_separator'] + \
-        #     config_values[carrier][product]['xml_output_path'] + \
-        #     config_values['os_path_separator'] + \
-        #     state + '_' + \
-        #     config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
 
         if verbose:
             print('input file path: ' + input_xml_path)

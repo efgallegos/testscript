@@ -14,20 +14,25 @@ config_browsers = {
         {'name': 'Firefox',
          'rightClickSaveLinkAs': 5,
          'saveWindow': '.*save to.*',
-         'openWindow': '.*Open File.*'},
+         'openWindow': '.*Open File.*',
+         'extension_path': {
+                            'Darwin': '/Users/efgallegos/GitHub/testscript/executables/',
+                            'Windows': 'C:/zz_EFG/GitHub/testscript/executables/'
+                    }
+         },
     'Chrome':
         {'name': 'Chrome',
          'rightClickSaveLinkAs': 4,
          'saveWindow': '.*Save As.*',
          'openWindow': '.*Open.*',
          'Darwin': '/Users/efgallegos/Dropbox/GitHub/testscript/executables/chromedriver',
-         'Windows': 'C:/zz_EFG/Dropbox/GitHub/testscript/executables/chromedriver.exe'},
+         'Windows': 'C:/zz_EFG/GitHub/testscript/executables/chromedriver.exe'},
     'IE':
         {'name': 'Internet Explorer',
          'rightClickSaveLinkAs': 4,
          'saveWindow': '.*Save As.*',
          'openWindow': '.*Open.*',
-         'Windows': 'C:/zz_EFG/Dropbox/GitHub/testscript/executables/IEDriverServer.exe'},
+         'Windows': 'C:/zz_EFG/GitHub/testscript/executables/IEDriverServer.exe'},
     }
 
 
@@ -80,7 +85,7 @@ def getWebDriver(browser_name, proxy=False, verbose=False):
                     driver = webdriver.Ie(config_browsers[browser_name][os_name], capabilities=caps)
             else:
                 profile = FirefoxProfile()
-                profile.add_extension('/Users/efgallegos/GitHub/testscript/executables/firebug-2.0.16-fx.xpi')
+                #profile.add_extension(config_browsers[browser_name]['extension_path'][os_name] + 'firebug-2.0.16-fx.xpi')
                 driver = webdriver.Firefox(firefox_profile=profile)
 
         driver.maximize_window()
