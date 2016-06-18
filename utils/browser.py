@@ -85,7 +85,7 @@ def getWebDriver(browser_name, proxy=False, verbose=False):
                     driver = webdriver.Ie(config_browsers[browser_name][os_name], capabilities=caps)
             else:
                 profile = FirefoxProfile()
-                #profile.add_extension(config_browsers[browser_name]['extension_path'][os_name] + 'firebug-2.0.16-fx.xpi')
+                profile.add_extension(config_browsers[browser_name]['extension_path'][os_name] + 'firebug-2.0.16-fx.xpi')
                 driver = webdriver.Firefox(firefox_profile=profile)
 
         driver.maximize_window()
