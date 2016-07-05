@@ -19,6 +19,7 @@ import time
 #from utils.browser import *
 #from utils.utils import *
 #from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import (WebDriverException,
@@ -61,7 +62,7 @@ def caseAction(driver, case_name, action, verbose=False):
             print(msg)
         raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
     try:
-        if driver.current_url.find('/webforms/caselistresp.aspx') == -1:
+        if driver.current_url.find('/WebForms/CaseListResp.aspx') == -1:
             if verbose:
                 print('Navigate to "View My Cases"')
             viewMyCases(driver, verbose=verbose)
@@ -74,17 +75,17 @@ def caseAction(driver, case_name, action, verbose=False):
 
             if verbose:
                 print('Verifing search returned cases.')
-            if driver.find_elements_by_link_text(case_name):
+            if driver.find_elements_by_partial_link_text(first_name):
                 if verbose:
                     print('Case "',case_name,'" was found.')
-                e = driver.find_element_by_link_text(case_name)
+                e = driver.find_element_by_partial_link_text(first_name)
                 parent = e.find_element_by_xpath('..').find_element_by_xpath('..').find_element_by_xpath('..')
                 b = parent.find_element_by_tag_name('button')
                 if verbose:
                     print('Clicking on the Case Action dropdown.')
                 b.click()
                 if verbose:
-                    print('Clicking on the Case Action option: ', action)
+                    print('Clicked on the Case Action option: ', action)
                 b.find_element_by_xpath('..').find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
             else:
                 msg = 'Case Name: "' + case_name + '" was not found in the "View My Cases" screen'
@@ -94,7 +95,7 @@ def caseAction(driver, case_name, action, verbose=False):
         else:
             if verbose:
                 print('Selection "Import" in the case action dropdown')
-            
+
             driver.find_element_by_id("pnlActions").click()
             driver.find_element_by_id("pnlActions").find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
 
@@ -356,13 +357,13 @@ def search(driver, target, verbose=False):
 
         if verbose:
             print('Searching target :"', target,'" finished.')
-        
+
         if driver.find_elements_by_id("gc_ctrl0_lblNoDataMessage"):
             if verbose:
                 print('No elements were found...')
         else:
             if verbose:
-                print('numero de elementos: ', driver.find_element_by_css_selector("span.badge.items_counter").text)                
+                print('numero de elementos: ', driver.find_element_by_css_selector("span.badge.items_counter").text)
 
     except NoSuchElementException as e:
         msg = 'Search Failed - The search element was not found. More Details:' + repr(e)
@@ -910,8 +911,140 @@ def openCase(driver, case_name, verbose=False):
         raise IgoCaseOpenException('Failed to load "Case Information" screen for case name: ' + case_name + '. More Details: ' + str(e))
 
 
+def get_button(driver, elem_id):
+    if driver.find_elements_by_id(elem_id):
+        return driver.find_element_by_id(elem_id)
+    else:
+        # searching by alt_id
+        buttons = driver.find_elements_by_tag_name('button')
+        for btn in buttons:
+            if btn.get_attribute('alt_id') == elem_id:
+                return btn
+        return None
+
+
+def get_required_fields(driver):
+    return driver.find_elements_by_class_name('is-required')
+
+def validate_igo_screen(driver, fields_to_process, verbose=False):
+    while fields_to_process:
+        for field in fields_to_process:
+            print(field.text)
+            if field.tag_name.lower() == 'label':
+                if field.find_element_by_xpath('..').get_attribute('class').find('radio-group') != -1:
+                    if field.text.upper() == 'NO':
+                        field.click()
+                        break
+                if field.get_attribute('class').find('js-check-btn') != -1:
+                    field.click()
+                    break
+            elif field.tag_name.lower() == 'input':
+                if field.get_attribute('maxlength') != None:
+                    field.send_keys('testing')
+                    field.send_keys(Keys.TAB)
+                    break
+                if field.get_attribute('number') != None:
+                    field.send_keys('1234')
+                    field.send_keys(Keys.TAB)
+                    break
+                if field.get_attribute('currency') != None:
+                    field.send_keys('12345')
+                    field.send_keys(Keys.TAB)
+                    break
+        fields_to_process = get_required_fields(driver)
+
+def get_screen_name(driver):
+    if driver.find_elements_by_id('CossScreenFrame'):
+        driver.switch_to_frame('CossScreenFrame')
+    headers = driver.find_elements_by_tag_name('h1')
+    if headers:
+        return headers[0].text.lower().strip()
+    else:
+        return ''
+
+def check_screen_name(driver, screen_name):
+    return get_screen_name(driver) == screen_name.lower().strip()
+
 def lockCase(driver, case_name, verbose=False):
-    pass
+    if verbose:
+        print('starting lockCase process...')
+        print('Case Name: ' + case_name)
+
+    try:
+        if verbose:
+            print("Call to caseAction(case_name,'OpenCase',verbose)")
+        caseAction(driver, case_name, 'OpenCase', verbose)
+        if verbose:
+            print("Case '" + case_name + "' was opened.")
+
+        wh = driver.current_window_handle
+        if verbose:
+            print('Current windows handler: ',str(wh))
+
+        while not check_screen_name(driver,'Forms To Be Sent to the Applicant'):
+
+            if driver.find_element_by_id('tab0').text.lower() == 'case information' and driver.find_element_by_id('tab0').get_attribute('class').lower() == 'active':
+                if verbose:
+                    print('Current screen: Case Information')
+                #Case information screen:
+                if driver.find_elements_by_id('CossScreenFrame'):
+                    if verbose:
+                        print('Switch to frame.')
+                    driver.switch_to_frame('CossScreenFrame')
+                    if verbose:
+                        print('Click on Product-Plan option.')
+                    elem = driver.find_element_by_id('GridView1_ctl02_btnIgo1')
+                    elem.click()
+
+                    if verbose:
+                        print('Switch to windows: ' + str(wh))
+                    driver.switch_to_window(wh)
+                    #WebDriverWait(driver, 30).until(EC.staleness_of(elem))
+            elif driver.find_element_by_id('tab1').text.lower().strip() == 'application' and driver.find_element_by_id('tab1').get_attribute('class').lower() == 'active':
+                #Application:
+                if driver.find_elements_by_id('CossScreenFrame'):
+                    if verbose:
+                        print('Switch to frame.')
+                    driver.switch_to_frame('CossScreenFrame')
+                if verbose:
+                    print('Current screen: ', get_screen_name(driver))
+
+                if check_screen_name(driver,'Validate and Lock Data'):
+                    if verbose:
+                        print('Locking application...')
+                    btn_lock_application = get_button(driver, 'btnLock')
+                    btn_lock_application.click()
+                    #WebDriverWait(driver, 30).until(EC.staleness_of(btn_lock_application))
+                    if verbose:
+                        print('Application locked.')
+                else:
+                    required = get_required_fields(driver)
+                    if required:
+                        if verbose:
+                            print('Screen failed to validate. Missing required fields. Starting "validate_igo_screen" procedure...')
+                        validate_igo_screen(driver, required)
+                        if verbose:
+                            print('Screen validated.')
+                btn_next = get_button(driver,'btnNext')
+                if verbose:
+                    print('clicking "Next" button.')
+                btn_next.click()
+                if verbose:
+                    print('Switch to windows: ' + str(wh))
+                driver.switch_to_window(wh)
+                #current_screen = get_screen_name(driver)
+                #WebDriverWait(driver, 30).until(get_screen_name(driver) != current_screen) #EC.staleness_of(btn_next))
+
+    except IgoCaseNotFound as e:
+        msg = 'Case Name "' + case_name + '" was not found...'
+        if verbose:
+            print('Case Name "' + case_name + '" was not found...')
+        raise IgoCommonException('lockCase', [('case_name',case_name)], msg)
+    except IgoCaseActionException as e:
+        msg = 'Call to caseAction failed. More Details:' + str(e)
+        if verbose:
+            print('Call to caseAction failed...')
+        raise IgoCommonException('lockCase', [('case_name',case_name), ('case_name', case_name), ('action','openCase')], msg)
 
 
 class IgoCommonException(Exception):
