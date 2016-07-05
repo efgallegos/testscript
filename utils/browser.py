@@ -89,7 +89,7 @@ def getWebDriver(browser_name, proxy=False, verbose=False):
                 driver = webdriver.Firefox(firefox_profile=profile)
 
         driver.maximize_window()
-        driver.implicitly_wait(30)
+        driver.implicitly_wait(15)
 
         if verbose:
             print('Driver was created successfully')

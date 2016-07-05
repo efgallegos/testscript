@@ -62,7 +62,7 @@ def caseAction(driver, case_name, action, verbose=False):
             print(msg)
         raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
     try:
-        if driver.current_url.find('/WebForms/CaseListResp.aspx') == -1:
+        if driver.current_url.lower().find('/webforms/caselistresp.aspx') == -1:
             if verbose:
                 print('Navigate to "View My Cases"')
             viewMyCases(driver, verbose=verbose)
@@ -954,13 +954,10 @@ def validate_igo_screen(driver, fields_to_process, verbose=False):
         fields_to_process = get_required_fields(driver)
 
 def get_screen_name(driver):
-    if driver.find_elements_by_id('CossScreenFrame'):
-        driver.switch_to_frame('CossScreenFrame')
     headers = driver.find_elements_by_tag_name('h1')
     if headers:
         return headers[0].text.lower().strip()
-    else:
-        return ''
+    return ''
 
 def check_screen_name(driver, screen_name):
     return get_screen_name(driver) == screen_name.lower().strip()
@@ -981,34 +978,34 @@ def lockCase(driver, case_name, verbose=False):
         if verbose:
             print('Current windows handler: ',str(wh))
 
-        while not check_screen_name(driver,'Forms To Be Sent to the Applicant'):
-
-            if driver.find_element_by_id('tab0').text.lower() == 'case information' and driver.find_element_by_id('tab0').get_attribute('class').lower() == 'active':
+        if driver.find_element_by_id('tab0').text.lower() == 'case information' and driver.find_element_by_id('tab0').get_attribute('class').lower() == 'active':
+            if verbose:
+                print('Current screen: Case Information')
+            #Case information screen:
+            if driver.find_elements_by_id('CossScreenFrame'):
                 if verbose:
-                    print('Current screen: Case Information')
-                #Case information screen:
-                if driver.find_elements_by_id('CossScreenFrame'):
-                    if verbose:
-                        print('Switch to frame.')
-                    driver.switch_to_frame('CossScreenFrame')
-                    if verbose:
-                        print('Click on Product-Plan option.')
-                    elem = driver.find_element_by_id('GridView1_ctl02_btnIgo1')
-                    elem.click()
+                    print('Switch to frame.')
+                driver.switch_to_frame('CossScreenFrame')
+                if verbose:
+                    print('Click on Product-Plan option.')
+                elem = driver.find_element_by_id('GridView1_ctl02_btnIgo1')
+                elem.click()
 
-                    if verbose:
-                        print('Switch to windows: ' + str(wh))
-                    driver.switch_to_window(wh)
-                    #WebDriverWait(driver, 30).until(EC.staleness_of(elem))
-            elif driver.find_element_by_id('tab1').text.lower().strip() == 'application' and driver.find_element_by_id('tab1').get_attribute('class').lower() == 'active':
-                #Application:
-                if driver.find_elements_by_id('CossScreenFrame'):
-                    if verbose:
-                        print('Switch to frame.')
-                    driver.switch_to_frame('CossScreenFrame')
+                if verbose:
+                    print('Switch to windows: ' + str(wh))
+                driver.switch_to_window(wh)
+
+        if driver.find_element_by_id('tab1').text.lower().strip() == 'application' and driver.find_element_by_id('tab1').get_attribute('class').lower() == 'active':
+            #Application:
+            if driver.find_elements_by_id('CossScreenFrame'):
+                if verbose:
+                    print('Switch to frame: "CossScreenFrame".')
+                driver.switch_to_frame('CossScreenFrame')
+
+            while not check_screen_name(driver,'Forms To Be Sent to the Applicant'):
                 if verbose:
                     print('Current screen: ', get_screen_name(driver))
-
+                
                 if check_screen_name(driver,'Validate and Lock Data'):
                     if verbose:
                         print('Locking application...')
@@ -1025,13 +1022,18 @@ def lockCase(driver, case_name, verbose=False):
                         validate_igo_screen(driver, required)
                         if verbose:
                             print('Screen validated.')
+                if verbose:
+                    print('finding "Next" button')
                 btn_next = get_button(driver,'btnNext')
                 if verbose:
                     print('clicking "Next" button.')
                 btn_next.click()
                 if verbose:
-                    print('Switch to windows: ' + str(wh))
-                driver.switch_to_window(wh)
+                    print('"Next" button clicked.')
+                
+            if verbose:
+                print('Switch to windows: ' + str(wh))
+            driver.switch_to_window(wh)
                 #current_screen = get_screen_name(driver)
                 #WebDriverWait(driver, 30).until(get_screen_name(driver) != current_screen) #EC.staleness_of(btn_next))
 
