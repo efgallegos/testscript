@@ -4,7 +4,7 @@ def get_driver():
     profile = FirefoxProfile()
     profile.add_extension('C:/zz_EFG/GitHub/testscript/executables/firebug-2.0.16-fx.xpi')
     d = webdriver.Firefox(firefox_profile=profile)
-    d.implicitly_wait(30)
+    d.implicitly_wait(7)
     return d
 
 

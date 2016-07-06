@@ -5,7 +5,7 @@ xmls_entry = {
         'ADDR_State__[0-9]_itmval">': "'>' + state + '<'",
         'ADDR_State__[0-9]_itmtxt">': "'>' + config_values[carrier][product]['states'][state].upper() + '<'",
         'FullAddress">': "'>123 Main St Exton, ' + state + ' 11111-1111<'",
-        'PIFullName">|APPCNT_FullName">': "'>' + state + '_' + plan + ' X ' + config_values[carrier][product]['name'] + '<'",
+        'PIFullName">|APPCNT_FullName">': "'>' + state + '_' + plan + ' ' + config_values[carrier][product]['name'] + '<'",
         'PIFirstName">': "'>' + state + '_' + plan + '<'",
         'PILastName">': "'>' + config_values[carrier][product]['name'] + '<'",
         '"State">|"State_itmval">': "'>' + state + '<'",
