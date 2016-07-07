@@ -1,14 +1,28 @@
 """Create an webdriver browser"""
 
 import platform
+import logging
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 
-# List of available browser to be use by the scripts.
 
+# create logger with __name__
+logger = logging.getLogger('utils.browser')
+logger.setLevel(logging.DEBUG)
+# create console handler
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+# create formatter and add it to the handlers
+formatter = logging.Formatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+# add the handler to the logger
+logger.addHandler(ch)
+
+# List of available browser to be use by the scripts.
 config_browsers = {
     'Firefox':
         {'name': 'Firefox',
@@ -36,14 +50,19 @@ config_browsers = {
     }
 
 
-def getWebDriver(browser_name, proxy=False, verbose=False):
-    proxy_host = 'localhost:9100'
-    os_name = platform.system()
+def getWebDriver(browser_name, proxy=False, implicit_wait_seconds=7, verbose=False):
+    logger.info('"getWebDriver" procedure started...')
+    logger.debug('Parameters: ')
+    logger.debug('\t"browser_name": ' + browser_name)    
+    logger.debug('\t"proxy": ' + str(proxy))    
+    logger.debug('\t"inplicit_wait_second": ' + str(implicit_wait_seconds))
 
-    if verbose:
-        print('Broswer:', browser_name,
-              ', os_name: ', os_name,
-              ', Proxy:', proxy)
+    proxy_host = 'localhost:9100'
+    if proxy:
+        logger.debug('\t"proxy_host": ' + proxy_host)
+    os_name = platform.system()
+    logger.debug('\t"Platform": ' + os_name)
+
     try:
         if proxy:
             if browser_name == "Chrome":
@@ -76,24 +95,24 @@ def getWebDriver(browser_name, proxy=False, verbose=False):
             if browser_name == 'Chrome':
                 print(os_name)
                 driver = webdriver.Chrome(config_browsers[browser_name][os_name])
-            elif browser_name == 'IE':
+            elif browser_name == 'IE' and os_name != "Darwin":
                 caps = DesiredCapabilities.INTERNETEXPLORER
                 caps['ignoreProtectedModeSettings'] = True
-                if os_name != "Darwin":
+                #if os_name != "Darwin":
                     # driver = webdriver.Remote(command_executor='http://10.211.55.4:4444/wd/hub', desired_capabilities=caps)
                     # else:
-                    driver = webdriver.Ie(config_browsers[browser_name][os_name], capabilities=caps)
+                driver = webdriver.Ie(config_browsers[browser_name][os_name], capabilities=caps)
             else:
+                browser_name = 'Firefox'
                 profile = FirefoxProfile()
                 profile.add_extension(config_browsers[browser_name]['extension_path'][os_name] + 'firebug-2.0.16-fx.xpi')
                 driver = webdriver.Firefox(firefox_profile=profile)
 
-        driver.maximize_window()
-        driver.implicitly_wait(7)
-
-        if verbose:
-            print('Driver was created successfully')
+        #driver.maximize_window()
+        driver.implicitly_wait(implicit_wait_seconds)
+        logger.info('Driver was created successfully')
         return driver
+
     except Exception as e:
         raise BrowserException(str(e))
 

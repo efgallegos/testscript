@@ -14,15 +14,16 @@
         11) createNewCase -> PENDING
 """
 
-import re
-import time
+#import re
+#import time
+import logging
 #from utils.browser import *
 #from utils.utils import *
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import (WebDriverException,
+from selenium.common.exceptions import (#WebDriverException,
                                         TimeoutException,
                                         NoSuchElementException,
                                         #NoSuchFrameException,
@@ -31,11 +32,8 @@ from selenium.common.exceptions import (WebDriverException,
 from .igo_xml import createXML, createXMLException
 from config_entries import config_values
 
-
-import logging
-
 # create logger with __name__
-logger = logging.getLogger('iGo')
+logger = logging.getLogger('igo.igo_common')
 logger.setLevel(logging.DEBUG)
 # create console handler
 ch = logging.StreamHandler()
@@ -64,68 +62,81 @@ def caseAction(driver, case_name, action, verbose=False):
     # 4) verbose: Determines the log level for this procedure.                         #
     #                                                                                  #
     # Raise Exceptions:                                                                #
-    # 1) action not listed in config_values['igo_common']['caseActionDropdown']        #
-    # 2) case_name not found by iGo Search                                             #
-    # 3) Selenium NoSuchElementException Exception                                     #
-    # 4) Unknown Exception                                                             #
+    # 1) "IgoCommonException" will be raised for the following errors:                 #
+    # 1.1) Action not listed in config_values['igo_common']['caseActionDropdown']      #
+    # 1.2) case_name not found by iGo Search                                           #
+    # 1.3) Selenium NoSuchElementException Exception                                   #
+    # 1.4) Unknown Exception                                                           #
     #                                                                                  #
     ####################################################################################
+    logger.info('"caseAction" procedure stated...')
+    logger.debug('Parameters:')
+    logger.debug('\t"case_name": ' + case_name)
+    logger.debug('\t"action": ' + action)
 
+    logger.debug('Validating parameters.')
     if action not in config_values['igo_common']['caseActionDropdown']:
         msg = 'Case Action: "' + action + '" is not a valid action. Please check the valid actions in the IGo Common dictionary entry "caseActionDropdown".'
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
+    logger.debug('Case Action value "' + action + '" is valid')
     try:
-        if driver.current_url.lower().find('/webforms/caselistresp.aspx') == -1:
-            if verbose:
-                print('Navigate to "View My Cases"')
-            viewMyCases(driver, verbose=verbose)
+        #logger.debug('Calling "viewMyCases" procedure')
+        #viewMyCases(driver, verbose=verbose)
 
         if action != 'Import':
-            first_name = re.split(',', case_name)[1].strip()
+            #first_name = re.split(',', case_name)[1].strip()
             #if verbose:
             #    print('Searching cases by First Name:' + first_name)
             #search(driver, first_name, verbose=verbose)
-            if verbose:
-                print('Searching case by "case_name":' + case_name)
+            #if verbose:
+            #    print('Searching case by "case_name":' + case_name)
+            logger.debug('Calling "search" procedure')
             search(driver, case_name, verbose=verbose)
-
-            if verbose:
-                print('Verifing search returned cases.')
-            if driver.find_elements_by_partial_link_text(first_name):
-                if verbose:
-                    print('Case "',case_name,'" was found.')
-                e = driver.find_element_by_partial_link_text(first_name)
-                parent = e.find_element_by_xpath('..').find_element_by_xpath('..').find_element_by_xpath('..')
-                b = parent.find_element_by_tag_name('button')
-                if verbose:
-                    print('Clicking on the Case Action dropdown.')
-                b.click()
-                if verbose:
-                    print('Clicked on the Case Action option: ', action)
-                b.find_element_by_xpath('..').find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
-            else:
-                msg = 'Case Name: "' + case_name + '" was not found in the "View My Cases" screen'
-                if verbose:
-                    print(msg)
-                IgoCommonException('caseAction', [['case_name',case_name],['action',action]], msg)
+            #if verbose:
+            #    print('Verifing search returned cases.')
+            #if driver.find_elements_by_partial_link_text(first_name):
+            #    if verbose:
+            #        print('Case "',case_name,'" was found.')
+            #    e = driver.find_element_by_partial_link_text(first_name)
+            #    parent = e.find_element_by_xpath('..').find_element_by_xpath('..').find_element_by_xpath('..')
+            #    b = parent.find_element_by_tag_name('button')
+            #    if verbose:
+            #        print('Clicking on the Case Action dropdown.')
+            #    b.click()
+            #    if verbose:
+            #        print('Clicked on the Case Action option: ', action)
+            #        b.find_element_by_xpath('..').find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
+            #else:
+            #    msg = 'Case Name: "' + case_name + '" was not found in the "View My Cases" screen'
+            #    logger.error(msg)
+            #    IgoCommonException('caseAction', [['case_name',case_name],['action',action]], msg)
+            logger.debug('Finding element: "' + case_name + '"')
+            e = driver.find_element_by_link_text(case_name)
+            parent = e.find_element_by_xpath('..').find_element_by_xpath('..').find_element_by_xpath('..')
+            logger.debug('Finding "Case Action" dropdown for element: ' + case_name)
+            b = parent.find_element_by_tag_name('button')
+            logger.debug('Expanding "Case Action" dropdown options')
+            b.click()
+            logger.debug('Clicked on the "Case Action" option: ' + action)
+            b.find_element_by_xpath('..').find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
         else:
-            if verbose:
-                print('Selection "Import" in the case action dropdown')
-
+            logger.debug('Selected "Import" in the "Case Action" dropdown')
             driver.find_element_by_id("pnlActions").click()
             driver.find_element_by_id("pnlActions").find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
+        logger.debug('"Case Action" option: ' + action + ' selected')
 
+    except IgoCommonException as e:
+        msg = 'Search Procedure failed or target was not found.' + repr(e)
+        logger.error(msg)
+        raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
     except NoSuchElementException as e:
         msg = 'NoSuchElementException Selenium Exception: Element not found by the Selenium Driver. More Details: ' + repr(e)
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
     except Exception as e:
         msg = 'Exception: An unknown Exception has occurred. More Details: ' + repr(e)
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
 
 def logIn(driver, carrier, environment='', username='', password='', verbose=False):
@@ -152,58 +163,50 @@ def logIn(driver, carrier, environment='', username='', password='', verbose=Fal
     #                         will be used as default.                                 #
     #                                                                                  #
     # Raise Exceptions:                                                                #
-    # 1) carrier not listed in config_values['carriers']                               #
-    # 2) environment not listed in config_values[carrier]['environments']              #
-    # 3) Selenium NoSuchElementException Exception                                     #
-    # 4) Unknown Exception                                                             #
+    # 1) "IgoCommonException" will be raised for the following errors:                 #
+    # 1.1) If carrier not listed in config_values['carriers']                          #
+    # 1.2) environment not listed in config_values[carrier]['environments']            #
+    # 1.3) Selenium NoSuchElementException Exception                                   #
+    # 1.4) Unknown Exception                                                           #
     #                                                                                  #
     ####################################################################################
-    if verbose:
-        print("LogIn procedure parameters:")
-        print('Carrier: ', carrier)
-        print('Environment:', environment)
-        print('Username:', username)
-        print('Password:', password)
+    logger.info('"LogIn" procedure started...')
+    logger.debug('Parameters:')
+    logger.debug('\t"Carrier": ' +  carrier) 
+    logger.debug('\t"Environment": ' + environment) 
+    logger.debug('\t"Username": ' + username)
+    logger.debug('\t"Password" : ' + password)
 
+    logger.debug('Validating parameters.')
     if carrier not in config_values['carriers']:
         msg = 'LogIn Failed. Invalid Carrier. ' + carrier + " is not listed in config_values['carriers']"
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
-
+    logger.debug('Carrier value "' + carrier + '" is valid')
     if not environment:
-        if verbose:
-            print('Using Default environment: ', environment)
+        logger.debug('Using Default environment')
         environment = 'default'
     else:
         if environment not in config_values[carrier]['environments']:
             msg = 'LogIn Failed. Environment "' + environment + '"not valid for carrier "' + carrier +". Please check the config_values[carrier]['environments'] dictionary."
-            if verbose:
-                print(msg)
+            logger.error(msg)
             raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
+    logger.debug('Environment value "' + environment + '" is valid')
 
     base_url = config_values[carrier]['environments'][environment]
+    logger.debug('Base URL: ' + base_url)
 
     if not username:
         username = config_values[carrier]['users'][environment[0:2] + '-user']
         password = config_values[carrier]['users'][environment[0:2] + '-pass']
-        if verbose:
-            print('Using default environment user and password: ', username, password)
+        logger.debug('Using default environment user and password: ' + username +', ' + password)
 
     try:
-        if verbose:
-            print("LogIn procedure final parameters:")
-            print('Carrier: ', carrier)
-            print('Environment:', environment)
-            print('Username:', username)
-            print('Password:', password)
-            print('Base_url:', base_url)
-
+        logger.debug('Loading base URL: ' + base_url)
         driver.get(base_url)
 
         if driver.current_url.find("/CossEnterpriseSuite/") == -1:
-            if verbose:
-                print('Setting User and Password')
+            logger.debug('Setting User and Password: ' + username +', ' + password)
 
             elem = driver.find_element_by_name("user")
             elem.clear()
@@ -216,34 +219,26 @@ def logIn(driver, carrier, environment='', username='', password='', verbose=Fal
             elem = driver.find_element_by_name("Submit")
             elem.click()
 
-            if verbose:
-                print('Checking that the start page is Displayed')
-
-            try:
-                elem = WebDriverWait(driver,30).until(lambda x: x.find_element_by_id("mycases-button"))
-            except TimeoutException as e:
-                msg = 'LogIn Failed. TimeoutException Selenium Exception: "mycases-button" button not found. More Details: ' + repr(e)
-                if verbose:
-                    print(msg)
-                raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
-            if verbose:
-                print("LogIn finished successfully")
+            logger.debug('Loading "Welcome" page')
+            elem = WebDriverWait(driver,30).until(lambda x: x.find_element_by_id("mycases-button"))
+            logger.debug('"Welcome" page loaded successfully')
+            logger.info("LogIn finished successfully")
         else:
             msg = 'LogIn Failed. The carrier "' + carrier + '" login screen failed to load.'
-            if verbose:
-                print(msg)
+            logger.error(msg)
             raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
 
     except NoSuchElementException as e:
         msg = 'LogIn Failed. NoSuchElementException Selenium Exception: Element not found by the Selenium Driver. More Details: ' + repr(e)
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
+    except TimeoutException as e:
+        msg = 'LogIn Failed. TimeoutException Selenium Exception: "mycases-button" button not found. More Details: ' + repr(e)
+        logger.error(msg)
+        raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)        
     except Exception as e:
         msg = 'LogIn Failed. An unknown Exception has occurred. More Details:' + repr(e)
-        if verbose:
-            print(msg)
-        # carrier, environment='', username='', password=''
+        logger.error(msg)
         raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
 
 def logOut(driver, verbose=False):
@@ -257,43 +252,32 @@ def logOut(driver, verbose=False):
     #            or Google Chorme.                                                     #
     #                                                                                  #
     # Raise Exceptions:                                                                #
-    # 1) WebDriverException when something failed within the webdriver.                #
+    # 1) IgoCommonException when something failed within the webdriver.                #
     #                                                                                  #
     ####################################################################################
-    if verbose:
-        print('Log Out procedure starts."')
+    logger.info('"logOut" procedure starts...')
+
     try:
-        if verbose:
-            print('User options displayed.')
+        if driver.find_elements_by_id('CossScreenFrame'):
+            logger.debug('Switching to windows')
+            driver.switch_to_window(driver.current_window_handle)
+
+        logger.debug('User options displayed')
         driver.find_element_by_id('ctrlBanner_lnkUserMenu').click()
+        logger.debug('Clicking the "Sing Out" button')
         driver.find_element_by_id("lnkSignOut").click()
-
-        #current_window = driver.current_window_handle
-
-        #for winHandle in driver.window_handles:
-        #    driver.switch_to.window(winHandle)
-        #    if driver.title == 'Sign Out?':
-        #        if verbose:
-        #            print('Pop Up Displayed.')
-        #            print('Pop Up Title:' + driver.title)
-        #        driver.find_element_by_css_selector("input.csd_button").click()
-        #        break
-
-        if verbose:
-            print('Log out option selected.')
 
         elem = driver.find_element_by_xpath("//body[@id='documentBody']/div[9]/div/div/div/h4")
 
         if elem.text == 'Sign Out?':
-            if verbose:
-                print('Inline Pop up was displayed.')
-                print('Inline pop up title: ', elem.text)
-            driver.find_element_by_css_selector('html body#documentBody.blue.modal-open div.modal.logoff.fade.in div.modal-dialog div.modal-content div.modal-footer div.text-center button.btn.btn-primary.btn-log-off').text
+            logger.debug('Inline Pop up was displayed.')
+            logger.debug('Inline pop up title: ', elem.text)
 
+            driver.find_element_by_class_name('btn-log-off').click()
+            logger.info('Sign Out completed')
     except Exception as e:
         msg = 'LogOut Failed. An unknown exception has occured. More details: ' + repr(e)
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('logOut', None, msg)
 
 def viewMyCases(driver, verbose=False):
@@ -308,35 +292,34 @@ def viewMyCases(driver, verbose=False):
     #            or Google Chorme.                                                     #
     #                                                                                  #
     # Raise Exceptions:                                                                #
-    # 1) TimeoutException when the View My Cases screen failed to be loaded.           #
-    # 2) Exception: Unknow exception.                                                  #
+    # 1) IgoCommonException when the View My Cases screen failed to be loaded.         #
     #                                                                                  #
     ####################################################################################
-    if verbose:
-        print('Navigating to "View My Cases" started...')
+    logger.info('Navigating to "View My Cases" started...')
 
     try:
-        if driver.find_elements_by_id('mycases-button'):
-            driver.find_element_by_id('mycases-button').click()
-            if verbose:
-                print('Navigating to "View My Cases" - Completed')
+        if driver.find_elements_by_id('btnNewCase'):
+            logger.info('Driver is already in the "View My Cases" screen')
+        else:
+            if driver.find_elements_by_id('mycases-button'):
+                logger.debug('Driver is in the "Welcome" screen')
+                driver.find_element_by_id('mycases-button').click()
+            elif driver.find_elements_by_partial_link_text('My Cases'):
+                logger.debug('Driver is in the Existing ')
+                driver.find_element_by_partial_link_text('My Cases').clik()
+            else:
+                logger.error('Driver is in an unkonw screen.')
 
-        elif driver.find_elements_by_id('spanMyCases'):
-            driver.find_element_by_id('spanMyCases').click()
+            WebDriverWait(driver, 30).until(lambda x: x.find_element_by_id("btnNewCase"))
+            logger.info('Navigating to "View My Cases" - Completed')
 
-            if verbose:
-                print('Navigating to "View My Cases" - Completed')
-
-        WebDriverWait(driver, 30).until(lambda x: x.find_element_by_id("btnNewCase"))
     except TimeoutException as e:
-        msg = 'viewMyCases Failed. The "View My Cases" screen was not loaded and a Timeout Exception took place. More datils:' + repr(e)
-        if verbose:
-            print(msg)
+        msg = '"viewMyCases" procedure failed. The "View My Cases" screen was not loaded and a Timeout Exception took place. More datils:' + repr(e)
+        logger.error(msg)
         raise IgoCommonException('viewMyCases', None, msg)
     except Exception as e:
         msg = 'viewMyCases Failed. An unknown exception has occured. More datils:' + repr(e)
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('viewMyCases', None, msg)
 
 def search(driver, target, verbose=False):
@@ -353,37 +336,48 @@ def search(driver, target, verbose=False):
     # 2) target: Is the value to be used in the iGo search function.                   #
     #                                                                                  #
     # Raise Exceptions:                                                                #
-    # 1) TimeoutException when the View My Cases screen failed to be loaded.           #
-    # 2) Exception: Unknow exception.                                                  #
+    # 1) IgoCommonException when the View My Cases screen failed to be loaded.         #
     #                                                                                  #
     ####################################################################################
-    if verbose:
-        print('iGO Search process started')
-        print('Target:' + target)
+    logger.info('"Search" procedure started...')
+    logger.debug('Parameters:')
+    logger.debug('\ttarget: ' + target)
 
     try:
-        if driver.current_url.find('/webforms/caselistresp.aspx') == -1:
-            if verbose:
-                print('Navigate to "View My Cases"')
-            viewMyCases(driver, verbose)
+        logger.debug('Call to "viewMyCases" procedure')
+        viewMyCases(driver, verbose)
 
-        if verbose:
-            print('Searching target...')
-
+        logger.debug('Splitting target in information in First_Name and Last_Name')
+        last_name = target.split(',')[0].strip()
         first_name = target.split(',')[1].strip()
+        logger.debug('Last_Name: ' + last_name)
+        logger.debug('First_Name: ' + first_name)
+
+        logger.debug('Searching by First_Name: ' + first_name)
         driver.find_element_by_id("txtSearch").clear()
         driver.find_element_by_id("txtSearch").send_keys(first_name)
         driver.find_element_by_id("btnSearch").click()
 
-        if driver.find_element_by_partial_link_text(first_name):
-            print('target found.')
+        logger.debug('Checking if target "' + target + '" was found')
+        if driver.find_elements_by_link_text(target):
+            logger.info('Target "' + target + '" was found searching by First Name.')
+        else:
+            logger.debug('Searching by Last_Name: ' + last_name)
+            driver.find_element_by_id("txtSearch").clear()
+            driver.find_element_by_id("txtSearch").send_keys(last_name)
+            driver.find_element_by_id("btnSearch").click()
 
+            logger.debug('Checking if target "' + target + '" was found')
+            if driver.find_elements_by_link_text(target):
+                logger.info('Target "' + target + '" was found searching by Last Name.')
+            else:
+                msg = 'Search Failed - The search element was not found. More Details:'
+                logger.error(msg)
+                raise IgoCommonException('search', [('target',target)], msg)
     except NoSuchElementException as e:
-        msg = 'Search Failed - The search element was not found. More Details:' + repr(e)
-        if verbose:
-            print(msg)
-        raise IgoCommonException('search', [('target',target)], msg)
-
+        msg = 'Search Failed - Selenium NoSuchElementException error. More Details:' + repr(e)
+        logger.error(msg)
+        raise IgoCommonException('selenium', [('target',target)], msg)
 
 # def viewCaseForms(driver, case_name, verbose=False):
 #     if verbose:
@@ -532,157 +526,111 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
     # 4) state not in config_values[carrier][product]['states']                        #
     #                                                                                  #
     ####################################################################################
-    state = state.upper()
-    if verbose:
-        print('Stating "Import Case" process...')
-        print('carrier: ', carrier)
-        print('product:', product)
-        print('state: ', state)
-        print('plan:', plan)
-
+    logger.info('"importCase" procedure started...')
+    logger.debug('Parameters:')
+    logger.debug('\tcarrier: ' + carrier)
+    logger.debug('\tproduct: ' + product)
+    logger.debug('\tstate: ' + state)
+    logger.debug('\tplan: ' + plan)
+    
+    logger.debug('Validating parameters.')
     if carrier not in config_values['carriers']:
         msg = 'importCase Failed - Invalid Carrier: ' + carrier
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+    logger.debug('Carrier value "' + carrier + '" is valid')
     if product not in config_values[carrier]['products']:
         msg = 'importCase Failed - Invalid product: ' + product
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
-    elif plan not in config_values[carrier][product]['plans']:
+    logger.debug('Product value "' + product + '" is valid')
+    if plan not in config_values[carrier][product]['plans']:
         msg = 'importCase Failed - Invalid plan: ' + plan
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
-    elif state not in config_values[carrier][product]['states']:
+    logger.debug('Plan value "' + plan + '" is valid')
+    state = state.upper()
+    if state not in config_values[carrier][product]['states']:
         msg = 'importCase Failed - Invalid State "' + state + '") for product: "' + product + '".'
-        if verbose:
-            print(msg)
+        logger.error(msg)
         raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
-    else:
-        if verbose:
-            print('Calling to createXML(carrier, product, state, plan, verbose)...')
+    logger.debug('State value "' + state + '" is valid')
 
-        try:
-            file_full_path = createXML(carrier, product, state, plan, verbose)
-            if verbose:
-                print('file_full_path:', file_full_path)
-        except createXMLException as e:
-            if verbose:
-                print('Function createXML() failed...')
-            msg = 'Function createXML() failed. More Details:' + repr(e)
-            if verbose:
-                print(msg)
-            raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+    try:
+        logger.debug('Calling to createXML(carrier, product, state, plan, verbose)...')
+        file_full_path = createXML(carrier, product, state, plan, verbose)
+        logger.debug('"file_full_path" to be imported: ' + file_full_path)
+    except createXMLException as e:
+        msg = 'Function createXML() failed. More Details:' + repr(e)
+        logger.error(msg)
+        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
 
-        current_window = driver.current_window_handle
+    current_window = driver.current_window_handle
 
-        if verbose:
-            print('current_window:', current_window)
+    logger.debug('Current window handler: ' + current_window)
 
-        try:
-            if verbose:
-                print("Call to caseAction('','Import',verbose)")
-            caseAction(driver, '', 'Import', verbose)
-        except IgoCommonException as e:
-            if verbose:
-                print('Call to caseAction failed...')
-            msg = 'Call to caseAction failed. More Details:' + repr(e)
-            if verbose:
-                print(msg)
-            raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+    try:
+        logger.debug("Call to caseAction('','Import',verbose)")
+        caseAction(driver, '', 'Import', verbose)
+    except IgoCommonException as e:
+        msg = 'Call to caseAction failed. More Details:' + repr(e)
+        logger.error(msg)
+        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
 
-        try:
-            file_imported = False
-            for winHandle in driver.window_handles:
-                try:
-                    driver.switch_to.window(winHandle)
-                    if verbose:
-                        print('winHandle', winHandle)
-                        print('Windows title:', driver.title)
-                except NoSuchWindowException as e:
-                    if verbose:
-                        print('Failed to switch to import window handle. More Details:' + repr(e))
-                    msg = 'Failed to switch to import window handle. More Details:' + repr(e)
-                    if verbose:
-                        print(msg)
-                    raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
-
-                if driver.title =='Import Case':
-                    try:
-                        if verbose:
-                            print('Setting file path in Pop up.')
-                        elem = WebDriverWait(driver,30).until(lambda x: x.find_element_by_id("ClientFile"))
-                        elem.send_keys(file_full_path)
-
-                        if verbose:
-                            print('Submiting Import Case in Pop up.')
-                        driver.find_element_by_id("Submit1").click()
-                        file_imported = True
-                        break
-                    except TimeoutException as e:
-                        if verbose:
-                            print('Import windows never displayed. More details:' + repr(e))
-                        msg = 'Import windows never displayed. More details:' + repr(e)
-                        if verbose:
-                            print(msg)
-                        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
-
-            if verbose:
-                print('Switching back to main window.')
-            driver.switch_to.window(current_window)
-
-            time.sleep(10)
-
-            if file_imported:
-                if verbose:
-                    print(current_window)
-                    print('Import pop up closed.')
-                    print('Checking the case in "My View Cases".')
-
-                # case_name = "LastName, FirstName"
-                case_name = config_values[carrier][product]['name'] + ', ' + state + '_' + plan
-
-                if verbose:
-                    print('Searching for: ' + case_name)
-
-                try:
-                    if driver.find_elements_by_link_text(case_name):
-                        if verbose:
-                            print('Case Name: '+case_name+ ' found in "View My Cases"- Import Case Finished successfully.')
-                            print('Importing case - Finished successfully.')
-                    else:
-                        if verbose:
-                            print('Import case - Failed. The case is not listed in the "View My Cases" screen.')
-                        msg = 'Unkonw error. Case was not imported. The case is not listed in ' +\
-                              'the "View My Cases" screen.'
-                        if verbose:
-                            print(msg)
-                        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
-
-                except (WebDriverException, NoSuchElementException) as e:
-                    if verbose:
-                        print('Impot Case - Failed. find_elements_by_link_text failed for case name:' + case_name)
-                    msg = 'Impot Case - Failed. find_elements_by_link_text failed for case name:' + case_name
-                    if verbose:
-                        print(msg)
-                    raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
-            else:
-                if verbose:
-                    print('File Impot pop up windows never displayed. Faled to import file.')
-                msg = 'File Impot pop up windows never displayed. Faled to import file.'
-                if verbose:
-                    print(msg)
+    try:
+        file_imported = False
+        for winHandle in driver.window_handles:
+            try:
+                driver.switch_to.window(winHandle)
+                logger.debug('Switching to window: ' + winHandle)
+                logger.debug('Windows title: ' + driver.title)
+            except NoSuchWindowException as e:
+                msg = 'Failed to switch to import window handle. More Details:' + repr(e)
+                logger.error(msg)
                 raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+            if driver.title =='Import Case':
+                try:
+                    logger.debug('Setting file path in Pop up.')
+                    elem = WebDriverWait(driver,30).until(lambda x: x.find_element_by_id("ClientFile"))
+                    elem.send_keys(file_full_path)
+                    logger.debug('Submiting Import Case in Pop up.')
+                    driver.find_element_by_id("Submit1").click()
+                    file_imported = True
+                    break
+                except TimeoutException as e:
+                    msg = 'Import windows never displayed. More details:' + repr(e)
+                    logger.error(msg)
+                    raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
 
-        except Exception as e:
-            if verbose:
-                print('Import Case - Unhandle exception.')
-            msg = 'Import Case - Unhandle exception.'
-            if verbose:
-                print(msg)
+        driver.switch_to.window(current_window)
+        logger.debug('Switching back to main window.')
+        
+        #time.sleep(10)
+
+        if file_imported:
+            logger.debug('Current Windows: ' + current_window)
+            logger.debug('Import pop up closed.')
+            logger.debug('Checking the case in "My View Cases".')
+
+            # case_name = "LastName, FirstName"
+            case_name = config_values[carrier][product]['name'] + ', ' + state + '_' + plan
+            logger.debug('Searching for imported application case: ' + case_name)
+            try:
+                WebDriverWait(driver,30).until(lambda  x: x.find_element_by_link_text(case_name))
+                logger.info('"Import Case" finished successfully')
+            except TimeoutException as e:
+                msg = 'Import Case - Failed. Imported Case was not found.' + repr(e)
+                logger.error(msg)
+                raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+        else:
+            msg = 'File Impot pop up windows never displayed. Faled to import file.'
+            logger.error(msg)
             raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+
+    except Exception as e:
+        msg = 'Import Case - Unhandle exception.'
+        logger.error(msg)
+        raise IgoCommonException('selenium', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
 
 
 def deleteCase(driver, case_name, verbose):
@@ -926,10 +874,12 @@ def validate_igo_screen(driver, fields_to_process, verbose=False):
         fields_to_process = get_required_fields(driver)
 
 def get_screen_name(driver):
-    header = driver.find_element_by_tag_name('h1')
-    screen_name = header.text.lower().strip()
+    headers = driver.find_elements_by_tag_name('h1')
+    while not headers:
+        headers = driver.find_elements_by_tag_name('h1')
+    screen_name = headers[0].text.lower().strip()
     while not screen_name:
-        screen_name = header.text.lower().strip()
+        screen_name = headers[0].text.lower().strip()
     return screen_name
 
 def check_screen_name(driver, screen_name):
@@ -1034,6 +984,9 @@ class IgoCommonException(Exception):
         self.fuctionName = fuctionName
         self.parameters = parameters
         self.messageDetails = messageDetails
+
+    def get_fuctionName(self):
+        return self.fuctionName
 
     def printParameters(self):
         output = ''

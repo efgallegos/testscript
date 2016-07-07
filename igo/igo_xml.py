@@ -1,8 +1,22 @@
 """This file contains the functions used to creates an iGo XML file."""
 
 import re, os
+import logging
 from config_entries import config_values
 
+
+# create logger with __name__
+logger = logging.getLogger('igo.igo_xml')
+logger.setLevel(logging.DEBUG)
+# create console handler
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+# create formatter and add it to the handlers
+formatter = logging.Formatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+# add the handler to the logger
+logger.addHandler(ch)
 
 def updateXMLElement(line, carrier, product, state, plan, verbose=False):
     regex = re.compile(r'>[,-=a-zA-Z0-9_ ]*<')
@@ -16,13 +30,13 @@ def updateXMLElement(line, carrier, product, state, plan, verbose=False):
 
 
 def createXML(carrier, product, state, plan, verbose=False):
+    logger.info('"createXML" procedure started...')
+    logger.debug('Parameters:')
+    logger.debug('\t"Carrier": ' +  carrier) 
+    logger.debug('\t"Product": ' + product)
+    logger.debug('\t"State": ' + state) 
+    logger.debug('\t"Plan" : '+ plan)
     try:
-        if verbose:
-            print('Carrier: ' + carrier)
-            print('Product: ' + product)
-            print('State: ' + state)
-            print('Plan: ' + plan)
-
         input_xml_path = config_values['base_path'] + \
                          config_values[carrier]['carrier_path'] + \
                          config_values['os_path_separator'] + \
@@ -44,31 +58,26 @@ def createXML(carrier, product, state, plan, verbose=False):
         output_xml_path = output_xml_folder + \
                           config_values['os_path_separator'] + \
                           file_name
-
-        if verbose:
-            print('input file path: ' + input_xml_path)
-            print('output file path: ' + output_xml_path)
+        logger.debug('Files paths:')
+        logger.debug('\tInput file path: ' + input_xml_path)
+        logger.debug('\tOutput file path: ' + output_xml_path)
 
         if os.getcwd() != output_xml_folder:
-            if verbose:
-                print('Current directory: ', os.getcwd())
+            logger.debug('Current directory: ' + os.getcwd())
             os.chdir(output_xml_folder)
-            if verbose:
-                print('Changed currect directory to: ', output_xml_folder)
+            logger.debug('Changed currect directory to: ' + output_xml_folder)
 
         if os.path.isfile(file_name):
-            if verbose:
-                print('XML file exists and it is at: ', output_xml_folder + config_values['os_path_separator'] + file_name)
-                print('Skipping CREATE XML process...')
+            logger.info('XML file exists and it is at: ' + output_xml_folder + config_values['os_path_separator'] + file_name)
+            logger.info('Skipping CREATE XML process...')
             return output_xml_path
 
-        if verbose:
-            print("File was never created for this state. Starting Craete XML process.")
+        logger.info("A XML file was never created for this state-product-plan.")
+        logger.info("Starting XML creation process.")
 
         with open(input_xml_path, 'r') as input_file:
             with open(output_xml_path, 'w') as output_file:
-                if verbose:
-                    print('files opened successfully.')
+                logger.debug('files opened successfully.')
 
                 entity_client = False
 
@@ -78,22 +87,16 @@ def createXML(carrier, product, state, plan, verbose=False):
                     else:
                         entity_client = re.search('EntityName="Client"', line)
                         updateLine = line
-
-                    if verbose:
-                        print(updateLine)
-
+                    logger.debug('XML: ' + updateLine)
                     output_file.write(updateLine)
 
-                if verbose:
-                    print('Files were closed successfully.')
-
-                return output_xml_path
+                logger.debug('Files were closed successfully.')
+        logger.info('CREATE XML process finished')
+        return output_xml_path
 
     except Exception as e:
-        if verbose:
-            print('Function CreateXML() failed.')
-        raise createXMLException(str(e), carrier, product, state, plan)
-
+        logger.error('Function CreateXML() failed.')
+        raise createXMLException(repr(e), carrier, product, state, plan)
 
 class createXMLException(Exception):
 
