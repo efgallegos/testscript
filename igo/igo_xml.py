@@ -30,12 +30,12 @@ def updateXMLElement(line, carrier, product, state, plan, verbose=False):
 
 
 def createXML(carrier, product, state, plan, verbose=False):
-    logger.info('"createXML" procedure started...')
-    logger.debug('Parameters:')
-    logger.debug('\t"Carrier": ' +  carrier) 
-    logger.debug('\t"Product": ' + product)
-    logger.debug('\t"State": ' + state) 
-    logger.debug('\t"Plan" : '+ plan)
+    logger.info('createXML -> "createXML" procedure started...')
+    logger.debug('createXML -> Parameters:')
+    logger.debug('createXML -> \t"Carrier": ' +  carrier)
+    logger.debug('createXML -> \t"Product": ' + product)
+    logger.debug('createXML -> \t"State": ' + state)
+    logger.debug('createXML -> \t"Plan" : '+ plan)
     try:
         input_xml_path = config_values['base_path'] + \
                          config_values[carrier]['carrier_path'] + \
@@ -58,26 +58,26 @@ def createXML(carrier, product, state, plan, verbose=False):
         output_xml_path = output_xml_folder + \
                           config_values['os_path_separator'] + \
                           file_name
-        logger.debug('Files paths:')
-        logger.debug('\tInput file path: ' + input_xml_path)
-        logger.debug('\tOutput file path: ' + output_xml_path)
+        logger.debug('createXML -> Files paths:')
+        logger.debug('createXML -> \tInput file path: ' + input_xml_path)
+        logger.debug('createXML -> \tOutput file path: ' + output_xml_path)
 
         if os.getcwd() != output_xml_folder:
-            logger.debug('Current directory: ' + os.getcwd())
+            logger.debug('createXML -> Current directory: ' + os.getcwd())
             os.chdir(output_xml_folder)
-            logger.debug('Changed currect directory to: ' + output_xml_folder)
+            logger.debug('createXML -> Changed currect directory to: ' + output_xml_folder)
 
         if os.path.isfile(file_name):
-            logger.info('XML file exists and it is at: ' + output_xml_folder + config_values['os_path_separator'] + file_name)
-            logger.info('Skipping CREATE XML process...')
+            logger.info('createXML -> XML file exists and it is at: ' + output_xml_folder + config_values['os_path_separator'] + file_name)
+            logger.info('createXML -> Skipping CREATE XML process...')
             return output_xml_path
 
-        logger.info("A XML file was never created for this state-product-plan.")
-        logger.info("Starting XML creation process.")
+        logger.info("createXML -> A XML file was never created for this state-product-plan.")
+        logger.info("createXML -> Starting XML creation process.")
 
         with open(input_xml_path, 'r') as input_file:
             with open(output_xml_path, 'w') as output_file:
-                logger.debug('files opened successfully.')
+                logger.debug('createXML -> Files opened successfully.')
 
                 entity_client = False
 
@@ -87,15 +87,15 @@ def createXML(carrier, product, state, plan, verbose=False):
                     else:
                         entity_client = re.search('EntityName="Client"', line)
                         updateLine = line
-                    logger.debug('XML: ' + updateLine)
+                    logger.debug('createXML -> XML: ' + updateLine)
                     output_file.write(updateLine)
 
-                logger.debug('Files were closed successfully.')
-        logger.info('CREATE XML process finished')
+                logger.debug('createXML -> Files were closed successfully.')
+        logger.info('createXML -> CREATE XML process finished')
         return output_xml_path
 
     except Exception as e:
-        logger.error('Function CreateXML() failed.')
+        logger.error('createXML -> Function CreateXML() failed.')
         raise createXMLException(repr(e), carrier, product, state, plan)
 
 class createXMLException(Exception):

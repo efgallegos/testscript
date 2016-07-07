@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"is",
+				"is_displayed"
+			],
+			[
 				"fid",
 				"find_element_by_partial_link_text"
 			],
@@ -62,10 +66,6 @@
 			[
 				"config",
 				"config_values"
-			],
-			[
-				"is",
-				"isfile	function"
 			],
 			[
 				"PRO",
@@ -391,6 +391,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "tests/test.py",
+			"settings":
+			{
+				"buffer_size": 895,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "run_test.py",
+			"settings":
+			{
+				"buffer_size": 37,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "utilities/utils.py",
+			"settings":
+			{
+				"buffer_size": 1434,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "igo/igo_common.py",
+			"settings":
+			{
+				"buffer_size": 56881,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "utilities/browser.py",
+			"settings":
+			{
+				"buffer_size": 6820,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -481,26 +521,31 @@
 	[
 		"/C/zz_EFG/GitHub/testscript",
 		"/C/zz_EFG/GitHub/testscript/carriers",
-		"/C/zz_EFG/GitHub/testscript/carriers/bankers",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/annuities",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/medsupp",
+		"/C/zz_EFG/GitHub/testscript/executables",
 		"/C/zz_EFG/GitHub/testscript/igo",
-		"/C/zz_EFG/GitHub/testscript/utils"
+		"/C/zz_EFG/GitHub/testscript/tests",
+		"/C/zz_EFG/GitHub/testscript/utilities"
 	],
 	"file_history":
 	[
-		"/C/zz_EFG/GitHub/testscript/test.py",
-		"/C/zz_EFG/GitHub/testscript/igo/igo_fields.py",
+		"/C/zz_EFG/GitHub/testscript/igo/__init__.py",
+		"/C/zz_EFG/GitHub/testscript/utils/__init__.py",
+		"/C/zz_EFG/GitHub/testscript/__init__.py",
+		"/C/zz_EFG/GitHub/testscript/tests/__init__.py",
 		"/C/zz_EFG/GitHub/testscript/igo/igo_common.py",
+		"/C/zz_EFG/GitHub/testscript/igo/igo_xml.py",
+		"/C/zz_EFG/GitHub/testscript/utils/browser.py",
+		"/C/zz_EFG/GitHub/testscript/igo/igo_fields.py",
+		"/C/zz_EFG/GitHub/testscript/test.py",
 		"/C/zz_EFG/GitHub/testscript/load_test_env.py",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/annuities/config_entries_annuity.py",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/medsupp/config_entries_medsupp.py",
 		"/C/zz_EFG/GitHub/testscript/test_create_xml.py",
-		"/C/zz_EFG/GitHub/testscript/utils/browser.py",
 		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/config_bankers.py",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/fuwl/fuwl_brd.py",
-		"/C/zz_EFG/GitHub/testscript/igo/igo_xml.py",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/fuwl/config_entries_fuwl.py",
 		"/Users/efgallegos/GitHub/testscript/utils/browser.py",
 		"/Users/efgallegos/GitHub/testscript/igo/igo_common.py",
@@ -612,11 +657,7 @@
 		"/C/zz_EFG/zz_EFG_TCP/Automation/Bankers/SPWL/Output/AK_14W.xml",
 		"/C/dev/Selenium/annuity_config_entries.py",
 		"/C/Python34/lib/site-packages/selenium-2.43.0-py3.4.egg/selenium/__init__.py",
-		"/C/zz_EFG/zz_EFG_TCP/Automation/Bankers/Annuity/run_caseImporter.bat",
-		"/C/Users/egalleg2/Downloads/SendKeysCtypes.py",
-		"/C/Users/egalleg2/Downloads/sendkeys-py-si-master/sendkeys-py-si-master/_sendkeys.c",
-		"/C/Users/egalleg2/Downloads/sendkeys-py-si-master/sendkeys-py-si-master/SendKeys.py",
-		"/C/Users/egalleg2/Downloads/Instaladores/SendKeys-0.3.win32-py2.7/PLATLIB/SendKeys-0.3-py2.7.egg-info"
+		"/C/zz_EFG/zz_EFG_TCP/Automation/Bankers/Annuity/run_caseImporter.bat"
 	],
 	"find":
 	{
@@ -638,6 +679,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"logout",
+			"viewMyCases",
 			"select",
 			"strip",
 			"importCase",
@@ -766,8 +809,158 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "tests/test.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								101,
+								101
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "run_test.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								36,
+								36
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "utilities/utils.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1434,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "igo/igo_common.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 56881,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "utilities/browser.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6820,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								623,
+								623
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],

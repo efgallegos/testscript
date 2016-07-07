@@ -50,18 +50,18 @@ config_browsers = {
     }
 
 
-def getWebDriver(browser_name, proxy=False, implicit_wait_seconds=7, verbose=False):
-    logger.info('"getWebDriver" procedure started...')
-    logger.debug('Parameters: ')
-    logger.debug('\t"browser_name": ' + browser_name)    
-    logger.debug('\t"proxy": ' + str(proxy))    
-    logger.debug('\t"inplicit_wait_second": ' + str(implicit_wait_seconds))
+def getWebDriver(browser_name, proxy=False, implicit_wait_seconds=0, verbose=False):
+    logger.info('getWebDriver -> "getWebDriver" procedure started...')
+    logger.debug('getWebDriver -> Parameters: ')
+    logger.debug('getWebDriver -> \t"browser_name": ' + browser_name)
+    logger.debug('getWebDriver -> \t"proxy": ' + str(proxy))
+    logger.debug('getWebDriver -> \t"inplicit_wait_second": ' + str(implicit_wait_seconds))
 
     proxy_host = 'localhost:9100'
     if proxy:
-        logger.debug('\t"proxy_host": ' + proxy_host)
+        logger.debug('getWebDriver -> \t"proxy_host": ' + proxy_host)
     os_name = platform.system()
-    logger.debug('\t"Platform": ' + os_name)
+    logger.debug('getWebDriver -> \t"Platform": ' + os_name)
 
     try:
         if proxy:
@@ -110,11 +110,12 @@ def getWebDriver(browser_name, proxy=False, implicit_wait_seconds=7, verbose=Fal
 
         #driver.maximize_window()
         driver.implicitly_wait(implicit_wait_seconds)
-        logger.info('Driver was created successfully')
+        logger.info('getWebDriver -> Driver was created successfully')
         return driver
 
     except Exception as e:
-        raise BrowserException(str(e))
+        logger.error('getWebDriver -> Unknown exception. More details: ' + repr(e))
+        raise BrowserException(repr(e))
 
 
 def getBrowserType(driver, verbose=False):

@@ -69,74 +69,51 @@ def caseAction(driver, case_name, action, verbose=False):
     # 1.4) Unknown Exception                                                           #
     #                                                                                  #
     ####################################################################################
-    logger.info('"caseAction" procedure stated...')
-    logger.debug('Parameters:')
-    logger.debug('\t"case_name": ' + case_name)
-    logger.debug('\t"action": ' + action)
+    logger.info('caseAction -> "caseAction" procedure stated...')
+    logger.debug('caseAction -> Parameters:')
+    logger.debug('caseAction -> \t"case_name": ' + case_name)
+    logger.debug('caseAction -> \t"action": ' + action)
 
-    logger.debug('Validating parameters.')
+    logger.debug('caseAction -> Validating parameters.')
     if action not in config_values['igo_common']['caseActionDropdown']:
         msg = 'Case Action: "' + action + '" is not a valid action. Please check the valid actions in the IGo Common dictionary entry "caseActionDropdown".'
-        logger.error(msg)
+        logger.error('caseAction -> ' + msg)
         raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
-    logger.debug('Case Action value "' + action + '" is valid')
+    logger.debug('caseAction -> Case Action value "' + action + '" is valid')
     try:
         #logger.debug('Calling "viewMyCases" procedure')
         #viewMyCases(driver, verbose=verbose)
 
         if action != 'Import':
-            #first_name = re.split(',', case_name)[1].strip()
-            #if verbose:
-            #    print('Searching cases by First Name:' + first_name)
-            #search(driver, first_name, verbose=verbose)
-            #if verbose:
-            #    print('Searching case by "case_name":' + case_name)
-            logger.debug('Calling "search" procedure')
+            logger.debug('caseAction -> Calling "search" procedure')
             search(driver, case_name, verbose=verbose)
-            #if verbose:
-            #    print('Verifing search returned cases.')
-            #if driver.find_elements_by_partial_link_text(first_name):
-            #    if verbose:
-            #        print('Case "',case_name,'" was found.')
-            #    e = driver.find_element_by_partial_link_text(first_name)
-            #    parent = e.find_element_by_xpath('..').find_element_by_xpath('..').find_element_by_xpath('..')
-            #    b = parent.find_element_by_tag_name('button')
-            #    if verbose:
-            #        print('Clicking on the Case Action dropdown.')
-            #    b.click()
-            #    if verbose:
-            #        print('Clicked on the Case Action option: ', action)
-            #        b.find_element_by_xpath('..').find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
-            #else:
-            #    msg = 'Case Name: "' + case_name + '" was not found in the "View My Cases" screen'
-            #    logger.error(msg)
-            #    IgoCommonException('caseAction', [['case_name',case_name],['action',action]], msg)
-            logger.debug('Finding element: "' + case_name + '"')
+
+            logger.debug('caseAction -> Finding element: "' + case_name + '"')
             e = driver.find_element_by_link_text(case_name)
             parent = e.find_element_by_xpath('..').find_element_by_xpath('..').find_element_by_xpath('..')
-            logger.debug('Finding "Case Action" dropdown for element: ' + case_name)
+            logger.debug('caseAction -> Finding "Case Action" dropdown for element: ' + case_name)
             b = parent.find_element_by_tag_name('button')
-            logger.debug('Expanding "Case Action" dropdown options')
+            logger.debug('caseAction -> Expanding "Case Action" dropdown options')
             b.click()
-            logger.debug('Clicked on the "Case Action" option: ' + action)
+            logger.debug('caseAction -> Clicked on the "Case Action" option: ' + action)
             b.find_element_by_xpath('..').find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
         else:
-            logger.debug('Selected "Import" in the "Case Action" dropdown')
+            logger.debug('caseAction -> Selected "Import" in the "Case Action" dropdown')
             driver.find_element_by_id("pnlActions").click()
             driver.find_element_by_id("pnlActions").find_element_by_link_text(config_values['igo_common']['caseActionDropdown'][action]).click()
-        logger.debug('"Case Action" option: ' + action + ' selected')
+        logger.debug('caseAction -> "Case Action" option: ' + action + ' selected')
 
     except IgoCommonException as e:
         msg = 'Search Procedure failed or target was not found.' + repr(e)
-        logger.error(msg)
+        logger.error('caseAction -> ' + msg)
         raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
     except NoSuchElementException as e:
         msg = 'NoSuchElementException Selenium Exception: Element not found by the Selenium Driver. More Details: ' + repr(e)
-        logger.error(msg)
+        logger.error('caseAction -> ' + msg)
         raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
     except Exception as e:
         msg = 'Exception: An unknown Exception has occurred. More Details: ' + repr(e)
-        logger.error(msg)
+        logger.error('caseAction -> ' + msg)
         raise IgoCommonException('caseAction', [('case_name',case_name),('action',action)], msg)
 
 def logIn(driver, carrier, environment='', username='', password='', verbose=False):
@@ -170,43 +147,43 @@ def logIn(driver, carrier, environment='', username='', password='', verbose=Fal
     # 1.4) Unknown Exception                                                           #
     #                                                                                  #
     ####################################################################################
-    logger.info('"LogIn" procedure started...')
-    logger.debug('Parameters:')
-    logger.debug('\t"Carrier": ' +  carrier) 
-    logger.debug('\t"Environment": ' + environment) 
-    logger.debug('\t"Username": ' + username)
-    logger.debug('\t"Password" : ' + password)
+    logger.info('logIn -> "LogIn" procedure started...')
+    logger.debug('logIn -> Parameters:')
+    logger.debug('logIn -> \t"Carrier": ' +  carrier)
+    logger.debug('logIn -> \t"Environment": ' + environment)
+    logger.debug('logIn -> \t"Username": ' + username)
+    logger.debug('logIn -> \t"Password" : ' + password)
 
-    logger.debug('Validating parameters.')
+    logger.debug('logIn -> Validating parameters.')
     if carrier not in config_values['carriers']:
         msg = 'LogIn Failed. Invalid Carrier. ' + carrier + " is not listed in config_values['carriers']"
-        logger.error(msg)
+        logger.error('logIn -> ' + msg)
         raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
-    logger.debug('Carrier value "' + carrier + '" is valid')
+    logger.debug('logIn -> Carrier value "' + carrier + '" is valid')
     if not environment:
-        logger.debug('Using Default environment')
+        logger.debug('logIn -> Using Default environment')
         environment = 'default'
     else:
         if environment not in config_values[carrier]['environments']:
             msg = 'LogIn Failed. Environment "' + environment + '"not valid for carrier "' + carrier +". Please check the config_values[carrier]['environments'] dictionary."
-            logger.error(msg)
+            logger.error('logIn -> ' + msg)
             raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
-    logger.debug('Environment value "' + environment + '" is valid')
+    logger.debug('logIn -> Environment value "' + environment + '" is valid')
 
     base_url = config_values[carrier]['environments'][environment]
-    logger.debug('Base URL: ' + base_url)
+    logger.debug('logIn -> Base URL: ' + base_url)
 
     if not username:
         username = config_values[carrier]['users'][environment[0:2] + '-user']
         password = config_values[carrier]['users'][environment[0:2] + '-pass']
-        logger.debug('Using default environment user and password: ' + username +', ' + password)
+        logger.debug('logIn -> Using default environment user and password: ' + username +', ' + password)
 
     try:
-        logger.debug('Loading base URL: ' + base_url)
+        logger.debug('logIn -> Loading base URL: ' + base_url)
         driver.get(base_url)
 
         if driver.current_url.find("/CossEnterpriseSuite/") == -1:
-            logger.debug('Setting User and Password: ' + username +', ' + password)
+            logger.debug('logIn -> Setting User and Password: ' + username +', ' + password)
 
             elem = driver.find_element_by_name("user")
             elem.clear()
@@ -219,26 +196,26 @@ def logIn(driver, carrier, environment='', username='', password='', verbose=Fal
             elem = driver.find_element_by_name("Submit")
             elem.click()
 
-            logger.debug('Loading "Welcome" page')
+            logger.debug('logIn -> Loading "Welcome" page')
             elem = WebDriverWait(driver,30).until(lambda x: x.find_element_by_id("mycases-button"))
-            logger.debug('"Welcome" page loaded successfully')
-            logger.info("LogIn finished successfully")
+            logger.debug('logIn -> "Welcome" page loaded successfully')
+            logger.info("logIn -> LogIn finished successfully")
         else:
             msg = 'LogIn Failed. The carrier "' + carrier + '" login screen failed to load.'
-            logger.error(msg)
+            logger.error('logIn -> ' + msg)
             raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
 
     except NoSuchElementException as e:
         msg = 'LogIn Failed. NoSuchElementException Selenium Exception: Element not found by the Selenium Driver. More Details: ' + repr(e)
-        logger.error(msg)
+        logger.error('logIn -> ' + msg)
         raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
     except TimeoutException as e:
         msg = 'LogIn Failed. TimeoutException Selenium Exception: "mycases-button" button not found. More Details: ' + repr(e)
-        logger.error(msg)
-        raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)        
+        logger.error('logIn -> ' + msg)
+        raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
     except Exception as e:
         msg = 'LogIn Failed. An unknown Exception has occurred. More Details:' + repr(e)
-        logger.error(msg)
+        logger.error('logIn -> ' + msg)
         raise IgoCommonException('caseAction', [('carrier',carrier),('environment',environment),('username',username),('password',password)], msg)
 
 def logOut(driver, verbose=False):
@@ -255,29 +232,36 @@ def logOut(driver, verbose=False):
     # 1) IgoCommonException when something failed within the webdriver.                #
     #                                                                                  #
     ####################################################################################
-    logger.info('"logOut" procedure starts...')
+    logger.info('logOut -> "logOut" procedure starts...')
 
     try:
         if driver.find_elements_by_id('CossScreenFrame'):
-            logger.debug('Switching to windows')
+            logger.debug('logOut -> Switching to windows')
             driver.switch_to_window(driver.current_window_handle)
 
-        logger.debug('User options displayed')
+        logger.debug('logOut -> User options displayed')
         driver.find_element_by_id('ctrlBanner_lnkUserMenu').click()
-        logger.debug('Clicking the "Sing Out" button')
-        driver.find_element_by_id("lnkSignOut").click()
+        logger.debug('logOut -> Clicking the "Sing Out" button')
+        sign_out = driver.find_element_by_id("lnkSignOut")
+        while True:
+            if sign_out.is_displayed():
+                break
+        sign_out.click()
 
         elem = driver.find_element_by_xpath("//body[@id='documentBody']/div[9]/div/div/div/h4")
 
         if elem.text == 'Sign Out?':
-            logger.debug('Inline Pop up was displayed.')
-            logger.debug('Inline pop up title: ', elem.text)
-
+            logger.debug('logOut -> Inline Pop up was displayed.')
+            logger.debug('logOut -> Inline pop up title: ' + elem.text)
             driver.find_element_by_class_name('btn-log-off').click()
-            logger.info('Sign Out completed')
+            logger.info('logOut -> Sign Out completed')
+        else:
+            msg = 'Inline Pop up was not displayed'
+            logger.error('logOut -> ' + msg)
+            raise IgoCommonException('logOut', None, msg)
     except Exception as e:
         msg = 'LogOut Failed. An unknown exception has occured. More details: ' + repr(e)
-        logger.error(msg)
+        logger.error('logOut -> ' + msg)
         raise IgoCommonException('logOut', None, msg)
 
 def viewMyCases(driver, verbose=False):
@@ -295,31 +279,31 @@ def viewMyCases(driver, verbose=False):
     # 1) IgoCommonException when the View My Cases screen failed to be loaded.         #
     #                                                                                  #
     ####################################################################################
-    logger.info('Navigating to "View My Cases" started...')
+    logger.info('viewMyCases -> Navigating to "View My Cases" started...')
 
     try:
         if driver.find_elements_by_id('btnNewCase'):
-            logger.info('Driver is already in the "View My Cases" screen')
+            logger.info('viewMyCases -> Driver is already in the "View My Cases" screen')
         else:
             if driver.find_elements_by_id('mycases-button'):
-                logger.debug('Driver is in the "Welcome" screen')
+                logger.debug('viewMyCases -> Driver is in the "Welcome" screen')
                 driver.find_element_by_id('mycases-button').click()
             elif driver.find_elements_by_partial_link_text('My Cases'):
-                logger.debug('Driver is in the Existing ')
+                logger.debug('viewMyCases -> Driver is in the Existing ')
                 driver.find_element_by_partial_link_text('My Cases').clik()
             else:
-                logger.error('Driver is in an unkonw screen.')
+                logger.error('viewMyCases -> Driver is in an unkonw screen.')
 
             WebDriverWait(driver, 30).until(lambda x: x.find_element_by_id("btnNewCase"))
-            logger.info('Navigating to "View My Cases" - Completed')
+            logger.info('viewMyCases -> Navigating to "View My Cases" - Completed')
 
     except TimeoutException as e:
         msg = '"viewMyCases" procedure failed. The "View My Cases" screen was not loaded and a Timeout Exception took place. More datils:' + repr(e)
-        logger.error(msg)
+        logger.error('viewMyCases -> ' + msg)
         raise IgoCommonException('viewMyCases', None, msg)
     except Exception as e:
         msg = 'viewMyCases Failed. An unknown exception has occured. More datils:' + repr(e)
-        logger.error(msg)
+        logger.error('viewMyCases -> ' + msg)
         raise IgoCommonException('viewMyCases', None, msg)
 
 def search(driver, target, verbose=False):
@@ -339,44 +323,44 @@ def search(driver, target, verbose=False):
     # 1) IgoCommonException when the View My Cases screen failed to be loaded.         #
     #                                                                                  #
     ####################################################################################
-    logger.info('"Search" procedure started...')
-    logger.debug('Parameters:')
-    logger.debug('\ttarget: ' + target)
+    logger.info('search -> "Search" procedure started...')
+    logger.debug('search -> Parameters:')
+    logger.debug('search -> \ttarget: ' + target)
 
     try:
-        logger.debug('Call to "viewMyCases" procedure')
+        logger.debug('search -> Call to "viewMyCases" procedure')
         viewMyCases(driver, verbose)
 
-        logger.debug('Splitting target in information in First_Name and Last_Name')
+        logger.debug('search -> Splitting target in information in First_Name and Last_Name')
         last_name = target.split(',')[0].strip()
         first_name = target.split(',')[1].strip()
-        logger.debug('Last_Name: ' + last_name)
-        logger.debug('First_Name: ' + first_name)
+        logger.debug('search -> Last_Name: ' + last_name)
+        logger.debug('search -> First_Name: ' + first_name)
 
-        logger.debug('Searching by First_Name: ' + first_name)
+        logger.debug('search -> Searching by First_Name: ' + first_name)
         driver.find_element_by_id("txtSearch").clear()
         driver.find_element_by_id("txtSearch").send_keys(first_name)
         driver.find_element_by_id("btnSearch").click()
 
-        logger.debug('Checking if target "' + target + '" was found')
+        logger.debug('search -> Checking if target "' + target + '" was found')
         if driver.find_elements_by_link_text(target):
-            logger.info('Target "' + target + '" was found searching by First Name.')
+            logger.info('search -> Target "' + target + '" was found searching by First Name.')
         else:
-            logger.debug('Searching by Last_Name: ' + last_name)
+            logger.debug('search -> Searching by Last_Name: ' + last_name)
             driver.find_element_by_id("txtSearch").clear()
             driver.find_element_by_id("txtSearch").send_keys(last_name)
             driver.find_element_by_id("btnSearch").click()
 
-            logger.debug('Checking if target "' + target + '" was found')
+            logger.debug('search -> Checking if target "' + target + '" was found')
             if driver.find_elements_by_link_text(target):
-                logger.info('Target "' + target + '" was found searching by Last Name.')
+                logger.info('search -> Target "' + target + '" was found searching by Last Name.')
             else:
                 msg = 'Search Failed - The search element was not found. More Details:'
-                logger.error(msg)
+                logger.error('search -> ' + msg)
                 raise IgoCommonException('search', [('target',target)], msg)
     except NoSuchElementException as e:
         msg = 'Search Failed - Selenium NoSuchElementException error. More Details:' + repr(e)
-        logger.error(msg)
+        logger.error('search -> ' + msg)
         raise IgoCommonException('selenium', [('target',target)], msg)
 
 # def viewCaseForms(driver, case_name, verbose=False):
@@ -526,55 +510,55 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
     # 4) state not in config_values[carrier][product]['states']                        #
     #                                                                                  #
     ####################################################################################
-    logger.info('"importCase" procedure started...')
-    logger.debug('Parameters:')
-    logger.debug('\tcarrier: ' + carrier)
-    logger.debug('\tproduct: ' + product)
-    logger.debug('\tstate: ' + state)
-    logger.debug('\tplan: ' + plan)
-    
-    logger.debug('Validating parameters.')
+    logger.info('importCase -> "importCase" procedure started...')
+    logger.debug('importCase -> Parameters:')
+    logger.debug('importCase -> \tcarrier: ' + carrier)
+    logger.debug('importCase -> \tproduct: ' + product)
+    logger.debug('importCase -> \tstate: ' + state)
+    logger.debug('importCase -> \tplan: ' + plan)
+
+    logger.debug('importCase -> Validating parameters.')
     if carrier not in config_values['carriers']:
         msg = 'importCase Failed - Invalid Carrier: ' + carrier
-        logger.error(msg)
+        logger.error('importCase -> ' + msg)
         raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
     logger.debug('Carrier value "' + carrier + '" is valid')
     if product not in config_values[carrier]['products']:
         msg = 'importCase Failed - Invalid product: ' + product
-        logger.error(msg)
+        logger.error('importCase -> ' + msg)
         raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
     logger.debug('Product value "' + product + '" is valid')
     if plan not in config_values[carrier][product]['plans']:
         msg = 'importCase Failed - Invalid plan: ' + plan
-        logger.error(msg)
+        logger.error('importCase -> ' + msg)
         raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
     logger.debug('Plan value "' + plan + '" is valid')
     state = state.upper()
     if state not in config_values[carrier][product]['states']:
         msg = 'importCase Failed - Invalid State "' + state + '") for product: "' + product + '".'
-        logger.error(msg)
+        logger.error('importCase -> ' + msg)
         raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
-    logger.debug('State value "' + state + '" is valid')
+    logger.debug('importCase -> State value "' + state + '" is valid')
 
     try:
-        logger.debug('Calling to createXML(carrier, product, state, plan, verbose)...')
+        logger.debug('importCase -> Calling to createXML(carrier, product, state, plan, verbose)...')
         file_full_path = createXML(carrier, product, state, plan, verbose)
-        logger.debug('"file_full_path" to be imported: ' + file_full_path)
+        logger.debug('importCase -> "file_full_path" to be imported: ' + file_full_path)
     except createXMLException as e:
         msg = 'Function createXML() failed. More Details:' + repr(e)
-        logger.error(msg)
+        logger.error('importCase -> ' + msg)
         raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
 
     current_window = driver.current_window_handle
 
-    logger.debug('Current window handler: ' + current_window)
+    logger.debug('importCase ->Current window handler: ' + current_window)
 
     try:
-        logger.debug("Call to caseAction('','Import',verbose)")
+        logger.debug("importCase ->Call to caseAction('','Import',verbose)")
         caseAction(driver, '', 'Import', verbose)
     except IgoCommonException as e:
         msg = 'Call to caseAction failed. More Details:' + repr(e)
-        logger.error(msg)
+        logger.error('importCase -> ' + msg)
         raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
 
     try:
@@ -582,54 +566,54 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
         for winHandle in driver.window_handles:
             try:
                 driver.switch_to.window(winHandle)
-                logger.debug('Switching to window: ' + winHandle)
-                logger.debug('Windows title: ' + driver.title)
+                logger.debug('importCase ->Switching to window: ' + winHandle)
+                logger.debug('importCase ->Windows title: ' + driver.title)
             except NoSuchWindowException as e:
                 msg = 'Failed to switch to import window handle. More Details:' + repr(e)
-                logger.error(msg)
+                logger.error('importCase -> ' + msg)
                 raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
             if driver.title =='Import Case':
                 try:
-                    logger.debug('Setting file path in Pop up.')
+                    logger.debug('importCase ->Setting file path in Pop up.')
                     elem = WebDriverWait(driver,30).until(lambda x: x.find_element_by_id("ClientFile"))
                     elem.send_keys(file_full_path)
-                    logger.debug('Submiting Import Case in Pop up.')
+                    logger.debug('importCase ->Submiting Import Case in Pop up.')
                     driver.find_element_by_id("Submit1").click()
                     file_imported = True
                     break
                 except TimeoutException as e:
                     msg = 'Import windows never displayed. More details:' + repr(e)
-                    logger.error(msg)
+                    logger.error('importCase -> ' + msg)
                     raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
 
         driver.switch_to.window(current_window)
-        logger.debug('Switching back to main window.')
-        
+        logger.debug('importCase ->Switching back to main window.')
+
         #time.sleep(10)
 
         if file_imported:
-            logger.debug('Current Windows: ' + current_window)
-            logger.debug('Import pop up closed.')
-            logger.debug('Checking the case in "My View Cases".')
+            logger.debug('importCase ->Current Windows: ' + current_window)
+            logger.debug('importCase ->Import pop up closed.')
+            logger.debug('importCase ->Checking the case in "My View Cases".')
 
             # case_name = "LastName, FirstName"
             case_name = config_values[carrier][product]['name'] + ', ' + state + '_' + plan
-            logger.debug('Searching for imported application case: ' + case_name)
+            logger.debug('importCase ->Searching for imported application case: ' + case_name)
             try:
                 WebDriverWait(driver,30).until(lambda  x: x.find_element_by_link_text(case_name))
-                logger.info('"Import Case" finished successfully')
+                logger.info('importCase ->"Import Case" finished successfully')
             except TimeoutException as e:
                 msg = 'Import Case - Failed. Imported Case was not found.' + repr(e)
-                logger.error(msg)
+                logger.error('importCase -> ' + msg)
                 raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
         else:
             msg = 'File Impot pop up windows never displayed. Faled to import file.'
-            logger.error(msg)
+            logger.error('importCase -> ' + msg)
             raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
 
     except Exception as e:
         msg = 'Import Case - Unhandle exception.'
-        logger.error(msg)
+        logger.error('importCase -> ' + msg)
         raise IgoCommonException('selenium', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
 
 
@@ -904,73 +888,74 @@ def lockCase(driver, case_name, verbose=False):
     # 4) state not in config_values[carrier][product]['states']                        #
     #                                                                                  #
     ####################################################################################
-    logger.info('starting lockCase process...')
-    logger.info('Case Name: ' + case_name)
+    logger.info('lockCase -> starting lockCase process...')
+    logger.info('lockCase -> Case Name: ' + case_name)
 
     try:
         #import pdb;pdb.set_trace()
-        logger.debug("Calling to procedure 'caseAction'")
+        logger.debug("lockCase -> Calling to procedure 'caseAction'")
         caseAction(driver, case_name, 'OpenCase', verbose)
 
         wh = driver.current_window_handle
-        logger.debug('Current windows handler: ' + str(wh))
+        logger.debug('lockCase -> Current windows handler: ' + str(wh))
 
         if driver.find_element_by_id('tab0').text.lower() == 'case information' and driver.find_element_by_id('tab0').get_attribute('class').lower() == 'active':
-            logger.debug('"Case Information" tab.')
+            logger.debug('lockCase -> "Case Information" tab.')
             #Case information screen:
             if driver.find_elements_by_id('CossScreenFrame'):
-                logger.debug('Switch to frame.')
+                logger.debug('lockCase -> Switch to frame.')
                 driver.switch_to_frame('CossScreenFrame')
-                logger.debug('Click on selected Product-Plan option.')
+                logger.debug('lockCase -> Click on selected Product-Plan option.')
                 elem = driver.find_element_by_id('GridView1_ctl02_btnIgo1')
                 elem.click()
-                logger.debug('Switch to windows: ' + str(wh))
+                logger.debug('lockCase -> Switch to windows: ' + str(wh))
                 driver.switch_to_window(wh)
                 WebDriverWait(driver, 30).until(lambda  x: x.find_element_by_id('tab1').get_attribute('class').lower() == 'active')
         if driver.find_element_by_id('tab1').text.lower().strip() == 'application' and driver.find_element_by_id('tab1').get_attribute('class').lower() == 'active':
             #Application:
-            logger.debug('"Applicaiton" Tab.')
+            logger.debug('lockCase -> "Applicaiton" Tab.')
             if driver.find_elements_by_id('CossScreenFrame'):
-                logger.debug('Switch to frame: "CossScreenFrame".')
+                logger.debug('lockCase -> Switch to frame: "CossScreenFrame".')
                 driver.switch_to_frame('CossScreenFrame')
             screen_name = get_screen_name(driver)
             while not screen_name == 'Forms To Be Sent to the Applicant'.lower().strip():
-                logger.info('Current screen: ' + screen_name)
+                logger.info('lockCase -> Current screen: ' + screen_name)
                 if screen_name == 'Validate and Lock Data'.lower().strip():
-                    logger.debug('Locking application...')
+                    logger.debug('lockCase -> Locking application...')
                     #btn_lock_application = get_button(driver, 'btnLock')
                     btn_lock_application = driver.find_element_by_xpath("//button[starts-with(@alt_id, 'btnLock')]")
                     btn_lock_application.click()
-                    logger.info('Application locked.')
+                    logger.info('lockCase -> Application locked.')
                 elif screen_name == '':
-                    logger.error('Missing screen name')
+                    logger.error('lockCase -> Missing screen name')
                     break
                 else:
-                    logger.debug('checking if requried fields exist in current screen: ' + screen_name)
+                    logger.debug('lockCase -> checking if requried fields exist in current screen: ' + screen_name)
                     required = get_required_fields(driver)
-                    logger.debug('required: ' + str(required))
+                    logger.debug('lockCase -> required: ' + str(required))
                     if required:
-                        logger.debug('Missing required fields. Starting "validate_igo_screen" procedure...')
+                        logger.debug('lockCase -> Missing required fields. Starting "validate_igo_screen" procedure...')
                         validate_igo_screen(driver, required)
-                logger.debug('finding "Next" button')
+                logger.debug('lockCase -> finding "Next" button')
                 btn_next = driver.find_element_by_xpath("//button[starts-with(@alt_id, 'btnNext')]")
-                logger.debug('clicking "Next" button.')
+                logger.debug('lockCase -> clicking "Next" button.')
                 btn_next.click()
-                logger.info('"Next" button clicked.')
+                logger.info('lockCase -> "Next" button clicked.')
                 screen_name = get_screen_name(driver)
 
-            logger.debug('Switch to windows: ' + str(wh))
+            logger.debug('lockCase -> Switch to windows: ' + str(wh))
             driver.switch_to_window(wh)
         else:
-            logger.error('"Application" tab is not active')
-    except IgoCaseNotFound as e:
-        msg = 'Case Name "' + case_name + '" was not found...'
-        logger.error('Case Name "' + case_name + '" was not found...')
+            logger.error('lockCase -> "Application" tab is not active')
+    except IgoCommonException as e:
+        msg = 'Case Name "' + case_name + '" was not found or could not be opened to be locked'
+        logger.error('lockCase -> '+ msg)
         raise IgoCommonException('lockCase', [('case_name',case_name)], msg)
-    except IgoCaseActionException as e:
-        msg = 'Call to caseAction failed. More Details:' + str(e)
-        logger.error('Call to caseAction failed...')
-        raise IgoCommonException('lockCase', [('case_name',case_name), ('case_name', case_name), ('action','openCase')], msg)
+    except Exception as e:
+        msg = 'Unkown Exception. More Details:' + repr(e)
+        logger.error('lockCase -> '+ msg)
+        raise IgoCommonException('lockCase', [('case_name',case_name)], msg)
+
 
 class IgoCommonException(Exception):
     """IgoCommonException raised for errors in the iGo Common prodecures.
