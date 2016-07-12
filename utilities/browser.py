@@ -11,20 +11,20 @@ from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 
 # create logger with __name__
 logger = logging.getLogger('utils.browser')
-logger.setLevel(logging.DEBUG)
-# create console handler
-ch = logging.StreamHandler()
-ch.setLevel(logging.DEBUG)
-# create file handler
-fh = logging.FileHandler('run_bankers.log')
-fh.setLevel(logging.DEBUG)
-# create formatter and add it to the handlers
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-ch.setFormatter(formatter)
-fh.setFormatter(formatter)
-# add the handler to the logger
-logger.addHandler(ch)
-logger.addHandler(ch)
+# logger.setLevel(logging.DEBUG)
+# # create console handler
+# ch = logging.StreamHandler()
+# ch.setLevel(logging.DEBUG)
+# # create file handler
+# fh = logging.FileHandler('run_bankers.log')
+# fh.setLevel(logging.DEBUG)
+# # create formatter and add it to the handlers
+# formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+# ch.setFormatter(formatter)
+# fh.setFormatter(formatter)
+# # add the handler to the logger
+# logger.addHandler(ch)
+# logger.addHandler(fh)
 
 # List of available browser to be use by the scripts.
 config_browsers = {

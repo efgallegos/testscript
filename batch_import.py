@@ -20,7 +20,7 @@ ch.setFormatter(formatter)
 fh.setFormatter(formatter)
 # add the handler to the logger
 logger.addHandler(ch)
-logger.addHandler(ch)
+logger.addHandler(fh)
 
 def batch_import(arguments):
     ####################################################################################
@@ -162,7 +162,7 @@ def batch_import(arguments):
         logOut(driver)
         logger.info('batch_import -> End time:' + str(datetime.now()))
         logger.info('batch_import -> Execution time:' + str(datetime.now()-start_time))
-        
+
     except Exception as e:
         # An exception was catch in the script
         # logger.debuging exception for LOG
