@@ -1,9 +1,12 @@
 import sys
 import logging
+import logging.handlers
 from datetime import datetime
 from utilities.browser import *
 from igo.igo_common import *
 from config_entries import config_values
+
+LOG_FILENAME = 'run_bankers.log'
 
 # create logger with __name__
 logger = logging.getLogger('batch_lock_case')
@@ -12,7 +15,7 @@ logger.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
 # create file handler
-fh = logging.FileHandler('run_bankers.log')
+fh = logging.handlers.RotatingFileHandler(LOG_FILENAME, maxBytes=1018576*5, backupCount=7)
 fh.setLevel(logging.DEBUG)
 # create formatter and add it to the handlers
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -20,7 +23,7 @@ ch.setFormatter(formatter)
 fh.setFormatter(formatter)
 # add the handler to the logger
 logger.addHandler(ch)
-logger.addHandler(ch)
+logger.addHandler(fh)
 
 
 def batch_lock_case(arguments):

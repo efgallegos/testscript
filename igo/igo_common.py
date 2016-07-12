@@ -17,6 +17,7 @@
 #import re
 #import time
 import logging
+import logging.handlers
 #from utils.browser import *
 #from utils.utils import *
 from selenium.webdriver.support.select import Select
@@ -32,6 +33,8 @@ from selenium.common.exceptions import (#WebDriverException,
 from .igo_xml import createXML, createXMLException
 from config_entries import config_values
 
+LOG_FILENAME = 'run_bankers.log'
+
 # create logger with __name__
 logger = logging.getLogger('igo')
 logger.setLevel(logging.DEBUG)
@@ -39,7 +42,7 @@ logger.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
 # create file handler
-fh = logging.FileHandler('run_bankers.log')
+fh = logging.handlers.RotatingFileHandler(LOG_FILENAME, maxBytes=1018576*5, backupCount=7)
 fh.setLevel(logging.DEBUG)
 # create formatter and add it to the handlers
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -48,6 +51,11 @@ fh.setFormatter(formatter)
 # add the handler to the logger
 logger.addHandler(ch)
 logger.addHandler(fh)
+
+handler = logging.handlers.RotatingFileHandler(
+              LOG_FILENAME, maxBytes=20, backupCount=5)
+
+logger.addHandler(handler)
 
 def caseAction(driver, case_name, action, verbose=False):
     ####################################################################################

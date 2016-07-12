@@ -10,7 +10,7 @@ from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 
 
 # create logger with __name__
-logger = logging.getLogger('igo.browser')
+logger = logging.getLogger('igo.utilities.browser')
 # logger.setLevel(logging.DEBUG)
 # # create console handler
 # ch = logging.StreamHandler()
