@@ -2,8 +2,8 @@ import sys
 import logging
 import logging.handlers
 from datetime import datetime
-from utilities.browser import *
-from igo.igo_common import *
+from utilities.browser import config_browsers, getWebDriver
+from igo.igo_common import logIn, viewMyCases, search, lockCase, logOut
 from config_entries import config_values
 
 LOG_FILENAME = 'run_bankers.log'
@@ -24,7 +24,6 @@ fh.setFormatter(formatter)
 # add the handler to the logger
 logger.addHandler(ch)
 logger.addHandler(fh)
-
 
 def batch_lock_case(arguments):
     ####################################################################################
@@ -58,6 +57,15 @@ def batch_lock_case(arguments):
 
     logger.info("batch_lock_case -> ################################################################################")
     logger.info('batch_lock_case -> Start time:' +  str(start_time))
+    logger.info("batch_import -> \tAction: Lock Case")
+
+    # Validate the number of parameters
+    if len(arguments) != 8:
+        # logger.debuging exception for LOG
+        logger.error('batch_lock_case -> Error: Expecting 8 argmunets.')
+        # Exiting batch with status failed.
+        sys.exit(1)
+
     logger.info("batch_lock_case -> Parameters list:")
     logger.info("batch_lock_case -> \tBrowser: " + arguments[0])
     logger.info("batch_lock_case -> \tCarrier: " + arguments[1])
@@ -67,14 +75,7 @@ def batch_lock_case(arguments):
     logger.info("batch_lock_case -> \tProduct: " + arguments[5])
     logger.info("batch_lock_case -> \tState: " + arguments[6])
     logger.info("batch_lock_case -> \tPlan: " + arguments[7])
-    logger.info("batch_lock_case -> ################################################################################")
-
-    # Validate the number of parameters
-    if len(arguments) != 8:
-        # logger.debuging exception for LOG
-        logger.error('batch_lock_case -> Error: Expecting 8 argmunets.')
-        # Exiting batch with status failed.
-        sys.exit(1)
+    logger.info("batch_lock_case -> --------------------------------------------------------------------------------")
 
     # Validate the browser parameter to match on of the valid browser: IE, Frifox, Chrome
     if arguments[0] in config_browsers:

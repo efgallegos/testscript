@@ -9,13 +9,12 @@ from config_entries import config_values
 LOG_FILENAME = 'run_bankers.log'
 
 # create logger with __name__
-logger = logging.getLogger('batch_import')
+logger = logging.getLogger('testscript')
 logger.setLevel(logging.DEBUG)
 # create console handler
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
 # create file handler
-# fh = logging.FileHandler('run_bankers.log')
 fh = logging.handlers.RotatingFileHandler(LOG_FILENAME, maxBytes=1018576*5, backupCount=7)
 fh.setLevel(logging.DEBUG)
 # create formatter and add it to the handlers
@@ -59,6 +58,15 @@ def batch_import(arguments):
     logger.info("batch_import -> ################################################################################")
     logger.info('batch_import -> Start time:' +  str(start_time))
     logger.info("batch_import -> Parameters list:")
+    logger.info("batch_import -> \tAction: Import Case")
+
+    # Validate the number of parameters
+    if len(arguments) != 8:
+        # logger.debuging exception for LOG
+        logger.error('batch_import -> Error: Expecting 8 argmunets.')
+        # Exiting batch with status failed.
+        sys.exit(1)
+
     logger.info("batch_import -> \tBrowser: " + arguments[0])
     logger.info("batch_import -> \tCarrier: " + arguments[1])
     logger.info("batch_import -> \tEnvironment: " + arguments[2])
@@ -67,14 +75,7 @@ def batch_import(arguments):
     logger.info("batch_import -> \tProduct: " + arguments[5])
     logger.info("batch_import -> \tState: " + arguments[6])
     logger.info("batch_import -> \tPlan: " + arguments[7])
-    logger.info("batch_import -> ################################################################################")
-
-    # Validate the number of parameters
-    if len(arguments) != 8:
-        # logger.debuging exception for LOG
-        logger.error('batch_import -> Error: Expecting 8 argmunets.')
-        # Exiting batch with status failed.
-        sys.exit(1)
+    logger.info("batch_lock_case -> --------------------------------------------------------------------------------")
 
     # Validate the browser parameter to match on of the valid browser: IE, Frifox, Chrome
     if arguments[0] in config_browsers:
