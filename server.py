@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask import make_response
 from config_entries import config_values
-from utils.browser import getWebDriver, BrowserException
+from utilities.browser import getWebDriver, BrowserException
 from igo.igo_common import *
 
 def create_app():

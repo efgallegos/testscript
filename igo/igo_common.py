@@ -38,11 +38,15 @@ logger.setLevel(logging.DEBUG)
 # create console handler
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
+# create file handler
+fh = logging.FileHandler('run_bankers.log')
+fh.setLevel(logging.DEBUG)
 # create formatter and add it to the handlers
-formatter = logging.Formatter(
-    '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 ch.setFormatter(formatter)
+fh.setFormatter(formatter)
 # add the handler to the logger
+logger.addHandler(ch)
 logger.addHandler(ch)
 
 def caseAction(driver, case_name, action, verbose=False):
@@ -225,7 +229,7 @@ def logOut(driver, verbose=False):
     # This fuction allows the script to logout iGo for any carrier                     #
     #                                                                                  #
     # Paremeters:                                                                      #
-    # 1) driver: webdriver used to run the selenium script: IE, Firefox                #
+    # 1) driver: webdriver used to run the selenium script: IE, Firefox                #ls
     #            or Google Chorme.                                                     #
     #                                                                                  #
     # Raise Exceptions:                                                                #
@@ -249,6 +253,10 @@ def logOut(driver, verbose=False):
         sign_out.click()
 
         elem = driver.find_element_by_xpath("//body[@id='documentBody']/div[9]/div/div/div/h4")
+
+        while True:
+            if elem.text == 'Sign Out?':
+                break
 
         if elem.text == 'Sign Out?':
             logger.debug('logOut -> Inline Pop up was displayed.')
@@ -551,10 +559,10 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
 
     current_window = driver.current_window_handle
 
-    logger.debug('importCase ->Current window handler: ' + current_window)
+    logger.debug('importCase -> Current window handler: ' + current_window)
 
     try:
-        logger.debug("importCase ->Call to caseAction('','Import',verbose)")
+        logger.debug("importCase ->C all to caseAction('','Import',verbose)")
         caseAction(driver, '', 'Import', verbose)
     except IgoCommonException as e:
         msg = 'Call to caseAction failed. More Details:' + repr(e)
@@ -566,18 +574,18 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
         for winHandle in driver.window_handles:
             try:
                 driver.switch_to.window(winHandle)
-                logger.debug('importCase ->Switching to window: ' + winHandle)
-                logger.debug('importCase ->Windows title: ' + driver.title)
+                logger.debug('importCase -> Switching to window: ' + winHandle)
+                logger.debug('importCase -> Windows title: ' + driver.title)
             except NoSuchWindowException as e:
                 msg = 'Failed to switch to import window handle. More Details:' + repr(e)
                 logger.error('importCase -> ' + msg)
                 raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
             if driver.title =='Import Case':
                 try:
-                    logger.debug('importCase ->Setting file path in Pop up.')
+                    logger.debug('importCase -> Setting file path in Pop up.')
                     elem = WebDriverWait(driver,30).until(lambda x: x.find_element_by_id("ClientFile"))
                     elem.send_keys(file_full_path)
-                    logger.debug('importCase ->Submiting Import Case in Pop up.')
+                    logger.debug('importCase -> Submiting Import Case in Pop up.')
                     driver.find_element_by_id("Submit1").click()
                     file_imported = True
                     break
@@ -592,16 +600,16 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
         #time.sleep(10)
 
         if file_imported:
-            logger.debug('importCase ->Current Windows: ' + current_window)
-            logger.debug('importCase ->Import pop up closed.')
-            logger.debug('importCase ->Checking the case in "My View Cases".')
+            logger.debug('importCase -> Current Windows: ' + current_window)
+            logger.debug('importCase -> Import pop up closed.')
+            logger.debug('importCase -> Checking the case in "My View Cases".')
 
             # case_name = "LastName, FirstName"
             case_name = config_values[carrier][product]['name'] + ', ' + state + '_' + plan
-            logger.debug('importCase ->Searching for imported application case: ' + case_name)
+            logger.debug('importCase -> Searching for imported application case: ' + case_name)
             try:
                 WebDriverWait(driver,30).until(lambda  x: x.find_element_by_link_text(case_name))
-                logger.info('importCase ->"Import Case" finished successfully')
+                logger.info('importCase -> "Import Case" finished successfully')
             except TimeoutException as e:
                 msg = 'Import Case - Failed. Imported Case was not found.' + repr(e)
                 logger.error('importCase -> ' + msg)

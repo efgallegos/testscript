@@ -1,5 +1,5 @@
 import sys
-from utils.imap4 import download_submitted_xml
+from utilities.imap4 import download_submitted_xml
 
 def batch_acord_xmls_download():
     print("################################################################################")

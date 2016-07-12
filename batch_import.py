@@ -1,11 +1,28 @@
 import sys
+import logging
 from datetime import datetime
-from utils.browser import *
+from utilities.browser import *
 from igo.igo_common import *
 from config_entries import config_values
 
+# create logger with __name__
+logger = logging.getLogger('batch_import')
+logger.setLevel(logging.DEBUG)
+# create console handler
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+# create file handler
+fh = logging.FileHandler('run_bankers.log')
+fh.setLevel(logging.DEBUG)
+# create formatter and add it to the handlers
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+fh.setFormatter(formatter)
+# add the handler to the logger
+logger.addHandler(ch)
+logger.addHandler(ch)
 
-def batch_inport(arguments):
+def batch_import(arguments):
     ####################################################################################
     #                                 batch_import                                     #
     ####################################################################################
@@ -35,32 +52,32 @@ def batch_inport(arguments):
     # start time counter to track the script duration.
     start_time = datetime.now()
 
+    logger.info("batch_import -> ################################################################################")
+    logger.info('batch_import -> Start time:' +  str(start_time))
+    logger.info("batch_import -> Parameters list:")
+    logger.info("batch_import -> \tBrowser: " + arguments[0])
+    logger.info("batch_import -> \tCarrier: " + arguments[1])
+    logger.info("batch_import -> \tEnvironment: " + arguments[2])
+    logger.info("batch_import -> \tUser: " + arguments[3])
+    logger.info("batch_import -> \tPass: " + arguments[4])
+    logger.info("batch_import -> \tProduct: " + arguments[5])
+    logger.info("batch_import -> \tState: " + arguments[6])
+    logger.info("batch_import -> \tPlan: " + arguments[7])
+    logger.info("batch_import -> ################################################################################")
+
     # Validate the number of parameters
     if len(arguments) != 8:
-        # Printing exception for LOG
-        print('Error: Expecting 8 argmunets.')
+        # logger.debuging exception for LOG
+        logger.error('batch_import -> Error: Expecting 8 argmunets.')
         # Exiting batch with status failed.
         sys.exit(1)
-
-    print("################################################################################")
-    print('Start time:', str(start_time))
-    print("Parameters list:")
-    print("Browser: ", arguments[0])
-    print("Carrier: ", arguments[1])
-    print("Environment: ", arguments[2])
-    print("User: ", arguments[3])
-    print("Pass: ", arguments[4])
-    print("Product: ", arguments[5])
-    print("State: ", arguments[6])
-    print("Plan: ", arguments[7])
-    print("################################################################################")
 
     # Validate the browser parameter to match on of the valid browser: IE, Frifox, Chrome
     if arguments[0] in config_browsers:
         browser = arguments[0]
     else:
-        # Printing exception for LOG
-        print('Invalid Browser: ' + arguments[0])
+        # logger.debuging exception for LOG
+        logger.error('batch_import -> Invalid Browser: ' + arguments[0])
         # Exiting batch with status failed.
         sys.exit(1)
 
@@ -68,8 +85,8 @@ def batch_inport(arguments):
     if arguments[1] in config_values['carriers']:
         carrier = arguments[1]
     else:
-        # Printing exception for LOG
-        print('Invalid Carrier: ' + arguments[1])
+        # logger.debuging exception for LOG
+        logger.error('batch_import -> Invalid Carrier: ' + arguments[1])
         # Exiting batch with status failed.
         sys.exit(1)
 
@@ -77,8 +94,8 @@ def batch_inport(arguments):
     if arguments[2] in config_values[carrier]['environments']:
         environment = arguments[2]
     else:
-        # Printing exception for LOG
-        print('Invalid Environment: ' + arguments[2])
+        # logger.debuging exception for LOG
+        logger.error('batch_import -> Invalid Environment: ' + arguments[2])
         # Exiting batch with status failed.
         sys.exit(1)
 
@@ -86,8 +103,8 @@ def batch_inport(arguments):
     if arguments[3] in config_values[carrier]['users'][environment[0:2] +'-user-list']:
         username = arguments[3]
     else:
-        # Printing exception for LOG
-        print('Invalid User: ' + arguments[3])
+        # logger.debuging exception for LOG
+        logger.error('batch_import -> Invalid User: ' + arguments[3])
         # Exiting batch with status failed.
         sys.exit(1)
 
@@ -95,8 +112,8 @@ def batch_inport(arguments):
     if len(arguments[4]) > 0:
         password = arguments[4]
     else:
-        # Printing exception for LOG
-        print("Passowrd can't be empty.")
+        # logger.debuging exception for LOG
+        logger.error("batch_import -> Passowrd can't be empty.")
         # Exiting batch with status failed.
         sys.exit(1)
 
@@ -104,8 +121,8 @@ def batch_inport(arguments):
     if arguments[5] in config_values[carrier]['products']:
         product = arguments[5]
     else:
-        # Printing exception for LOG
-        print('Invalid Product: ' + arguments[5])
+        # logger.debuging exception for LOG
+        logger.error('batch_import -> Invalid Product: ' + arguments[5])
         # Exiting batch with status failed.
         sys.exit(1)
 
@@ -113,8 +130,8 @@ def batch_inport(arguments):
     if arguments[6] in config_values[carrier][product]['states']:
         state = arguments[6]
     else:
-        # Printing exception for LOG
-        print('Invalid State for Product - ' + \
+        # logger.debuging exception for LOG
+        logger.error('batch_import -> Invalid State for Product - ' + \
               config_values[carrier][product]['name'] + \
               ': ' + arguments[6])
         # Exiting batch with status failed.
@@ -124,8 +141,8 @@ def batch_inport(arguments):
     if arguments[7] in config_values[carrier][product]['plans']:
         plan = arguments[7]
     else:
-        # Printing exception for LOG
-        print('Invalid Plan for Product - ' + \
+        # logger.debuging exception for LOG
+        logger.error('batch_import -> Invalid Plan for Product - ' + \
               config_values[carrier][product]['name'] + \
               ': ' + arguments[7])
         # Exiting batch with status failed.
@@ -133,37 +150,29 @@ def batch_inport(arguments):
 
     # Starts script execution
     try:
+        logger.info('batch_import -> Call to "getWebDriver(' + browser + ') procedure')
         driver = getWebDriver(browser)
-        print('driver ' + browser + ' created successfully.')
+        logger.info('batch_import -> Call to "logIn(driver, ' + environment + ', ' + username + ', ' + password + ') procedure')
         logIn(driver, carrier, environment, username, password)
-        print('logIn to ' + environment + ' with user ' + username + ' successfully.')
+        logger.info('batch_import -> Call to "viewMyCases(driver) procedure')
         viewMyCases(driver)
-        print('"View My Cases" screen displayed successfully.')
-        print('Import Case -> PROCESS STARTED...')
-        print('CARRIER: ' + carrier)
-        print('PRODUCT: ' + product)
-        print('STATE: ' + state)
-        print('PLAN: ' + plan)
-        importCase(driver, carrier, product, state, plan, verbose=True)
-        print('Import Case -> PROCESS COMPLETED...')
-        logOut(driver, verbose=True)
-        print('logOut from ' + environment + ' successfully')
-        print('End time:', str(datetime.now()))
-        print('Execution time:', str(datetime.now()-start_time))
-        print('################################################################################')
-    except (BrowserException,
-            IgoCaseImportException,
-            IgoLogInException,
-            InvalidProductPlanState,
-            Exception) as e:
+        logger.info('batch_import -> Call to "importCase(driver, ' + carrier + ', ' + product + ', ' + state + ', ' + plan + ') procedure')
+        importCase(driver, carrier, product, state, plan)
+        logger.info('batch_import -> Call to logOut(driver) procedure')
+        logOut(driver)
+        logger.info('batch_import -> End time:' + str(datetime.now()))
+        logger.info('batch_import -> Execution time:' + str(datetime.now()-start_time))
+        
+    except Exception as e:
         # An exception was catch in the script
-        # Printing exception for LOG
-        print(str(e))
+        # logger.debuging exception for LOG
+        logger.error(str(e))
         # Exiting batch with status failed.
         sys.exit(1)
     finally:
+        logger.info('batch_import -> driver quit()')
         driver.quit()
-        print('driver quit()')
+        logger.info('batch_import -> ################################################################################')
 
 if __name__ == "__main__":
-    batch_inport(sys.argv[1:])
+    batch_import(sys.argv[1:])

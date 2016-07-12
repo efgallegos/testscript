@@ -34,5 +34,6 @@ bankers_config = {
     'cb': cb_config,
     'stc': stc_config,
     'medsupp': medsupp_config,
-    'srlife': srlife_config
+    'srlife': srlife_config,
+    'log_file': 'run_bankers.log'
 }
