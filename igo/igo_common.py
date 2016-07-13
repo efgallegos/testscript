@@ -548,7 +548,7 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
     logger.debug('importCase -> Current window handler: ' + current_window)
 
     try:
-        logger.debug("importCase ->C all to caseAction('','Import',verbose)")
+        logger.debug("importCase -> Call to caseAction('','Import',verbose)")
         caseAction(driver, '', 'Import', verbose)
     except IgoCommonException as e:
         msg = 'Call to caseAction failed. More Details:' + repr(e)
@@ -581,7 +581,7 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
                     raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
 
         driver.switch_to.window(current_window)
-        logger.debug('importCase ->Switching back to main window.')
+        logger.debug('importCase -> Switching back to main window.')
 
         #time.sleep(10)
 

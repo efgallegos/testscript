@@ -4,72 +4,12 @@
 		"selected_items":
 		[
 			[
-				"LOG",
-				"logger	statement"
-			],
-			[
 				"log",
 				"logger	statement"
 			],
 			[
-				"set",
-				"setLevel	function"
-			],
-			[
-				"file",
-				"filename	param"
-			],
-			[
-				"find",
-				"find_elements_by_class_name"
-			],
-			[
-				"pro",
-				"proxy_host	statement"
-			],
-			[
-				"brow",
-				"browser_name	param"
-			],
-			[
-				"case",
-				"case_name"
-			],
-			[
-				"Wait",
-				"WebDriverWait	class"
-			],
-			[
-				"get",
-				"get_fuctionName	function"
-			],
-			[
-				"func",
-				"fuctionName	statement"
-			],
-			[
-				"csa",
-				"case_name	statement"
-			],
-			[
-				"re",
-				"repr	function"
-			],
-			[
-				"Igo",
-				"IgoCommonException	class"
-			],
-			[
-				"ca",
-				"carrier	param"
-			],
-			[
-				"de",
-				"debug"
-			],
-			[
-				"fin",
-				"find_elements_by_link_text"
+				"is",
+				"is_displayed"
 			],
 			[
 				"fid",
@@ -96,8 +36,20 @@
 				"switch_to_frame"
 			],
 			[
+				"find",
+				"find_elements_by_tag_name"
+			],
+			[
 				"send",
 				"send_keys"
+			],
+			[
+				"get",
+				"get_attribute"
+			],
+			[
+				"fin",
+				"find_elements_by_id"
 			],
 			[
 				"m",
@@ -118,10 +70,6 @@
 			[
 				"config",
 				"config_values"
-			],
-			[
-				"is",
-				"isfile	function"
 			],
 			[
 				"PRO",
@@ -200,6 +148,10 @@
 				"viewCaseForms	function"
 			],
 			[
+				"case",
+				"case_name	param"
+			],
+			[
 				"Vi",
 				"ViewForms"
 			],
@@ -232,6 +184,10 @@
 				"try	Try/Except/Else"
 			],
 			[
+				"pro",
+				"product	param"
+			],
+			[
 				"con",
 				"config_entries_annuity	module"
 			],
@@ -262,6 +218,10 @@
 			[
 				"br",
 				"browser_name	param"
+			],
+			[
+				"Igo",
+				"IgoLogInException	class"
 			],
 			[
 				"def",
@@ -435,44 +395,11 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "batch_lock_case.py",
-			"settings":
-			{
-				"buffer_size": 8800,
-				"line_ending": "Unix"
-			}
-		}
 	],
-	"build_system": "Anaconda Python Builder",
-	"build_system_choices":
-	[
-		[
-			[
-				[
-					"Anaconda Python Builder",
-					""
-				],
-				[
-					"Packages/Python/Python.sublime-build",
-					""
-				],
-				[
-					"Packages/Python/Python.sublime-build",
-					"Syntax Check"
-				]
-			],
-			[
-				"Anaconda Python Builder",
-				""
-			]
-		]
-	],
-	"build_varint": "",
+	"build_system": "",
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -556,54 +483,52 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/efgallegos/GitHub/testscript",
-		"/Users/efgallegos/GitHub/testscript/carriers",
-		"/Users/efgallegos/GitHub/testscript/carriers/bankers",
-		"/Users/efgallegos/GitHub/testscript/igo",
-		"/Users/efgallegos/GitHub/testscript/tests",
-		"/Users/efgallegos/GitHub/testscript/utilities"
+		"/C/zz_EFG/GitHub/testscript",
+		"/C/zz_EFG/GitHub/testscript/carriers",
+		"/C/zz_EFG/GitHub/testscript/executables",
+		"/C/zz_EFG/GitHub/testscript/igo",
+		"/C/zz_EFG/GitHub/testscript/tests",
+		"/C/zz_EFG/GitHub/testscript/utilities"
 	],
 	"file_history":
 	[
-		"/Users/efgallegos/GitHub/testscript/batch_import.py",
-		"/Users/efgallegos/GitHub/testscript/igo/igo_common.py",
-		"/Users/efgallegos/GitHub/testscript/batch_lock_case.py",
-		"/Users/efgallegos/GitHub/testscript/batch_inport.py",
-		"/Users/efgallegos/GitHub/testscript/bach_lock.py",
-		"/Users/efgallegos/GitHub/testscript/igo/igo_fields.py",
-		"/Users/efgallegos/GitHub/testscript/igo/igo_xml.py",
-		"/Users/efgallegos/GitHub/testscript/utilities/browser.py",
-		"/Users/efgallegos/GitHub/testscript/carriers/bankers/config_bankers.py",
-		"/Users/efgallegos/GitHub/testscript/server.py",
-		"/Users/efgallegos/GitHub/testscript/batch_acord_download.py",
-		"/Users/efgallegos/GitHub/testscript/config_entries.py",
-		"/Users/efgallegos/GitHub/testscript/utilities/mylogger.py",
-		"/Users/efgallegos/GitHub/testscript/tests/test.py",
-		"/Users/efgallegos/GitHub/testscript/test.py",
-		"/Users/efgallegos/GitHub/testscript/utils/browser.py",
-		"/Users/efgallegos/GitHub/testscript/igo/tests/test_create_xml.py",
-		"/Users/efgallegos/GitHub/igo/testscript/tests/test_create_xml.py",
-		"/Users/efgallegos/GitHub/testscript/test_create_xml.py",
-		"/Users/efgallegos/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
-		"/C/zz_EFG/GitHub/testscript/test.py",
-		"/C/zz_EFG/GitHub/testscript/igo/igo_fields.py",
 		"/C/zz_EFG/GitHub/testscript/igo/igo_common.py",
+		"/C/zz_EFG/GitHub/testscript/batch_import.py",
+		"/C/zz_EFG/GitHub/testscript/batch_lock_case.py",
+		"/C/zz_EFG/GitHub/testscript/igo/igo_xml.py",
+		"/C/zz_EFG/GitHub/testscript/igo/igo_fields.py",
+		"/C/zz_EFG/GitHub/testscript/utilities/browser.py",
+		"/C/zz_EFG/GitHub/testscript/tests/test.py",
+		"/C/zz_EFG/GitHub/testscript/utilities/utils.py",
+		"/C/zz_EFG/GitHub/testscript/run_test.py",
+		"/C/zz_EFG/GitHub/testscript/igo/__init__.py",
+		"/C/zz_EFG/GitHub/testscript/utils/__init__.py",
+		"/C/zz_EFG/GitHub/testscript/__init__.py",
+		"/C/zz_EFG/GitHub/testscript/tests/__init__.py",
+		"/C/zz_EFG/GitHub/testscript/utils/browser.py",
+		"/C/zz_EFG/GitHub/testscript/test.py",
 		"/C/zz_EFG/GitHub/testscript/load_test_env.py",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/annuities/config_entries_annuity.py",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/medsupp/config_entries_medsupp.py",
 		"/C/zz_EFG/GitHub/testscript/test_create_xml.py",
-		"/C/zz_EFG/GitHub/testscript/utils/browser.py",
 		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/config_bankers.py",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/fuwl/fuwl_brd.py",
-		"/C/zz_EFG/GitHub/testscript/igo/igo_xml.py",
 		"/C/zz_EFG/GitHub/testscript/carriers/bankers/fuwl/config_entries_fuwl.py",
+		"/Users/efgallegos/GitHub/testscript/utils/browser.py",
+		"/Users/efgallegos/GitHub/testscript/igo/igo_common.py",
 		"/Users/efgallegos/GitHub/testscript/carriers/bankers/fuwl/config_entries_fuwl.py",
+		"/Users/efgallegos/GitHub/testscript/carriers/bankers/config_bankers.py",
+		"/Users/efgallegos/GitHub/testscript/config_entries.py",
+		"/Users/efgallegos/GitHub/testscript/igo/igo_xml.py",
 		"/Users/efgallegos/GitHub/testscript/test.html",
 		"/Users/efgallegos/GitHub/testscript/style.css",
+		"/Users/efgallegos/GitHub/testscript/test.py",
 		"/Users/efgallegos/GitHub/testscript/create_case.py",
+		"/Users/efgallegos/GitHub/testscript/batch_acord_download.py",
 		"/Users/efgallegos/GitHub/testscript/bankers/annuities/config_entries_annuity.py",
 		"/Users/efgallegos/GitHub/testscript/test.js",
+		"/Users/efgallegos/GitHub/testscript/batch_inport.py",
 		"/Users/efgallegos/.bash_profile",
 		"/Users/efgallegos/GitHub/testscript/.gitignore",
 		"/Users/efgallegos/GitHub/testscript/utils/utils.py",
@@ -692,11 +617,13 @@
 		"/C/dev/Selenium/igo_xml_20141216.py",
 		"/C/dev/Selenium/spwl_config_entries.py",
 		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
-		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Plain text.sublime-settings"
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Plain text.sublime-settings",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -715,13 +642,8 @@
 		"find_history":
 		[
 			"importCase",
-			"batch_inport",
-			"search",
-			"batch_inport",
-			"lock",
-			"logOut",
-			"print",
-			"driver",
+			"import",
+			"logout",
 			"viewMyCases",
 			"select",
 			"strip",
@@ -836,9 +758,6 @@
 		"regex": false,
 		"replace_history":
 		[
-			"batch_import",
-			"batch_lock_case",
-			"logger.debug",
 			"browser",
 			"plan",
 			"product",
@@ -854,39 +773,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "batch_lock_case.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 8800,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3925,
-								3925
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 329.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -923,23 +811,21 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 214.0
+		"height": 155.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "",
 	"project": "testscript.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 62.0
 	},
 	"save_all_on_build": false,
 	"select_file":
 	{
 		"height": 0.0,
-		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -960,7 +846,6 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -969,7 +854,6 @@
 	"select_symbol":
 	{
 		"height": 0.0,
-		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -983,7 +867,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 301.0,
+	"side_bar_width": 244.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
