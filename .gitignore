@@ -51,9 +51,4 @@ __pycache__/
 *.sublime-project
 *.sublime-workspace
 *.sublime-workspace
-
-*.sublime-workspace
-
-*.sublime-workspace
-
 testscript.sublime-workspace

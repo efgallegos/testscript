@@ -1,0 +1,1325 @@
+2016-07-12 22:55:21,023 - testscript - INFO - batch_import -> ################################################################################
+2016-07-12 22:55:21,023 - testscript - INFO - batch_import -> Start time:2016-07-12 22:55:21.023487
+2016-07-12 22:55:21,023 - testscript - INFO - batch_import -> Parameters list:
+2016-07-12 22:55:21,023 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-07-12 22:55:21,024 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-07-12 22:55:21,024 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-07-12 22:55:21,024 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-07-12 22:55:21,024 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-07-12 22:55:21,024 - testscript - INFO - batch_import -> 	Pass: password1
+2016-07-12 22:55:21,024 - testscript - INFO - batch_import -> 	Product: stc
+2016-07-12 22:55:21,024 - testscript - INFO - batch_import -> 	State: CO
+2016-07-12 22:55:21,024 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-07-12 22:55:21,024 - testscript - INFO - batch_lock_case -> --------------------------------------------------------------------------------
+2016-07-12 22:55:21,025 - testscript - INFO - batch_import -> Call to "getWebDriver(Firefox) procedure
+2016-07-12 22:55:21,025 - testscript.utilities.browser - INFO - getWebDriver -> "getWebDriver" procedure started...
+2016-07-12 22:55:21,025 - testscript.utilities.browser - DEBUG - getWebDriver -> Parameters: 
+2016-07-12 22:55:21,025 - testscript.utilities.browser - DEBUG - getWebDriver -> 	"browser_name": Firefox
+2016-07-12 22:55:21,025 - testscript.utilities.browser - DEBUG - getWebDriver -> 	"proxy": False
+2016-07-12 22:55:21,025 - testscript.utilities.browser - DEBUG - getWebDriver -> 	"inplicit_wait_second": 0
+2016-07-12 22:55:21,025 - testscript.utilities.browser - DEBUG - getWebDriver -> 	"Platform": Darwin
+2016-07-12 22:55:24,663 - testscript.utilities.browser - INFO - getWebDriver -> Driver was created successfully
+2016-07-12 22:55:24,663 - testscript - INFO - batch_import -> Call to "logIn(driver, qd3, tombqd5, password1) procedure
+2016-07-12 22:55:24,664 - testscript.igo.igo_common - INFO - logIn -> "LogIn" procedure started...
+2016-07-12 22:55:24,664 - testscript.igo.igo_common - DEBUG - logIn -> Parameters:
+2016-07-12 22:55:24,664 - testscript.igo.igo_common - DEBUG - logIn -> 	"Carrier": bankers
+2016-07-12 22:55:24,664 - testscript.igo.igo_common - DEBUG - logIn -> 	"Environment": qd3
+2016-07-12 22:55:24,664 - testscript.igo.igo_common - DEBUG - logIn -> 	"Username": tombqd5
+2016-07-12 22:55:24,664 - testscript.igo.igo_common - DEBUG - logIn -> 	"Password" : password1
+2016-07-12 22:55:24,664 - testscript.igo.igo_common - DEBUG - logIn -> Validating parameters.
+2016-07-12 22:55:24,664 - testscript.igo.igo_common - DEBUG - logIn -> Carrier value "bankers" is valid
+2016-07-12 22:55:24,664 - testscript.igo.igo_common - DEBUG - logIn -> Environment value "qd3" is valid
+2016-07-12 22:55:24,664 - testscript.igo.igo_common - DEBUG - logIn -> Base URL: http://pipepasstoigo-qd3.ipipeline.com/default.aspx?gaid=5752
+2016-07-12 22:55:24,665 - testscript.igo.igo_common - DEBUG - logIn -> Loading base URL: http://pipepasstoigo-qd3.ipipeline.com/default.aspx?gaid=5752
+2016-07-12 22:55:28,325 - testscript.igo.igo_common - DEBUG - logIn -> Setting User and Password: tombqd5, password1
+2016-07-12 22:55:29,270 - testscript.igo.igo_common - DEBUG - logIn -> Loading "Welcome" page
+2016-07-12 22:55:35,962 - testscript.igo.igo_common - DEBUG - logIn -> "Welcome" page loaded successfully
+2016-07-12 22:55:35,962 - testscript.igo.igo_common - INFO - logIn -> LogIn finished successfully
+2016-07-12 22:55:35,962 - testscript - INFO - batch_import -> Call to "viewMyCases(driver) procedure
+2016-07-12 22:55:35,963 - testscript.igo.igo_common - INFO - viewMyCases -> Navigating to "View My Cases" started...
+2016-07-12 22:55:35,976 - testscript.igo.igo_common - DEBUG - viewMyCases -> Driver is in the "Welcome" screen
+2016-07-12 22:56:07,573 - testscript.igo.igo_common - INFO - viewMyCases -> Navigating to "View My Cases" - Completed
+2016-07-12 22:56:07,573 - testscript - INFO - batch_import -> Call to "importCase(driver, bankers, stc, CO, GR-N320) procedure
+2016-07-12 22:56:07,574 - testscript.igo.igo_common - INFO - importCase -> "importCase" procedure started...
+2016-07-12 22:56:07,574 - testscript.igo.igo_common - DEBUG - importCase -> Parameters:
+2016-07-12 22:56:07,574 - testscript.igo.igo_common - DEBUG - importCase -> 	carrier: bankers
+2016-07-12 22:56:07,574 - testscript.igo.igo_common - DEBUG - importCase -> 	product: stc
+2016-07-12 22:56:07,574 - testscript.igo.igo_common - DEBUG - importCase -> 	state: CO
+2016-07-12 22:56:07,574 - testscript.igo.igo_common - DEBUG - importCase -> 	plan: GR-N320
+2016-07-12 22:56:07,574 - testscript.igo.igo_common - DEBUG - importCase -> Validating parameters.
+2016-07-12 22:56:07,574 - testscript.igo.igo_common - DEBUG - Carrier value "bankers" is valid
+2016-07-12 22:56:07,574 - testscript.igo.igo_common - DEBUG - Product value "stc" is valid
+2016-07-12 22:56:07,574 - testscript.igo.igo_common - DEBUG - Plan value "GR-N320" is valid
+2016-07-12 22:56:07,575 - testscript.igo.igo_common - DEBUG - importCase -> State value "CO" is valid
+2016-07-12 22:56:07,575 - testscript.igo.igo_common - DEBUG - importCase -> Calling to createXML(carrier, product, state, plan, verbose)...
+2016-07-12 22:56:07,575 - testscript.igo.igo_xml - INFO - createXML -> "createXML" procedure started...
+2016-07-12 22:56:07,575 - testscript.igo.igo_xml - DEBUG - createXML -> Parameters:
+2016-07-12 22:56:07,575 - testscript.igo.igo_xml - DEBUG - createXML -> 	"Carrier": bankers
+2016-07-12 22:56:07,575 - testscript.igo.igo_xml - DEBUG - createXML -> 	"Product": stc
+2016-07-12 22:56:07,575 - testscript.igo.igo_xml - DEBUG - createXML -> 	"State": CO
+2016-07-12 22:56:07,575 - testscript.igo.igo_xml - DEBUG - createXML -> 	"Plan" : GR-N320
+2016-07-12 22:56:07,575 - testscript.igo.igo_xml - DEBUG - createXML -> Files paths:
+2016-07-12 22:56:07,575 - testscript.igo.igo_xml - DEBUG - createXML -> 	Input file path: /Users/efgallegos/Dropbox/Automation/Bankers/STC/Input/GR-N320.xml
+2016-07-12 22:56:07,576 - testscript.igo.igo_xml - DEBUG - createXML -> 	Output file path: /Users/efgallegos/Dropbox/Automation/Bankers/STC/Output/CO_GR-N320.xml
+2016-07-12 22:56:07,576 - testscript.igo.igo_xml - DEBUG - createXML -> Current directory: /Users/efgallegos/GitHub/testscript
+2016-07-12 22:56:07,576 - testscript.igo.igo_xml - DEBUG - createXML -> Changed currect directory to: /Users/efgallegos/Dropbox/Automation/Bankers/STC/Output
+2016-07-12 22:56:07,576 - testscript.igo.igo_xml - INFO - createXML -> A XML file was never created for this state-product-plan.
+2016-07-12 22:56:07,576 - testscript.igo.igo_xml - INFO - createXML -> Starting XML creation process.
+2016-07-12 22:56:07,576 - testscript.igo.igo_xml - DEBUG - createXML -> Files opened successfully.
+2016-07-12 22:56:07,577 - testscript.igo.igo_xml - DEBUG - createXML -> XML: ﻿<?xml version="1.0" encoding="utf-8"?>
+
+2016-07-12 22:56:07,577 - testscript.igo.igo_xml - DEBUG - createXML -> XML: <CossDataExtract Version="1.0">
+
+2016-07-12 22:56:07,577 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   <ImportExport>Export</ImportExport>
+
+2016-07-12 22:56:07,577 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   <Reference>
+
+2016-07-12 22:56:07,577 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     <Date>
+
+2016-07-12 22:56:07,577 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     </Date>
+
+2016-07-12 22:56:07,577 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     <Time>
+
+2016-07-12 22:56:07,577 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     </Time>
+
+2016-07-12 22:56:07,577 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     <Timezone>
+
+2016-07-12 22:56:07,578 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     </Timezone>
+
+2016-07-12 22:56:07,578 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     <IP>
+
+2016-07-12 22:56:07,578 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     </IP>
+
+2016-07-12 22:56:07,578 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   </Reference>
+
+2016-07-12 22:56:07,578 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   <Entities>
+
+2016-07-12 22:56:07,578 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     <Entity EntityName="" EntityID="" Type="Organization">
+
+2016-07-12 22:56:07,578 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     </Entity>
+
+2016-07-12 22:56:07,578 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     <Entity EntityName="" EntityID="" Type="Company">
+
+2016-07-12 22:56:07,578 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     </Entity>
+
+2016-07-12 22:56:07,578 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     <Entity EntityName="" EntityID="" Type="SubCompany">
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     </Entity>
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     <Entity EntityName="User" EntityID="07d4a710-452b-4271-b7d2-5e7d22779f3d" Type="User">
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Address1">Address Line 1</Data>
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Address2">Address 2</Data>
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="AgentID">U0970</Data>
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="AllowClientExport">NO</Data>
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="AllowClientImport">NO</Data>
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="AllowClientRefer">NO</Data>
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="AllowClientShare">NO</Data>
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="AllowClientTransfer">NO</Data>
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="AllowClientUnlock">NO</Data>
+
+2016-07-12 22:56:07,579 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="AllowSPIAOverride">NO</Data>
+
+2016-07-12 22:56:07,580 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="AllowSubmissionApproval">NO</Data>
+
+2016-07-12 22:56:07,580 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="AllowUserAdmin">NO</Data>
+
+2016-07-12 22:56:07,580 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="BirthDate">04/30/1972</Data>
+
+2016-07-12 22:56:07,580 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="BirthDate_fmt">04/30/1972</Data>
+
+2016-07-12 22:56:07,580 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="BrokerDealerLicNum">U0970</Data>
+
+2016-07-12 22:56:07,580 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="BrokerDealerNum">Broker Dealer</Data>
+
+2016-07-12 22:56:07,580 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="BusinessCode">U0970</Data>
+
+2016-07-12 22:56:07,580 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="BusinessName">Agency Name</Data>
+
+2016-07-12 22:56:07,581 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="City">Exton</Data>
+
+2016-07-12 22:56:07,581 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ClientListXmlNodeList">&lt;COSS&gt;&lt;Table&gt;
+
+2016-07-12 22:56:07,581 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ObjectName&gt;PILastName&lt;/ObjectName&gt;
+
+2016-07-12 22:56:07,581 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ColumnHeader&gt;Last Name&lt;/ColumnHeader&gt;
+
+2016-07-12 22:56:07,581 - testscript.igo.igo_xml - DEBUG - createXML -> XML: &lt;/Table&gt;&lt;Table&gt;
+
+2016-07-12 22:56:07,581 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ObjectName&gt;PIFirstName&lt;/ObjectName&gt;
+
+2016-07-12 22:56:07,581 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ColumnHeader&gt;First Name&lt;/ColumnHeader&gt;
+
+2016-07-12 22:56:07,581 - testscript.igo.igo_xml - DEBUG - createXML -> XML: &lt;/Table&gt;&lt;Table&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ObjectName&gt;PIAge&lt;/ObjectName&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ColumnHeader&gt;Age&lt;/ColumnHeader&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML: &lt;/Table&gt;&lt;Table&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ObjectName&gt;PIJurisdiction&lt;/ObjectName&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ColumnHeader&gt;State&lt;/ColumnHeader&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML: &lt;/Table&gt;&lt;Table&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ObjectName&gt;ProducerFullName&lt;/ObjectName&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ColumnHeader&gt;Agent&lt;/ColumnHeader&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML: &lt;/Table&gt;&lt;Table&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ObjectName&gt;PIProductType&lt;/ObjectName&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ColumnHeader&gt;Product&lt;/ColumnHeader&gt;
+
+2016-07-12 22:56:07,582 - testscript.igo.igo_xml - DEBUG - createXML -> XML: &lt;/Table&gt;&lt;Table&gt;
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ObjectName&gt;PIPlanName&lt;/ObjectName&gt;
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ColumnHeader&gt;Plan&lt;/ColumnHeader&gt;
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML: &lt;/Table&gt;&lt;Table&gt;
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ObjectName&gt;Scenario&lt;/ObjectName&gt;
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   &lt;ColumnHeader&gt;Case&lt;/ColumnHeader&gt;
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML: &lt;/Table&gt;&lt;/COSS&gt;</Data>
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="CompanyID">IPIPELINE</Data>
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="cossEntitySaveDate">20141124072650</Data>
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="DateOfLastSync">05/05/2014</Data>
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Designations">Designations</Data>
+
+2016-07-12 22:56:07,583 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="DiscLogonID">test5752</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="DiscPassword">snpIhGZveK4V/tAG7emPenha+NDgCScRAqI6W3kJcPI=</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="DropDeadDate">10/23/2014</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Email">egallegos@totalperform.com</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="EnhancedSecurityGraceLogins">0</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="EnhancedSecuritySecretAnswer">PH1KDnlhZ0SEs0H4aKnkieXlonzkBl94tlg35iRK4EI=</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="EnhancedSecuritySecretQuestion">In what city were you born?</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="EnhancedSecuritySecretQuestionCounter">0</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="EntityID">07d4a710-452b-4271-b7d2-5e7d22779f3d</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="EntityName">User</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ExamOneClientNumber">2067</Data>
+
+2016-07-12 22:56:07,584 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ExamOneClientNumber_itmtxt">2067</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ExamOneClientNumber_itmval">2067</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Fax">6564546546</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Fax_fmt">(656) 454-6546</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Fax_msk">(###) ###-####</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Fax2">4214132131</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Fax2_fmt">(421) 413-2131</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Fax2_msk">(###) ###-####</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="FirstName">TEST</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="HomeOfficeUser">No</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="LastCompanyID">IPIPELINE</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="LastName">BANKERS</Data>
+
+2016-07-12 22:56:07,585 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="LastSubCompanyID">5752</Data>
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="LoginAttempts">2</Data>
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="LogonExpirationDate">02/22/2015</Data>
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="LogonExpirationDate_fmt">02/22/2015</Data>
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="LogonID">test5752</Data>
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="MiddleName" C="D">
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       </Data>
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="NumberOfClients">5726</Data>
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="OrganizationID">IPIPELINE</Data>
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="overrideEdits">NO</Data>
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ParentEntityID">IPIPELINE</Data>
+
+2016-07-12 22:56:07,586 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ParentEntityName">Organization</Data>
+
+2016-07-12 22:56:07,587 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Password">
+
+2016-07-12 22:56:07,587 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       </Data>
+
+2016-07-12 22:56:07,587 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Phone">4444444444</Data>
+
+2016-07-12 22:56:07,587 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Phone_fmt">(444) 444-4444</Data>
+
+2016-07-12 22:56:07,587 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Phone_msk">(###) ###-####</Data>
+
+2016-07-12 22:56:07,587 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Phone2">4564564654</Data>
+
+2016-07-12 22:56:07,587 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Phone2_fmt">(456) 456-4654</Data>
+
+2016-07-12 22:56:07,587 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="Phone2_msk">(###) ###-####</Data>
+
+2016-07-12 22:56:07,587 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ProducerAddressCountry">USA</Data>
+
+2016-07-12 22:56:07,587 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ProducerAddressCountry_itmtxt">USA</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ProducerAddressCountry_itmval">USA</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="RegionalDirector">NO</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ShowPDFInSeparateWindow">YES</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="SSN">123546789</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="SSN_fmt">123-54-6789</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="SSN_msk">###-##-####</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="State">PA</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="State_itmtxt">PA</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="State_itmval">PA</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="SubCompanyID">5752</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="SubCompanyID_itmtxt">Bankers</Data>
+
+2016-07-12 22:56:07,588 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="SubCompanyID_itmval">5752</Data>
+
+2016-07-12 22:56:07,589 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="TempEnhancedSecuritySecretQuestion_itmtxt">In what city were you born?</Data>
+
+2016-07-12 22:56:07,589 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="TempEnhancedSecuritySecretQuestion_itmval">In what city were you born?</Data>
+
+2016-07-12 22:56:07,589 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="UserID">07d4a710-452b-4271-b7d2-5e7d22779f3d</Data>
+
+2016-07-12 22:56:07,589 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ZipCode">111111111</Data>
+
+2016-07-12 22:56:07,589 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ZipCode_fmt">11111-1111</Data>
+
+2016-07-12 22:56:07,589 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <Data Name="ZipCode_msk">#####-9999</Data>
+
+2016-07-12 22:56:07,589 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     </Entity>
+
+2016-07-12 22:56:07,589 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     <Entity EntityName="Client" EntityID="7d04e19d-f7a4-4796-95eb-737f03326b4c" Type="Client">
+
+2016-07-12 22:56:07,591 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       <EntityData>
+
+2016-07-12 22:56:07,591 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AAI_PlanInfo_FormType">Undefined</Data>
+
+2016-07-12 22:56:07,591 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ABRInd">NO</Data>
+
+2016-07-12 22:56:07,591 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ABStates">AL, AZ, CA, CT, IL, IN, IA, KS, MA, MI, MS, NJ, ND, OK, OR, PA, SC, UT, VT</Data>
+
+2016-07-12 22:56:07,592 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ACKStates">AL, MS, VT</Data>
+
+2016-07-12 22:56:07,592 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ADDR_City">Exton</Data>
+
+2016-07-12 22:56:07,592 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ADDR_State">CO</Data>
+
+2016-07-12 22:56:07,592 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ADDR_State_itmtxt">COLORADO</Data>
+
+2016-07-12 22:56:07,592 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ADDR_State_itmval">CO</Data>
+
+2016-07-12 22:56:07,593 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ADDR_Street">123 Main St</Data>
+
+2016-07-12 22:56:07,593 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ADDR_Zip">11111</Data>
+
+2016-07-12 22:56:07,593 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ADDR_Zip_fmt">11111</Data>
+
+2016-07-12 22:56:07,593 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ADDR_Zip_msk">#####</Data>
+
+2016-07-12 22:56:07,593 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_HADI_Ttl">222.22</Data>
+
+2016-07-12 22:56:07,593 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_HADI_Ttl_fmt">$222.22</Data>
+
+2016-07-12 22:56:07,593 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_InterviewPI">Yes</Data>
+
+2016-07-12 22:56:07,593 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_InterviewSP">Yes</Data>
+
+2016-07-12 22:56:07,593 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_LA_Ttl">333.33</Data>
+
+2016-07-12 22:56:07,593 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_LA_Ttl_fmt">$333.33</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_LiveAlone">No</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_LiveAloneDesc">With spouse</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_PremApplied">111.11</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_PremApplied_fmt">$111.11</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_PremTtl">666.66</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_PremTtl_fmt">$666.66</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_SpouseApply">Yes</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AE_Understand">No</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_ADDR_City">Exton</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_ADDR_State">CO</Data>
+
+2016-07-12 22:56:07,594 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_ADDR_State_itmtxt">COLORADO</Data>
+
+2016-07-12 22:56:07,595 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_ADDR_State_itmval">CO</Data>
+
+2016-07-12 22:56:07,595 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_ADDR_Street">123 Main St</Data>
+
+2016-07-12 22:56:07,595 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_ADDR_Street1">Address Line 1</Data>
+
+2016-07-12 22:56:07,595 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_ADDR_Street2">Address 2</Data>
+
+2016-07-12 22:56:07,595 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_ADDR_Zip">11111</Data>
+
+2016-07-12 22:56:07,595 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_ADDR_Zip_fmt">11111</Data>
+
+2016-07-12 22:56:07,595 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_ADDR_Zip_msk">#####</Data>
+
+2016-07-12 22:56:07,595 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_Company">Agency Name</Data>
+
+2016-07-12 22:56:07,595 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_Email">egallegos@totalperform.com</Data>
+
+2016-07-12 22:56:07,595 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_Fax">6564546546</Data>
+
+2016-07-12 22:56:07,596 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_FirstName">TEST</Data>
+
+2016-07-12 22:56:07,596 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_FullAddress">123 Agent St Exton, CO 11111</Data>
+
+2016-07-12 22:56:07,596 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_FullName">Agent Name</Data>
+
+2016-07-12 22:56:07,596 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_LastName">BANKERS</Data>
+
+2016-07-12 22:56:07,596 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_Name">TEST BANKERS</Data>
+
+2016-07-12 22:56:07,596 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_No">U0970</Data>
+
+2016-07-12 22:56:07,596 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Agent_No_1">11111</Data>
+
+2016-07-12 22:56:07,596 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Agent_No_2">22222</Data>
+
+2016-07-12 22:56:07,596 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_Number">11111</Data>
+
+2016-07-12 22:56:07,596 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_pdf_FullAddress">Address Line 1, Address 2, Exton, CO, 111111111</Data>
+
+2016-07-12 22:56:07,597 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_Phone">4444444444</Data>
+
+2016-07-12 22:56:07,597 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT_SSN">123546789</Data>
+
+2016-07-12 22:56:07,597 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Agent1_First_Name">Agent</Data>
+
+2016-07-12 22:56:07,597 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Agent1_Last_Name">Name</Data>
+
+2016-07-12 22:56:07,597 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_ADDR_City">Exton</Data>
+
+2016-07-12 22:56:07,597 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_ADDR_State">CO</Data>
+
+2016-07-12 22:56:07,597 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_ADDR_State_itmtxt">COLORADO</Data>
+
+2016-07-12 22:56:07,597 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_ADDR_State_itmval">CO</Data>
+
+2016-07-12 22:56:07,597 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_ADDR_Street">123 Second St</Data>
+
+2016-07-12 22:56:07,598 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_ADDR_Zip">11111</Data>
+
+2016-07-12 22:56:07,598 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_ADDR_Zip_fmt">11111</Data>
+
+2016-07-12 22:56:07,598 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_ADDR_Zip_msk">#####</Data>
+
+2016-07-12 22:56:07,598 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Agent2_First_Name">Second</Data>
+
+2016-07-12 22:56:07,598 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_FullAddress">123 Second St Exton, CO 11111</Data>
+
+2016-07-12 22:56:07,598 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_FullName">Second Name</Data>
+
+2016-07-12 22:56:07,598 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Agent2_Last_Name">Name</Data>
+
+2016-07-12 22:56:07,598 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AGENT2_Number">22222</Data>
+
+2016-07-12 22:56:07,599 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AgentStates">AR, NY, RI</Data>
+
+2016-07-12 22:56:07,599 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AIS_AddlAgentRadio">Yes</Data>
+
+2016-07-12 22:56:07,599 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AllowPlanX">YES</Data>
+
+2016-07-12 22:56:07,599 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="APP_Form18443CO">18443-CO</Data>
+
+2016-07-12 22:56:07,599 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ApplicantAnnualPremium">111.11</Data>
+
+2016-07-12 22:56:07,599 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ApplicantAnnualPremium_fmt">$111.11</Data>
+
+2016-07-12 22:56:07,599 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ApplicantOptionPrem">333.33</Data>
+
+2016-07-12 22:56:07,599 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ApplicantOptionPrem_fmt">$333.33</Data>
+
+2016-07-12 22:56:07,599 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ApplicantRiderPrem">555.55</Data>
+
+2016-07-12 22:56:07,600 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ApplicantRiderPrem_fmt">$555.55</Data>
+
+2016-07-12 22:56:07,600 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ApplicantTotalAnnualPrem">999.99</Data>
+
+2016-07-12 22:56:07,600 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ApplicantTotalAnnualPrem_fmt">$999.99</Data>
+
+2016-07-12 22:56:07,600 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ApplicationCreationDate">03/24/2015</Data>
+
+2016-07-12 22:56:07,600 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="AppUnlocked">X</Data>
+
+2016-07-12 22:56:07,600 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="BILLING_ADDR_City">Exton</Data>
+
+2016-07-12 22:56:07,600 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="BILLING_ADDR_State">CO</Data>
+
+2016-07-12 22:56:07,601 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="BILLING_ADDR_State_itmtxt">COLORADO</Data>
+
+2016-07-12 22:56:07,601 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="BILLING_ADDR_State_itmval">CO</Data>
+
+2016-07-12 22:56:07,601 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="BILLING_ADDR_Street">123 Billin St</Data>
+
+2016-07-12 22:56:07,601 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="BILLING_ADDR_Zip">11111</Data>
+
+2016-07-12 22:56:07,601 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="BILLING_ADDR_Zip_fmt">11111</Data>
+
+2016-07-12 22:56:07,601 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="BILLING_ADDR_Zip_msk">#####</Data>
+
+2016-07-12 22:56:07,601 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="BillingAddressInd">No</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Branch_Office1">11111</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Branch_Office2">22222</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Carrier">886</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Carrier_itmtxt">Bankers Life and Casualty</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Carrier_itmval">886</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="CaseDescription">State=CO</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="CIRInd">NO</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ClientID" C="U">f6fcf9c9-49d5-4ab2-8ccd-1eb8f7068b1c</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Commission1">50</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Commission1_fmt">50 %</Data>
+
+2016-07-12 22:56:07,602 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Commission2">50</Data>
+
+2016-07-12 22:56:07,603 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Commission2_fmt">50 %</Data>
+
+2016-07-12 22:56:07,603 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="CompanyName">Bankers Life And Casualty Company</Data>
+
+2016-07-12 22:56:07,603 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="CossCustomAssemblyFrameworkVersion">1.1.0.1</Data>
+
+2016-07-12 22:56:07,603 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossEntitySaveDate">20150324232926</Data>
+
+2016-07-12 22:56:07,603 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_FormSequenceXml" C="D">
+
+2016-07-12 22:56:07,603 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         </Data>
+
+2016-07-12 22:56:07,603 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_LastFormName" C="D">
+
+2016-07-12 22:56:07,603 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         </Data>
+
+2016-07-12 22:56:07,603 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_LastiGoScreenName">AgentInformationAndStatement</Data>
+
+2016-07-12 22:56:07,604 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_LastPackageName" C="D">
+
+2016-07-12 22:56:07,604 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         </Data>
+
+2016-07-12 22:56:07,604 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_LastScreenName" C="D">
+
+2016-07-12 22:56:07,604 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         </Data>
+
+2016-07-12 22:56:07,604 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_PackageXml" C="D">
+
+2016-07-12 22:56:07,604 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         </Data>
+
+2016-07-12 22:56:07,604 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_ScreenConfigFileDateTime" C="D">
+
+2016-07-12 22:56:07,604 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         </Data>
+
+2016-07-12 22:56:07,604 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_ScreenConfigMD5Hash">4B80C49E5E96E4D0A27E37D931AA0462</Data>
+
+2016-07-12 22:56:07,605 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_ScreenDefsFileDateTime" C="D">
+
+2016-07-12 22:56:07,605 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         </Data>
+
+2016-07-12 22:56:07,605 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_ScreenDefsMD5Hash">DC56CE1C385A608BD5594A7DF6FE5EE6</Data>
+
+2016-07-12 22:56:07,605 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossFORMS_FORMS_ScreenSequenceXml" C="D">
+
+2016-07-12 22:56:07,605 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         </Data>
+
+2016-07-12 22:56:07,605 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossIsClientAReferral">NO</Data>
+
+2016-07-12 22:56:07,605 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossIsClientLocked">NO</Data>
+
+2016-07-12 22:56:07,605 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="CurrentDate">3/24/2015</Data>
+
+2016-07-12 22:56:07,605 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="CurrentYear">2015</Data>
+
+2016-07-12 22:56:07,605 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="CWLast4DigitsOfSSN__70">1111</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="dayDifMulti">0</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="DisableSynchForIgo">YES</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="DisconnectedSwitch">ON</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="DisplayAllYears">YES</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="DisplayYrs">Every year</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="DisplayYrs_itmtxt">Every year</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="DisplayYrs_itmval">Every year</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_AcctHolder">Name A</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_AcctName">Checking</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_AcctNum">98765456787654787654</Data>
+
+2016-07-12 22:56:07,606 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_AcctType">Checking</Data>
+
+2016-07-12 22:56:07,607 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_BankName">Bank A</Data>
+
+2016-07-12 22:56:07,607 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_BankStreet">123 Bank St</Data>
+
+2016-07-12 22:56:07,607 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_City">Exton</Data>
+
+2016-07-12 22:56:07,607 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_DayCharged">1</Data>
+
+2016-07-12 22:56:07,607 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_DayCharged_itmtxt">1</Data>
+
+2016-07-12 22:56:07,607 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_DayCharged_itmval">1</Data>
+
+2016-07-12 22:56:07,607 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_DepositorName">Name B</Data>
+
+2016-07-12 22:56:07,607 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_Policy1">EFt987654</Data>
+
+2016-07-12 22:56:07,607 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_Policy2">EFT456789</Data>
+
+2016-07-12 22:56:07,607 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_Policy3">EFT456789</Data>
+
+2016-07-12 22:56:07,608 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_State">CO</Data>
+
+2016-07-12 22:56:07,608 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_State_itmtxt">COLORADO</Data>
+
+2016-07-12 22:56:07,608 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_State_itmval">CO</Data>
+
+2016-07-12 22:56:07,608 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_TIN">987654345</Data>
+
+2016-07-12 22:56:07,608 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_ZIPCode">12345</Data>
+
+2016-07-12 22:56:07,608 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_ZIPCode_fmt">12345</Data>
+
+2016-07-12 22:56:07,608 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EFT_ZIPCode_msk">#####</Data>
+
+2016-07-12 22:56:07,608 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Email">egallegos@totalperform.com</Data>
+
+2016-07-12 22:56:07,608 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EntityID" C="U">7d04e19d-f7a4-4796-95eb-737f03326b4c</Data>
+
+2016-07-12 22:56:07,608 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="EntityName">Client</Data>
+
+2016-07-12 22:56:07,609 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="FormNo">GR-N320</Data>
+
+2016-07-12 22:56:07,609 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="FORMS_FORMS_ACCESSED">YES</Data>
+
+2016-07-12 22:56:07,609 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="GlobalDefaultsUpdatedDateTime">03/23/2015 15:12:18</Data>
+
+2016-07-12 22:56:07,609 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="GuarPeriodYrs">10</Data>
+
+2016-07-12 22:56:07,609 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="iGO_BrowserName">MOZILLA/5.0 (WINDOWS NT 6.1; WOW64; RV:36.0) GECKO/20100101 FIREFOX/36.0</Data>
+
+2016-07-12 22:56:07,609 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="IllustrationVersion">5</Data>
+
+2016-07-12 22:56:07,609 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Init1035AmtInternal">0</Data>
+
+2016-07-12 22:56:07,609 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="INTENDEDPolicyStates">CA, FL, MD, MI, MN, PA, TN, GA, ID, MO, NV, CT, DC, ND, WY, SD, MA, OK, DE, IN, KS, WA, IL</Data>
+
+2016-07-12 22:56:07,609 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="IPAD_SIGNATURE_SUPPORTED">YES</Data>
+
+2016-07-12 22:56:07,609 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="isGeneric">NO</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="isGenericReplacement">NO</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="IsGlobalDefaults">0</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="IsNewClient">YES</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="IsNewClient2">YES</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="IsNewClientIUL">YES</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="LBRInd">YES</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="LeadSource">A</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="LeadSource_itmtxt">A. Mail - New Lead</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="LeadSource_itmval">A</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="LivingSite">1</Data>
+
+2016-07-12 22:56:07,610 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="LivingSite_itmtxt">Own Home</Data>
+
+2016-07-12 22:56:07,611 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="LivingSite_itmval">1</Data>
+
+2016-07-12 22:56:07,611 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQA_PI">No</Data>
+
+2016-07-12 22:56:07,611 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQA_SP">No</Data>
+
+2016-07-12 22:56:07,611 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQB_PI">No</Data>
+
+2016-07-12 22:56:07,611 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQB_SP">No</Data>
+
+2016-07-12 22:56:07,611 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQC_PI">No</Data>
+
+2016-07-12 22:56:07,611 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQC_SP">No</Data>
+
+2016-07-12 22:56:07,611 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQE_PI">No</Data>
+
+2016-07-12 22:56:07,611 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQE_SP">No</Data>
+
+2016-07-12 22:56:07,611 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQI1_PI">No</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQI11_PI">No</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQI11_SP">No</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQI12_PI">No</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQI12_SP">No</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQL_PI">No</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="MedQL_SP">No</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Member">No</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Mode_Type">Monthly-PPSP</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Mode_Type_itmtxt">Monthly-PPSP</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Mode_Type_itmval">Monthly-PPSP</Data>
+
+2016-07-12 22:56:07,612 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ModeOfApplication">Connected</Data>
+
+2016-07-12 22:56:07,613 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="myAgency_ApproverDefaultCode">9999</Data>
+
+2016-07-12 22:56:07,613 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="myAgency_ApproverFirstName">Case</Data>
+
+2016-07-12 22:56:07,613 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="myAgency_ApproverLastName">Manager</Data>
+
+2016-07-12 22:56:07,613 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="myAgency_CompanyName">Bankers</Data>
+
+2016-07-12 22:56:07,613 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="myAgency_Email">egallegos@totalperform.com</Data>
+
+2016-07-12 22:56:07,613 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="NumberMonthsPaid_PPSP">0</Data>
+
+2016-07-12 22:56:07,614 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="NumberMonthsPaid_PPSP_fmt">0</Data>
+
+2016-07-12 22:56:07,614 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="OIRInd">NO</Data>
+
+2016-07-12 22:56:07,614 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="OIRUnderwritingClass__1">Standard Non-Tobacco</Data>
+
+2016-07-12 22:56:07,614 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="OriginatingUserCompanyID">IPIPELINE</Data>
+
+2016-07-12 22:56:07,614 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="OriginatingUserLogonID">TEST5752</Data>
+
+2016-07-12 22:56:07,614 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="OriginatingUserOrganizationID">IPIPELINE</Data>
+
+2016-07-12 22:56:07,614 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="OriginatingUserSubCompanyID">5752</Data>
+
+2016-07-12 22:56:07,614 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="OriginatingUserUserID">07d4a710-452b-4271-b7d2-5e7d22779f3d</Data>
+
+2016-07-12 22:56:07,614 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ParentEntityID">07d4a710-452b-4271-b7d2-5e7d22779f3d</Data>
+
+2016-07-12 22:56:07,614 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ParentEntityName">User</Data>
+
+2016-07-12 22:56:07,615 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ParticipationRate">70</Data>
+
+2016-07-12 22:56:07,615 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="pdf_PI_ElimDays">0 Days</Data>
+
+2016-07-12 22:56:07,615 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="pdf_SP_ElimDays">20 Days</Data>
+
+2016-07-12 22:56:07,615 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="pdfAGENT_FullNameAddress">Agent Name 123 Agent St Exton, CO 11111</Data>
+
+2016-07-12 22:56:07,615 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="pdfFullProductName">Short Term Care Insurance</Data>
+
+2016-07-12 22:56:07,615 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="pdfPlanInfo_MBene">1,550.00</Data>
+
+2016-07-12 22:56:07,615 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="pdfPlanInfo_WBene">350.00</Data>
+
+2016-07-12 22:56:07,615 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="pdfReplaceNo">X</Data>
+
+2016-07-12 22:56:07,616 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="pdfReplaceYes">
+
+2016-07-12 22:56:07,616 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         </Data>
+
+2016-07-12 22:56:07,616 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="pdfReversePIName">STC, CO_GR-N320 X</Data>
+
+2016-07-12 22:56:07,616 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="pdfStreet">123 Main St </Data>
+
+2016-07-12 22:56:07,616 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PemiumAllocationFundPct">3.9</Data>
+
+2016-07-12 22:56:07,616 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Phone_Home">9876543456</Data>
+
+2016-07-12 22:56:07,616 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Phone_Home_fmt">(987)-654-3456</Data>
+
+2016-07-12 22:56:07,616 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Phone_Home_msk">(###)-###-####</Data>
+
+2016-07-12 22:56:07,616 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Phone_Work">8765434567</Data>
+
+2016-07-12 22:56:07,616 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Phone_Work_fmt">(876)-543-4567</Data>
+
+2016-07-12 22:56:07,617 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Phone_Work_msk">(###)-###-####</Data>
+
+2016-07-12 22:56:07,617 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIADBInd">NO</Data>
+
+2016-07-12 22:56:07,617 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIADDR_City">Exton</Data>
+
+2016-07-12 22:56:07,617 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIADDR_State">CO</Data>
+
+2016-07-12 22:56:07,617 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIADDR_Street">123 Main St</Data>
+
+2016-07-12 22:56:07,617 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIADDR_Zip">11111</Data>
+
+2016-07-12 22:56:07,617 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIADDR_Zip_fmt">11111</Data>
+
+2016-07-12 22:56:07,617 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIAge">65</Data>
+
+2016-07-12 22:56:07,618 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIAge_fmt">65</Data>
+
+2016-07-12 22:56:07,618 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIAge_val">65</Data>
+
+2016-07-12 22:56:07,618 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIAgeNearest">65</Data>
+
+2016-07-12 22:56:07,618 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIAgeNearest_fmt">65</Data>
+
+2016-07-12 22:56:07,618 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIAgeNearest_val">65</Data>
+
+2016-07-12 22:56:07,618 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIAgeNext">66</Data>
+
+2016-07-12 22:56:07,618 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIAgeNext_fmt">66</Data>
+
+2016-07-12 22:56:07,619 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIAgeNext_val">66</Data>
+
+2016-07-12 22:56:07,619 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIDOB">03/24/1950</Data>
+
+2016-07-12 22:56:07,619 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIDOB_fmt">03/24/1950</Data>
+
+2016-07-12 22:56:07,619 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIDOB_val">03/24/1950</Data>
+
+2016-07-12 22:56:07,619 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIFirstName">CO_GR-N320</Data>
+
+2016-07-12 22:56:07,619 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIFullAddress">123 Main St Exton, CO 11111</Data>
+
+2016-07-12 22:56:07,619 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIFullName">CO_GR-N320 X STC Sr</Data>
+
+2016-07-12 22:56:07,619 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIGender">Male</Data>
+
+2016-07-12 22:56:07,620 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIHeightFt">4</Data>
+
+2016-07-12 22:56:07,620 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIHeightFt_itmtxt">4</Data>
+
+2016-07-12 22:56:07,620 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIHeightFt_itmval">4</Data>
+
+2016-07-12 22:56:07,620 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIHeightIn">4</Data>
+
+2016-07-12 22:56:07,620 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIHeightIn_itmtxt">4</Data>
+
+2016-07-12 22:56:07,620 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIHeightIn_itmval">4</Data>
+
+2016-07-12 22:56:07,620 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIInsureSpouse">Yes</Data>
+
+2016-07-12 22:56:07,620 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIIssueAge">65</Data>
+
+2016-07-12 22:56:07,620 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIIssueAge_fmt">65</Data>
+
+2016-07-12 22:56:07,621 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIIssueAge_val">65</Data>
+
+2016-07-12 22:56:07,621 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIIssueGender">Male</Data>
+
+2016-07-12 22:56:07,621 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIIssueGender_itmtxt">Male</Data>
+
+2016-07-12 22:56:07,621 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIIssueGender_itmval">Male</Data>
+
+2016-07-12 22:56:07,621 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIJurisdiction">CO</Data>
+
+2016-07-12 22:56:07,621 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIJurisdiction_itmtxt">Colorado</Data>
+
+2016-07-12 22:56:07,621 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIJurisdiction_itmval">CO</Data>
+
+2016-07-12 22:56:07,622 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PILastName">STC</Data>
+
+2016-07-12 22:56:07,622 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIMiddleName">X</Data>
+
+2016-07-12 22:56:07,622 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIMStatus">Married</Data>
+
+2016-07-12 22:56:07,622 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIMStatus_itmtxt">Married</Data>
+
+2016-07-12 22:56:07,622 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIMStatus_itmval">Married</Data>
+
+2016-07-12 22:56:07,622 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PISolveDistributions">NO</Data>
+
+2016-07-12 22:56:07,623 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PISolveDistributionsAllYrs">YES</Data>
+
+2016-07-12 22:56:07,623 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PISolveDistributionsYrs">121</Data>
+
+2016-07-12 22:56:07,623 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PISolveDistributionsYrsBegin">2</Data>
+
+2016-07-12 22:56:07,623 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PISSN">911111111</Data>
+
+2016-07-12 22:56:07,623 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PISSN_fmt">911-11-1111</Data>
+
+2016-07-12 22:56:07,625 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PISSN_msk">###-##-####</Data>
+
+2016-07-12 22:56:07,625 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIUnderwritingClass">Standard Non-Tobacco</Data>
+
+2016-07-12 22:56:07,625 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIUnderwritingClass_itmtxt">Standard Non-Tobacco</Data>
+
+2016-07-12 22:56:07,625 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIUnderwritingClass_itmval">Standard Non-Tobacco</Data>
+
+2016-07-12 22:56:07,625 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIWeightLbs">444</Data>
+
+2016-07-12 22:56:07,626 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PIWeightLbs_fmt">444</Data>
+
+2016-07-12 22:56:07,626 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_AUTH">Yes</Data>
+
+2016-07-12 22:56:07,626 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_EFTAmt">0</Data>
+
+2016-07-12 22:56:07,626 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_EFTAmt_fmt">$0.00</Data>
+
+2016-07-12 22:56:07,626 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_FormNumber">1</Data>
+
+2016-07-12 22:56:07,626 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_IncreaseOpt">Yes</Data>
+
+2016-07-12 22:56:07,627 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_IssueDate">03/25/2015</Data>
+
+2016-07-12 22:56:07,627 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_IssueDate_fmt">03/25/2015</Data>
+
+2016-07-12 22:56:07,627 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PI_EP">0 Days</Data>
+
+2016-07-12 22:56:07,627 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PI_EP_itmtxt">0 Days</Data>
+
+2016-07-12 22:56:07,627 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PI_EP_itmval">0 Days</Data>
+
+2016-07-12 22:56:07,627 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PI_MaxBene">50.00</Data>
+
+2016-07-12 22:56:07,627 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PI_MaxBene_itmtxt">$50.00</Data>
+
+2016-07-12 22:56:07,628 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PI_MaxBene_itmval">50.00</Data>
+
+2016-07-12 22:56:07,628 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PI_MOMB">90 X Daily Benefit (approx. 3 months coverage)</Data>
+
+2016-07-12 22:56:07,628 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PI_MOMB_itmtxt">90 X Daily Benefit (approx. 3 months coverage)</Data>
+
+2016-07-12 22:56:07,628 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PI_MOMB_itmval">90 X Daily Benefit (approx. 3 months coverage)</Data>
+
+2016-07-12 22:56:07,628 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PlanApply">New Coverage</Data>
+
+2016-07-12 22:56:07,628 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PlanApply_itmtxt">New Coverage</Data>
+
+2016-07-12 22:56:07,628 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PlanApply_itmval">New Coverage</Data>
+
+2016-07-12 22:56:07,629 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_PPSP">Yes</Data>
+
+2016-07-12 22:56:07,629 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_SP_EP">20 Days</Data>
+
+2016-07-12 22:56:07,629 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_SP_EP_itmtxt">20 Days</Data>
+
+2016-07-12 22:56:07,629 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_SP_EP_itmval">20 Days</Data>
+
+2016-07-12 22:56:07,629 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_SP_MaxBene">50.00</Data>
+
+2016-07-12 22:56:07,629 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_SP_MaxBene_itmtxt">$50.00</Data>
+
+2016-07-12 22:56:07,629 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_SP_MaxBene_itmval">50.00</Data>
+
+2016-07-12 22:56:07,630 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_SP_MOMB">180 X Daily Benefit (approx. 6 months coverage)</Data>
+
+2016-07-12 22:56:07,630 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_SP_MOMB_itmtxt">180 X Daily Benefit (approx. 6 months coverage)</Data>
+
+2016-07-12 22:56:07,630 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_SP_MOMB_itmval">180 X Daily Benefit (approx. 6 months coverage)</Data>
+
+2016-07-12 22:56:07,630 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfo_SpecIssue">Yes</Data>
+
+2016-07-12 22:56:07,630 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfoRiderCV">NO</Data>
+
+2016-07-12 22:56:07,630 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PlanInfoRiderRP">YES</Data>
+
+2016-07-12 22:56:07,630 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PremiumAllocationFundIndex__1">1</Data>
+
+2016-07-12 22:56:07,631 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PremiumAllocationFundIndex__2">2</Data>
+
+2016-07-12 22:56:07,631 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PremiumAllocationFundIndex__3">3</Data>
+
+2016-07-12 22:56:07,631 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PremiumAllocationFundIndex_2">100</Data>
+
+2016-07-12 22:56:07,631 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PremiumAllocationFundPct_1">4.7</Data>
+
+2016-07-12 22:56:07,631 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PremiumAllocationFundPct_2">6.81</Data>
+
+2016-07-12 22:56:07,631 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PremiumAllocationFundPct_3">5.64</Data>
+
+2016-07-12 22:56:07,631 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="PremiumToAgeYear">Continuous</Data>
+
+2016-07-12 22:56:07,631 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerAddressCity">Exton</Data>
+
+2016-07-12 22:56:07,632 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerAddressLine1">Address Line 1</Data>
+
+2016-07-12 22:56:07,632 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerAddressLine2">Address 2</Data>
+
+2016-07-12 22:56:07,632 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerAddressState">CO</Data>
+
+2016-07-12 22:56:07,632 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerAddressStateTC">CO</Data>
+
+2016-07-12 22:56:07,632 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerAddressZipCode">111111111</Data>
+
+2016-07-12 22:56:07,632 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerAddressZipCode_fmt">11111-1111</Data>
+
+2016-07-12 22:56:07,632 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerAgencyCode">U0970</Data>
+
+2016-07-12 22:56:07,632 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerCertification">Designations</Data>
+
+2016-07-12 22:56:07,633 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerCityStateZip">Exton, CO 11111-1111</Data>
+
+2016-07-12 22:56:07,633 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerEmail">egallegos@totalperform.com</Data>
+
+2016-07-12 22:56:07,633 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerFAX1">6564546546</Data>
+
+2016-07-12 22:56:07,633 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerFAX1_fmt">(656) 454-6546</Data>
+
+2016-07-12 22:56:07,633 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerFAX2">4214132131</Data>
+
+2016-07-12 22:56:07,633 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerFAX2_fmt">(421) 413-2131</Data>
+
+2016-07-12 22:56:07,633 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerFirstName">TEST</Data>
+
+2016-07-12 22:56:07,634 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerFullName">TEST BANKERS</Data>
+
+2016-07-12 22:56:07,634 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerLastName">BANKERS</Data>
+
+2016-07-12 22:56:07,634 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerLicenseNum">U0970</Data>
+
+2016-07-12 22:56:07,634 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerOrganization">Agency Name</Data>
+
+2016-07-12 22:56:07,634 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerPhone1">4444444444</Data>
+
+2016-07-12 22:56:07,634 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerPhone1_fmt">(444) 444-4444</Data>
+
+2016-07-12 22:56:07,634 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerPhone2">4564564654</Data>
+
+2016-07-12 22:56:07,634 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerPhone2_fmt">(456) 456-4654</Data>
+
+2016-07-12 22:56:07,635 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerRegistration">Broker Dealer</Data>
+
+2016-07-12 22:56:07,635 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProducerRegistrationNum">U0970</Data>
+
+2016-07-12 22:56:07,635 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Product">6048</Data>
+
+2016-07-12 22:56:07,635 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Product_itmtxt">Short Term Care</Data>
+
+2016-07-12 22:56:07,635 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Product_itmval">6048</Data>
+
+2016-07-12 22:56:07,635 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductCode">N320</Data>
+
+2016-07-12 22:56:07,635 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductCompanyID">IPIPELINE</Data>
+
+2016-07-12 22:56:07,636 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductCompanyLogoUrl">..//Custom/IPIPELINE/IPipeline/5880/companylogo.png</Data>
+
+2016-07-12 22:56:07,636 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductiGoScreenFileName">Bankers_STC.csz</Data>
+
+2016-07-12 22:56:07,636 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductIllustrationRequired">False</Data>
+
+2016-07-12 22:56:07,636 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductOrganizationID">IPIPELINE</Data>
+
+2016-07-12 22:56:07,636 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductSaveAgeMaximumAge">999</Data>
+
+2016-07-12 22:56:07,636 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductSaveAgeMinimumAge">0</Data>
+
+2016-07-12 22:56:07,637 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductSaveDataPeriod">0</Data>
+
+2016-07-12 22:56:07,637 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductSubCompanyID">5880</Data>
+
+2016-07-12 22:56:07,637 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductType">137</Data>
+
+2016-07-12 22:56:07,637 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductType_itmtxt">Short Term Care</Data>
+
+2016-07-12 22:56:07,637 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductType_itmval">137</Data>
+
+2016-07-12 22:56:07,637 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductTypeDropDownCarrierIDValue">886</Data>
+
+2016-07-12 22:56:07,637 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductTypeDropDownValue">137,886</Data>
+
+2016-07-12 22:56:07,638 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ProductUseSaveAge">False</Data>
+
+2016-07-12 22:56:07,638 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_Existing">No</Data>
+
+2016-07-12 22:56:07,638 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_KY_CIPI">NO</Data>
+
+2016-07-12 22:56:07,638 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_KY_CISP">NO</Data>
+
+2016-07-12 22:56:07,639 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_KY_HEPI">NO</Data>
+
+2016-07-12 22:56:07,639 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_KY_HESP">NO</Data>
+
+2016-07-12 22:56:07,639 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_KY_MEPI">NO</Data>
+
+2016-07-12 22:56:07,639 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_KY_MESP">NO</Data>
+
+2016-07-12 22:56:07,639 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_KY_MSPI">NO</Data>
+
+2016-07-12 22:56:07,639 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_KY_MSSP">NO</Data>
+
+2016-07-12 22:56:07,639 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_KY_OtherPI">NO</Data>
+
+2016-07-12 22:56:07,640 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REC_KY_OtherSP">NO</Data>
+
+2016-07-12 22:56:07,640 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REM_MAIN_01_InitialPrem">Initial Premium Amount Received = $0.00</Data>
+
+2016-07-12 22:56:07,640 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REM_MAIN_02_ModeType">Modal Premium = Monthly-PPSP</Data>
+
+2016-07-12 22:56:07,640 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REPLACEFourStates">CT, DC, KS, WY, WA, TN, SC, PA, IL, ID, OK, NV, MO, GA, MI, CA</Data>
+
+2016-07-12 22:56:07,640 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="REPLACESpecialStates">FL, MD, MI, MN, PA, TN, IL, NY, GA, ID, IN, KS, MA, MO, NV, OK, SD, WY, CT, DC, ND, DE</Data>
+
+2016-07-12 22:56:07,640 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ReplaceState">CO</Data>
+
+2016-07-12 22:56:07,640 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ReproOnInd">No</Data>
+
+2016-07-12 22:56:07,640 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ReproposalState">CO</Data>
+
+2016-07-12 22:56:07,641 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="RequireMe">X</Data>
+
+2016-07-12 22:56:07,641 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Role1Needed">X</Data>
+
+2016-07-12 22:56:07,641 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Role2Needed">X</Data>
+
+2016-07-12 22:56:07,641 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Role98Needed">X</Data>
+
+2016-07-12 22:56:07,641 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ROPInd">NO</Data>
+
+2016-07-12 22:56:07,641 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ShowAdvancedSalesTab">False</Data>
+
+2016-07-12 22:56:07,641 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ShowiGoTab">True</Data>
+
+2016-07-12 22:56:07,642 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ShowIllustrationsTab">False</Data>
+
+2016-07-12 22:56:07,642 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="ShowNeedsTab">False</Data>
+
+2016-07-12 22:56:07,642 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_Age">60</Data>
+
+2016-07-12 22:56:07,642 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_DOB">03/25/1955</Data>
+
+2016-07-12 22:56:07,642 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_DOB_fmt">03/25/1955</Data>
+
+2016-07-12 22:56:07,642 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_FirstName">Spouse</Data>
+
+2016-07-12 22:56:07,642 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_FullName">Spouse X Name </Data>
+
+2016-07-12 22:56:07,642 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_Gender">Female</Data>
+
+2016-07-12 22:56:07,643 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_HeightFt">3</Data>
+
+2016-07-12 22:56:07,643 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_HeightFt_itmtxt">3</Data>
+
+2016-07-12 22:56:07,643 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_HeightFt_itmval">3</Data>
+
+2016-07-12 22:56:07,643 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_HeightIn">3</Data>
+
+2016-07-12 22:56:07,643 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_HeightIn_itmtxt">3</Data>
+
+2016-07-12 22:56:07,643 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_HeightIn_itmval">3</Data>
+
+2016-07-12 22:56:07,643 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_LastName">Name</Data>
+
+2016-07-12 22:56:07,644 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_MiddleName">X</Data>
+
+2016-07-12 22:56:07,644 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_MStatus">Married</Data>
+
+2016-07-12 22:56:07,644 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_MStatus_itmtxt">Married</Data>
+
+2016-07-12 22:56:07,644 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_MStatus_itmval">Married</Data>
+
+2016-07-12 22:56:07,644 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_PIIS_Saved">Yes</Data>
+
+2016-07-12 22:56:07,644 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_SSN">811111111</Data>
+
+2016-07-12 22:56:07,645 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_SSN_fmt">811-11-1111</Data>
+
+2016-07-12 22:56:07,645 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_SSN_msk">###-##-####</Data>
+
+2016-07-12 22:56:07,645 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_WeightLbs">333</Data>
+
+2016-07-12 22:56:07,645 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SP_WeightLbs_fmt">333</Data>
+
+2016-07-12 22:56:07,645 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SpouseAnnualPremium">222.22</Data>
+
+2016-07-12 22:56:07,646 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SpouseAnnualPremium_fmt">$222.22</Data>
+
+2016-07-12 22:56:07,646 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SpouseOptionPrem">444.44</Data>
+
+2016-07-12 22:56:07,646 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SpouseOptionPrem_fmt">$444.44</Data>
+
+2016-07-12 22:56:07,646 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SpouseRiderPrem">666.66</Data>
+
+2016-07-12 22:56:07,646 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SpouseRiderPrem_fmt">$666.66</Data>
+
+2016-07-12 22:56:07,647 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SpouseTotalAnnualPrem">1333.32</Data>
+
+2016-07-12 22:56:07,647 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SpouseTotalAnnualPrem_fmt">$1,333.32</Data>
+
+2016-07-12 22:56:07,647 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SSN__70">1111</Data>
+
+2016-07-12 22:56:07,647 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="State">CO</Data>
+
+2016-07-12 22:56:07,647 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="State_itmtxt">Colorado</Data>
+
+2016-07-12 22:56:07,647 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="State_itmval">CO</Data>
+
+2016-07-12 22:56:07,648 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="strXPath">//Nodes/Node</Data>
+
+2016-07-12 22:56:07,648 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SubmissionApprovalRequired">True</Data>
+
+2016-07-12 22:56:07,648 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="SubmitPremium">0</Data>
+
+2016-07-12 22:56:07,648 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TaxQualified">NO</Data>
+
+2016-07-12 22:56:07,648 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TaxStatus">Non-Qualified</Data>
+
+2016-07-12 22:56:07,648 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="Temp">Monthly-PPSP</Data>
+
+2016-07-12 22:56:07,648 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="tempPIIS">Yes</Data>
+
+2016-07-12 22:56:07,649 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TotalAnnualPaymentAmt">2333.31</Data>
+
+2016-07-12 22:56:07,649 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPCity">Exton</Data>
+
+2016-07-12 22:56:07,649 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPDesignee">Yes</Data>
+
+2016-07-12 22:56:07,649 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPFirstName">Contact</Data>
+
+2016-07-12 22:56:07,649 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPFullName">Contact X Name Sr</Data>
+
+2016-07-12 22:56:07,649 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPHomePhone">9876543456</Data>
+
+2016-07-12 22:56:07,649 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPHomePhone_fmt">(987)-654-3456</Data>
+
+2016-07-12 22:56:07,650 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPHomePhone_msk">(###)-###-####</Data>
+
+2016-07-12 22:56:07,650 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPLastName">Name</Data>
+
+2016-07-12 22:56:07,650 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPMiddleName">X</Data>
+
+2016-07-12 22:56:07,650 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPState">CO</Data>
+
+2016-07-12 22:56:07,650 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPState_itmtxt">COLORADO</Data>
+
+2016-07-12 22:56:07,651 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPState_itmval">CO</Data>
+
+2016-07-12 22:56:07,651 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPStreetAddress">123 Contact St</Data>
+
+2016-07-12 22:56:07,651 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPSuffix">Sr</Data>
+
+2016-07-12 22:56:07,651 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPSuffix_itmtxt">Sr.</Data>
+
+2016-07-12 22:56:07,651 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPSuffix_itmval">Sr</Data>
+
+2016-07-12 22:56:07,651 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPZip">11111</Data>
+
+2016-07-12 22:56:07,651 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPZip_fmt">11111</Data>
+
+2016-07-12 22:56:07,651 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="TPZip_msk">#####</Data>
+
+2016-07-12 22:56:07,652 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="UpdatedDateTime">2015-03-25 03:29:26</Data>
+
+2016-07-12 22:56:07,652 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="UsingiPipelineUI">YES</Data>
+
+2016-07-12 22:56:07,652 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="WPInd">NO</Data>
+
+2016-07-12 22:56:07,652 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="WritingAgent">SELF</Data>
+
+2016-07-12 22:56:07,652 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="WritingAgentID">SELF</Data>
+
+2016-07-12 22:56:07,652 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="WritingAgentName">TEST BANKERS</Data>
+
+2016-07-12 22:56:07,652 - testscript.igo.igo_xml - DEBUG - createXML -> XML:         <Data Name="cossIsClientShared" C="U">NO</Data>
+
+2016-07-12 22:56:07,652 - testscript.igo.igo_xml - DEBUG - createXML -> XML:       </EntityData>
+
+2016-07-12 22:56:07,652 - testscript.igo.igo_xml - DEBUG - createXML -> XML:     </Entity>
+
+2016-07-12 22:56:07,652 - testscript.igo.igo_xml - DEBUG - createXML -> XML:   </Entities>
+
+2016-07-12 22:56:07,653 - testscript.igo.igo_xml - DEBUG - createXML -> XML: </CossDataExtract>
+2016-07-12 22:56:07,653 - testscript.igo.igo_xml - DEBUG - createXML -> Files were closed successfully.
+2016-07-12 22:56:07,653 - testscript.igo.igo_xml - INFO - createXML -> CREATE XML process finished
+2016-07-12 22:56:07,653 - testscript.igo.igo_common - DEBUG - importCase -> "file_full_path" to be imported: /Users/efgallegos/Dropbox/Automation/Bankers/STC/Output/CO_GR-N320.xml
+2016-07-12 22:56:07,659 - testscript.igo.igo_common - DEBUG - importCase -> Current window handler: {412d73ac-08fc-b744-b729-86ce6af59cd6}
+2016-07-12 22:56:07,659 - testscript.igo.igo_common - DEBUG - importCase -> Call to caseAction('','Import',verbose)
+2016-07-12 22:56:07,659 - testscript.igo.igo_common - INFO - caseAction -> "caseAction" procedure stated...
+2016-07-12 22:56:07,659 - testscript.igo.igo_common - DEBUG - caseAction -> Parameters:
+2016-07-12 22:56:07,659 - testscript.igo.igo_common - DEBUG - caseAction -> 	"case_name": 
+2016-07-12 22:56:07,659 - testscript.igo.igo_common - DEBUG - caseAction -> 	"action": Import
+2016-07-12 22:56:07,659 - testscript.igo.igo_common - DEBUG - caseAction -> Validating parameters.
+2016-07-12 22:56:07,659 - testscript.igo.igo_common - DEBUG - caseAction -> Case Action value "Import" is valid
+2016-07-12 22:56:07,660 - testscript.igo.igo_common - DEBUG - caseAction -> Selected "Import" in the "Case Action" dropdown
+2016-07-12 22:57:05,410 - testscript.igo.igo_common - DEBUG - caseAction -> "Case Action" option: Import selected
+2016-07-12 22:57:05,427 - testscript.igo.igo_common - DEBUG - importCase -> Switching to window: {412d73ac-08fc-b744-b729-86ce6af59cd6}
+2016-07-12 22:57:05,642 - testscript.igo.igo_common - DEBUG - importCase -> Windows title: My Cases - iPipeline Velocity Platform 9.0.6255.16193-TOMBQD5-IPIPELINE/IPIPELINE/5752
+2016-07-12 22:57:05,663 - testscript.igo.igo_common - DEBUG - importCase -> Switching to window: {79e22cbf-6e39-8f4f-a3c7-7609f3912be3}
+2016-07-12 22:57:06,288 - testscript.igo.igo_common - DEBUG - importCase -> Windows title: Import Case
+2016-07-12 22:57:06,295 - testscript.igo.igo_common - DEBUG - importCase -> Setting file path in Pop up.
+2016-07-12 22:57:06,311 - testscript.igo.igo_common - DEBUG - importCase -> Submiting Import Case in Pop up.
+2016-07-12 22:57:08,166 - testscript.igo.igo_common - DEBUG - importCase -> Switching back to main window.
+2016-07-12 22:57:08,166 - testscript.igo.igo_common - DEBUG - importCase -> Current Windows: {412d73ac-08fc-b744-b729-86ce6af59cd6}
+2016-07-12 22:57:08,166 - testscript.igo.igo_common - DEBUG - importCase -> Import pop up closed.
+2016-07-12 22:57:08,166 - testscript.igo.igo_common - DEBUG - importCase -> Checking the case in "My View Cases".
+2016-07-12 22:57:08,166 - testscript.igo.igo_common - DEBUG - importCase -> Searching for imported application case: STC, CO_GR-N320
+2016-07-12 22:57:37,701 - testscript.igo.igo_common - INFO - importCase -> "Import Case" finished successfully
+2016-07-12 22:57:37,701 - testscript - INFO - batch_import -> Call to logOut(driver) procedure
+2016-07-12 22:57:37,701 - testscript.igo.igo_common - INFO - logOut -> "logOut" procedure starts...
+2016-07-12 22:57:37,915 - testscript.igo.igo_common - DEBUG - logOut -> User options displayed
+2016-07-12 22:57:37,985 - testscript.igo.igo_common - DEBUG - logOut -> Clicking the "Sing Out" button
+2016-07-12 22:57:38,249 - testscript.igo.igo_common - DEBUG - logOut -> Inline Pop up was displayed.
+2016-07-12 22:57:38,254 - testscript.igo.igo_common - DEBUG - logOut -> Inline pop up title: Sign Out?
+2016-07-12 22:57:38,318 - testscript.igo.igo_common - INFO - logOut -> Sign Out completed
+2016-07-12 22:57:38,320 - testscript - INFO - batch_import -> End time:2016-07-12 22:57:38.320589
+2016-07-12 22:57:38,320 - testscript - INFO - batch_import -> Execution time:0:02:17.297234
+2016-07-12 22:57:38,320 - testscript - INFO - batch_import -> driver quit()
+2016-07-12 22:57:38,455 - testscript - INFO - batch_import -> ################################################################################

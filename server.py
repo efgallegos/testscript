@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request
 from flask import make_response
 from config_entries import config_values
-from utilities.browser import getWebDriver, BrowserException
-from igo.igo_common import *
+#from utilities.browser import getWebDriver, BrowserException
+from batch_import import batch_import
 
 def create_app():
     app = Flask(__name__)
@@ -19,6 +19,7 @@ def create_app():
     def list_api():
         result = {
             "igo/create":"Api used to create new cases with pre-filled data.",
+            "igo/lock":"Api used to lock a existing case with pre-filled data."
         }
         return make_response(jsonify(result), 200)
 
@@ -71,8 +72,8 @@ def create_app():
     def create_case(name, product, state, plan):
         b = request.args.get('browser', 'Firefox')
         e = request.args.get('env', 'qd3')
-        u = request.args.get('usr', 'test5752')
-        p = request.args.get('pass', 'test5752')
+        u = request.args.get('usr', 'tombqd5')
+        p = request.args.get('pass', 'password1')
 
         try:
             result = {}
@@ -81,28 +82,29 @@ def create_app():
             result['state']  = state
             result['plan'] = plan
             ##################################################
-            #####    Call to iGo common import case      #####
+            #####    Call to iGo batch import case       #####
             ##################################################
-            driver = getWebDriver(b)
-            logIn(driver, e, u, p)
-            viewMyCases(driver)
-            importCase(driver, product, state, plan)
-            logOut(driver)
+            batch_import([b,name,e,u,p,product,state,plan])
+            #driver = getWebDriver(b)
+            #logIn(driver, e, u, p)
+            #viewMyCases(driver)
+            #importCase(driver, product, state, plan)
+            #logOut(driver)
             ##################################################
             result['status'] = "Case was created successfully."
             return make_response(jsonify(result), 200)
 
-        except (BrowserException, Exception) as e:
+        except Exception as e:
             result = {}
             result['browser'] = name
             result['product'] = product
             result['state']  = state
             result['plan'] = plan
             result['status'] = "Case creation failed."
+            result['error msg'] = str(e)
             return make_response(jsonify(result), 404)
-        finally:
-            driver.quit()
-
+        #finally:
+        #    driver.quit()
     return app
 
 app = create_app()
