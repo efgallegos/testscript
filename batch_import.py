@@ -63,7 +63,8 @@ def batch_import(arguments):
     # Validate the number of parameters
     if len(arguments) != 8:
         # logger.debuging exception for LOG
-        logger.error('batch_import -> Error: Expecting 8 argmunets.')
+        logger.info("batch_import -> --------------------------------------------------------------------------------")
+        logger.error('batch_import -> Error: Expecting 8 argmunets. Found: ' + str(len(arguments)))
         # Exiting batch with status failed.
         sys.exit(1)
 
@@ -75,7 +76,7 @@ def batch_import(arguments):
     logger.info("batch_import -> \tProduct: " + arguments[5])
     logger.info("batch_import -> \tState: " + arguments[6])
     logger.info("batch_import -> \tPlan: " + arguments[7])
-    logger.info("batch_lock_case -> --------------------------------------------------------------------------------")
+    logger.info("batch_import -> --------------------------------------------------------------------------------")
 
     # Validate the browser parameter to match on of the valid browser: IE, Frifox, Chrome
     if arguments[0] in config_browsers:

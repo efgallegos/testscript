@@ -395,6 +395,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "batch_import.py",
+			"settings":
+			{
+				"buffer_size": 8783,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -492,6 +500,7 @@
 	],
 	"file_history":
 	[
+		"/C/zz_EFG/GitHub/testscript/batch_acord_download.py",
 		"/C/zz_EFG/GitHub/testscript/igo/igo_common.py",
 		"/C/zz_EFG/GitHub/testscript/batch_import.py",
 		"/C/zz_EFG/GitHub/testscript/batch_lock_case.py",
@@ -618,8 +627,7 @@
 		"/C/dev/Selenium/spwl_config_entries.py",
 		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
 		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Plain text.sublime-settings",
-		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings"
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap"
 	],
 	"find":
 	{
@@ -773,8 +781,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "batch_import.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 8783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 615.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
