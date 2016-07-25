@@ -36,4 +36,5 @@ def load():
             new_entry = line.split(',')
             config_values[new_entry[0]] = new_entry[1]
 
+
 load()

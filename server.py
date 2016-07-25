@@ -85,12 +85,6 @@ def create_app():
             #####    Call to iGo batch import case       #####
             ##################################################
             batch_import([b,name,e,u,p,product,state,plan])
-            #driver = getWebDriver(b)
-            #logIn(driver, e, u, p)
-            #viewMyCases(driver)
-            #importCase(driver, product, state, plan)
-            #logOut(driver)
-            ##################################################
             result['status'] = "Case was created successfully."
             return make_response(jsonify(result), 200)
 

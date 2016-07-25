@@ -1,20 +1,32 @@
 """mapping fuctions: excel to dic"""
 
-from pandas import *
+from openpyxl import load_workbook
 import pprint
-from config_entries import config_values
+wb = load_workbook(filename = '/Users/efgallegos/Dropbox/Automation/Bankers/bankers_product_matrix.xlsx')
+sheet_annuity = wb['annuity']
 
+annuity_matrix = {}
 
-def map_brd(product):
+row = 6
+while True:
+    if sheet_annuity['C'+str(row)].value == None:
+        #print (sheet_annuity['C'+str(row)].value)
+        break
+    else:
+        col = 'D'
+        while True:
+            if sheet_annuity[col + '5'].value == None:
+                #print(sheet_annuity[col + '5'].value)
+                break
+            else:
+                if sheet_annuity[col + str(row)].value == 'x':
+                    if sheet_annuity['C' + str(row)].value in annuity_matrix:
+                        annuity_matrix[sheet_annuity['C' + str(row)].value].append(sheet_annuity[col + '5'].value)
+                    else:
+                        annuity_matrix[sheet_annuity['C' + str(row)].value] = [sheet_annuity[col + '5'].value]
+                col = chr(ord(col) + 1) 
+    row += 1
 
-    input_file_path = config_values['base_path'] + 'brd.xlsm'
+pp = pprint.PrettyPrinter(indent=4)
+pp.pprint(annuity_matrix)
 
-    print(input_file_path)
-
-    df = read_excel(input_file_path, 1, index_col=0, na_values=['NA'])
-
-    pp = pprint.PrettyPrinter(indent=4)
-    pp.pprint(df.to_dict())
-
-
-map_brd('fuwl')

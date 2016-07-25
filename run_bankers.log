@@ -1,0 +1,20 @@
+2016-07-24 23:04:07,292 - testscript - INFO - batch_import -> ################################################################################
+2016-07-24 23:04:07,292 - testscript - INFO - batch_import -> Start time:2016-07-24 23:04:07.292731
+2016-07-24 23:04:07,293 - testscript - INFO - batch_import -> Parameters list:
+2016-07-24 23:04:07,293 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-07-24 23:04:07,293 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-07-24 23:04:07,293 - testscript - ERROR - batch_import -> Error: Expecting 8 argmunets. Found: 7
+2016-07-24 23:05:06,567 - testscript - INFO - batch_import -> ################################################################################
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> Start time:2016-07-24 23:05:06.567944
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> Parameters list:
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> 	Browser: IE
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> 	Pass: password1
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> 	Product: annuity
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> 	State: AL
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> 	Plan: LA07G_GLIA_NG
+2016-07-24 23:05:06,568 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-07-24 23:05:06,569 - testscript - ERROR - batch_import -> Invalid Plan for Product - Annuity: LA07G_GLIA_NG

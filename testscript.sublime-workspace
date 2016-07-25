@@ -396,18 +396,23 @@
 	"buffers":
 	[
 		{
-			"file": "batch_import.py",
+			"file": "test.py",
 			"settings":
 			{
-				"buffer_size": 8783,
-				"line_ending": "Windows"
+				"buffer_size": 1621,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -491,16 +496,13 @@
 	},
 	"expanded_folders":
 	[
-		"/C/zz_EFG/GitHub/testscript",
-		"/C/zz_EFG/GitHub/testscript/carriers",
-		"/C/zz_EFG/GitHub/testscript/executables",
-		"/C/zz_EFG/GitHub/testscript/igo",
-		"/C/zz_EFG/GitHub/testscript/tests",
-		"/C/zz_EFG/GitHub/testscript/utilities"
+		"/Users/efgallegos/GitHub/testscript"
 	],
 	"file_history":
 	[
-		"/C/zz_EFG/GitHub/testscript/batch_acord_download.py",
+		"/Users/efgallegos/GitHub/testscript/batch_import.py",
+		"/Users/efgallegos/GitHub/testscript/carriers/bankers/annuities/config_entries_annuity.py",
+		"/Users/efgallegos/GitHub/testscript/server.py",
 		"/C/zz_EFG/GitHub/testscript/igo/igo_common.py",
 		"/C/zz_EFG/GitHub/testscript/batch_import.py",
 		"/C/zz_EFG/GitHub/testscript/batch_lock_case.py",
@@ -625,9 +627,7 @@
 		"/C/dev/Selenium/config_entries_spwl_20141216.py",
 		"/C/dev/Selenium/igo_xml_20141216.py",
 		"/C/dev/Selenium/spwl_config_entries.py",
-		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
-		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Plain text.sublime-settings",
-		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap"
+		"/C/Users/egalleg2/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings"
 	],
 	"find":
 	{
@@ -649,6 +649,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			",",
 			"importCase",
 			"import",
 			"logout",
@@ -766,6 +767,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"','",
 			"browser",
 			"plan",
 			"product",
@@ -786,29 +788,29 @@
 			[
 				{
 					"buffer": 0,
-					"file": "batch_import.py",
-					"semi_transient": true,
+					"file": "test.py",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8783,
+						"buffer_size": 1621,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1327,
+								1327
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
+							"syntax": "Packages/Python/Python.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 615.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -856,15 +858,17 @@
 	{
 		"height": 0.0
 	},
+	"pinned_build_system": "",
 	"project": "testscript.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 64.0
 	},
 	"save_all_on_build": false,
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -885,6 +889,7 @@
 	"select_project":
 	{
 		"height": 500.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -893,6 +898,7 @@
 	"select_symbol":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
