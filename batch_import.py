@@ -6,7 +6,7 @@ from utilities.browser import config_browsers, getWebDriver
 from igo.igo_common import logIn, viewMyCases, importCase, logOut
 from config_entries import config_values
 
-LOG_FILENAME = 'run_bankers.log'
+LOG_FILENAME = 'batch_import_bankers.log'
 
 # create logger with __name__
 logger = logging.getLogger('testscript')
