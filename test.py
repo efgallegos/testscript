@@ -32,7 +32,7 @@ try:
 
         try:
             viewMyCases(driver)
-            importCase(driver, 'bankers','annuity', state, 'LA07G_GLIA_Q', verbose=True)
+            # importCase(driver, 'bankers','annuity', state, 'LA07G_GLIA_Q', verbose=True)
             logger.debug("testscript -> 'State: " + state + ", plan: LA07G_GLIA_Q --> PASSED")
         except Exception as e:
             logger.error("testscript -> 'State: " + state + ", plan: LA07G_GLIA_Q --> FAILED")

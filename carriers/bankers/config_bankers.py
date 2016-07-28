@@ -6,8 +6,6 @@ from carriers.bankers.stc.config_entries_stc import stc_config
 from carriers.bankers.medsupp.config_entries_medsupp import medsupp_config
 from carriers.bankers.srlife.config_entries_srlife import srlife_config
 
-def load_product_matrix():
-    pass
 
 bankers_config = {
     'carrier_path': 'Bankers',

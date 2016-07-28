@@ -85,7 +85,7 @@ def load_prod_matrix(arguments):
                         #print(sheet[col + '5'].value)
                         break
                     else:
-                        if sheet[col + str(row)].value == 'x':
+                        if sheet[col + str(row)].value == 'x' or sheet[col + str(row)].value == 'X':
                             if sheet['C' + str(row)].value in product_dict:
                                 product_dict[sheet['C' + str(row)].value].append(sheet[col + '5'].value)
                             else:
