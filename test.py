@@ -22,20 +22,29 @@ try:
     driver = getWebDriver('IE', verbose=True)
     logIn(driver, 'bankers', 'qd3', 'tombqd5', 'password1', verbose=True)
     
-    states = ['OH','TX']
+    states = ['NJ']
     #'CO','DE','DC','FL','GA','HI','ID','IL','KS','KY','LA','ME','MD','MA','MN','MS','MO','MT','NE','NM','RI','SC','SD','TN','UT','VT','VA','WV','WI','WY']
     # 'NV','NH','NJ','ND', 'AR'
     logger.debug('testscript -> start process')
-    print('list of states:' + str(states))
+    logger.debug('testscript -> list of states:' + str(states))
     
     for state in states:
 
         try:
             viewMyCases(driver)
-            # importCase(driver, 'bankers','annuity', state, 'LA07G_GLIA_Q', verbose=True)
+            importCase(driver, 'bankers','annuity', state, 'LA07G_GLIA_Q', verbose=True)
             logger.debug("testscript -> 'State: " + state + ", plan: LA07G_GLIA_Q --> PASSED")
         except Exception as e:
             logger.error("testscript -> 'State: " + state + ", plan: LA07G_GLIA_Q --> FAILED")
+            logger.error("testscript -> Error mesg: " + str(e))
+        try:
+            viewMyCases(driver)
+            importCase(driver, 'bankers','annuity', state, 'LA07G_GLIA_NQ', verbose=True)
+            logger.debug("testscript -> 'State: " + state + ", plan: LA07G_GLIA_NQ --> PASSED")
+        except Exception as e:
+            logger.error("testscript -> 'State: " + state + ", plan: LA07G_GLIA_NQ --> FAILED")
+            logger.error("testscript -> Error mesg: " + str(e))
+
         # try:
         #     viewMyCases(driver)
         #     case_name = 'Annuity, ' + state + '_LA07G_GLIA_Q'

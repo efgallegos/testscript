@@ -528,23 +528,26 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
     if carrier not in config_values['carriers']:
         msg = 'importCase Failed - Invalid Carrier: ' + carrier
         logger.error('importCase -> ' + msg)
-        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+        raise Exception #IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
     logger.debug('Carrier value "' + carrier + '" is valid')
     if product not in config_values[carrier]['products']:
         msg = 'importCase Failed - Invalid product: ' + product
         logger.error('importCase -> ' + msg)
-        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+        raise Exception #raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
     logger.debug('Product value "' + product + '" is valid')
+
+    logger.debug('importCase -> Carrier product plans: ' + str(config_values[carrier][product]['plans']))
     if plan not in config_values[carrier][product]['plans']:
         msg = 'importCase Failed - Invalid plan: ' + plan
         logger.error('importCase -> ' + msg)
-        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+        raise Exception #raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
     logger.debug('Plan value "' + plan + '" is valid')
     state = state.upper()
+    logger.debug('importCase -> Carrier product state: ' + str(config_values[carrier][product]['states']))
     if state not in config_values[carrier][product]['states']:
         msg = 'importCase Failed - Invalid State "' + state + '") for product: "' + product + '".'
         logger.error('importCase -> ' + msg)
-        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+        raise Exception #raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
     logger.debug('importCase -> State value "' + state + '" is valid')
 
     try:
