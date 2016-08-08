@@ -28,23 +28,23 @@ logger.addHandler(fh)
 annuity_xmls_entry = {
         'ADDR_State__[0-9]{1,1}[0-5]{0,1}">': "'>' + state + '<'",
         'ADDR_State__[0-9]_itmval">': "'>' + state + '<'",
-        'ADDR_State__[0-9]_itmtxt">': "'>' + config_values[carrier][product]['states'][state].upper() + '<'",
+        'ADDR_State__[0-9]_itmtxt">': "'>' + config_values[carrier][product]['states'][state]['name'].upper() + '<'",
         'FullAddress">': "'>123 Main St Exton, ' + state + ' 11111-1111<'",
         'PIFullName">|APPCNT_FullName">': "'>' + state + '_' + plan + ' ' + config_values[carrier][product]['name'] + '<'",
         'PIFirstName">': "'>' + state + '_' + plan + '<'",
         'PILastName">': "'>' + config_values[carrier][product]['name'] + '<'",
         '"State">|"State_itmval">': "'>' + state + '<'",
-        '"State_itmtxt">': "'>' + config_values[carrier][product]['states'][state] + '<'",
+        '"State_itmtxt">': "'>' + config_values[carrier][product]['states'][state]['name'] + '<'",
         '"PIJurisdiction">|"PIJurisdiction_itmval">': "'>' + state + '<'",
-        '"PIJurisdiction_itmtxt">':"'>' + config_values[carrier][product]['states'][state] + '<'",
+        '"PIJurisdiction_itmtxt">':"'>' + config_values[carrier][product]['states'][state]['name'] + '<'",
         'HEY_IT_ALSO_WORKED">': "'>' + state + '<'"
         }
 
 cb_xmls_entry = {
     'ADDR_State">|ADDR_State_itmval|EFT_State">|EFT_State_itmval|PIJurisdiction">|PIJurisdiction_itmval': "'>' + state + '<'",
     'ProducerAddressState">|ProducerAddressStateTC|State">|State_itmval">|TPState">|TPState_itmval': "'>' + state + '<'",
-    'ADDR_State_itmtxt|EFT_State_itmtxt|TPState_itmtxt': "'>' + config_values[carrier][product]['states'][state].upper() + '<'",
-    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state] + '<'",
+    'ADDR_State_itmtxt|EFT_State_itmtxt|TPState_itmtxt': "'>' + config_values[carrier][product]['states'][state]['name'].upper() + '<'",
+    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state]['name'] + '<'",
     'PIFullAddress': "'>123 Main St Exton, ' + state + ' 11111<'",
     'AGENT_FullAddress': "'>123 Agent St Exton, ' + state + ' 11111<'",
     'AGENT2_FullAddress':"'>123 Second St Exton, ' + state + ' 11111<'",
@@ -65,7 +65,7 @@ fuwl_xmls_entry = {
      'OWN1_ADDR_State|OWN2_ADDR_State|PAYOR_ADDR_State|PB_ADDR_State|pdfBENE_ADDRState|PIBILL_ADDR_State': "'>' + state + '<'",
      'PIBirth_State2|PIEMP_ADDR_State|CopyPIADDR_State|StateOrCountry2': "'>' + state + '<'",
      '"State"|OI1_myState|PIAppState|PIJurisdiction">|PIJurisdiction_itmval': "'>' + state + '<'",
-     'PIJurisdiction_itmtxt|"State_itmtxt">': "'>' + config_values[carrier][product]['states'][state] + '<'",
+     'PIJurisdiction_itmtxt|"State_itmtxt">': "'>' + config_values[carrier][product]['states'][state]['name'] + '<'",
      'PICityStateZip': "'>Exton, ' + state + ' 11111-1111<'",
      'APPCNT_FullAddress|OWN1_FullAddress|OWN2_FullAddress|PIADDR_FullAddress|PIFullAddress': "'>123 Main St Exton, ' + state + ' 11111-1111<'",
      'PB_FullAddress|CB_FullAddress': "'>123 Bene St Exton, ' + state + ' 111111111<'",
@@ -81,8 +81,8 @@ medsupp_xmls_entry = {
     '"OTHINS_State__[0-9]">': "'>' + state + '<'",
     '"EFT_States"|"EFT_States_itmval"|"PIADDR_State"|"PIADDR_State_itmval"|"PIJurisdiction"|"PIJurisdiction_itmval"|"State"|"State_itmval"': "'>' + state + '<'",
     '"AGENT_ADDR_State"|"AGENT_ADDR_State_itmval"|"pdfBillingState"|"PIBILLING_ADDR_State"|"PIBILLING_ADDR_State_itmval"': "'>' + state + '<'",
-    '"EFT_States_itmtxt"|"PIADDR_State_itmtxt"': "'>' + config_values[carrier][product]['states'][state].upper() + '<'",
-    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state] + '<'",
+    '"EFT_States_itmtxt"|"PIADDR_State_itmtxt"': "'>' + config_values[carrier][product]['states'][state]['name'].upper() + '<'",
+    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state]['name'] + '<'",
     '"PIFullAddress">': "'>123 Main St Exton, ' + state + ' 12345<'",
     '"AGENT_FullAddress">': "'>123 Agent St Exton, ' + state + ' 12345<'",
     '"pdfAGENT_FullNameAddress">': "'>Agent Name 123 Agent St Exton, ' + state + ' 12345<'",
@@ -94,8 +94,8 @@ medsupp_xmls_entry = {
 spwl_xmls_entry = {
     '"OWN_ADDR_State"|"OWN_ADDR_State_itmval"|"ADDR_State"|"ADDR_State_itmval"|ADDR_State__[1-3]{1,1}">|ADDR_State__[1-3]{1,1}_itmval">': "'>' + state + '<'",
     '"pdfBENE_State__[0-9]{1,1}[0-5]{0,1}">|"pdfOwnerState"|"PIJurisdiction"|"PIJurisdiction_itmval"|"State"|"State_itmval"': "'>' + state + '<'",
-    '"ADDR_State_itmtxt"|"OWN_ADDR_State_itmtxt"|ADDR_State__[1-3]{1,1}_itmtxt">': "'>' + config_values[carrier][product]['states'][state].upper() + '<'",
-    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state] + '<'",
+    '"ADDR_State_itmtxt"|"OWN_ADDR_State_itmtxt"|ADDR_State__[1-3]{1,1}_itmtxt">': "'>' + config_values[carrier][product]['states'][state]['name'].upper() + '<'",
+    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state]['name'] + '<'",
     '"APPCNT_FullAddress"': "'>123 Owner St  Exton, '+ state +', 11111<'",
     '"PIFullAddress">': "'>123 Main St Exton, ' + state + ' 11111<'",
     '"pdfAPPCNT_CityState"': "'>Exton, ' + state + ' 11111<'",
@@ -111,8 +111,8 @@ srlife_xmls_entry = {
     '"OWN_ADDR_State"|"OWN_ADDR_State_itmval"|"ADDR_State"|"ADDR_State_itmval"|ADDR_State__[1-3]{1,1}">|ADDR_State__[1-3]{1,1}_itmval">': "'>' + state + '<'",
     '"pdfBENE_State__[0-9]{1,1}">|"pdfOwnerState"|"PIJurisdiction"|"PIJurisdiction_itmval"|"State"|"State_itmval"': "'>' + state + '<'",
     '"EFT_ADDR_State"|"EFT_ADDR_State_itmval"|"Payor_BILLING_ADDR_State"|"Payor_BILLING_ADDR_State_itmval"|"pdfBillingState"': "'>' + state + '<'",
-    '"ADDR_State_itmtxt"|"OWN_ADDR_State_itmtxt"|ADDR_State__[1-3]{1,1}_itmtxt">|"EFT_ADDR_State_itmtxt"|"Payor_BILLING_ADDR_State_itmtxt"': "'>' + config_values[product]['states'][state].upper() + '<'",
-    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[product]['states'][state] + '<'",
+    '"ADDR_State_itmtxt"|"OWN_ADDR_State_itmtxt"|ADDR_State__[1-3]{1,1}_itmtxt">|"EFT_ADDR_State_itmtxt"|"Payor_BILLING_ADDR_State_itmtxt"': "'>' + config_values[carrier][product]['states'][state]['name'].upper() + '<'",
+    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state]['name'] + '<'",
     '"APPCNT_FullAddress"': "'>123 Owner St  Exton, '+ state +', 11111<'",
     '"PIFullAddress">': "'>123 Main St Exton, ' + state + ' 11111<'",
     '"EFT_BankAddress">': "'>123 Bank St Exton, ' + state + ' 11111<'",
@@ -128,8 +128,8 @@ srlife_xmls_entry = {
 stc_xmls_entry = {
     'ADDR_State">|ADDR_State_itmval|EFT_State">|EFT_State_itmval|PIJurisdiction">|PIJurisdiction_itmval': "'>' + state + '<'",
     'ProducerAddressState">|ProducerAddressStateTC|State">|State_itmval">|TPState">|TPState_itmval': "'>' + state + '<'",
-    'ADDR_State_itmtxt|EFT_State_itmtxt|TPState_itmtxt': "'>' + config_values[carrier][product]['states'][state].upper() + '<'",
-    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state] + '<'",
+    'ADDR_State_itmtxt|EFT_State_itmtxt|TPState_itmtxt': "'>' + config_values[carrier][product]['states'][state]['name'].upper() + '<'",
+    '"PIJurisdiction_itmtxt"|"State_itmtxt"': "'>' + config_values[carrier][product]['states'][state]['name'] + '<'",
     'PIFullAddress': "'>123 Main St Exton, ' + state + ' 11111<'",
     'AGENT_FullAddress': "'>123 Agent St Exton, ' + state + ' 11111<'",
     'AGENT2_FullAddress':"'>123 Second St Exton, ' + state + ' 11111<'",
@@ -191,7 +191,8 @@ def load_prod_matrix(arguments):
 
         product_dict = {}
 
-        product_dict['name'] = product
+        product_dict['name'] = product.upper()
+
         product_dict['product_path'] = config_values[carrier]['carrier_path'] +\
                                        'Products' + config_values['os_path_separator'] +\
                                        product + config_values['os_path_separator']
@@ -230,9 +231,10 @@ def load_prod_matrix(arguments):
                     else:
                         if sheet[col + str(row)].value == 'x' or sheet[col + str(row)].value == 'X':
                             if sheet['B' + str(row)].value in states:
-                                states[sheet['B' + str(row)].value].append(sheet[col + '6'].value)
+                                states[sheet['B' + str(row)].value]['plans'].append(sheet[col + '6'].value)
                             else:
-                                states[sheet['B' + str(row)].value] = [sheet[col + '6'].value]
+                                states[sheet['B' + str(row)].value] = {'name': sheet['A'+str(row)].value, 
+                                                                       'plans': [sheet[col + '6'].value]}
                         col = chr(ord(col) + 1) 
             row += 1
 
