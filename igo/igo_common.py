@@ -19,9 +19,10 @@
 import logging
 # from utils.browser import *
 # from utils.utils import *
+# from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import (#WebDriverException,
                                         TimeoutException,
@@ -229,30 +230,39 @@ def logOut(driver, verbose=False):
             logger.debug('logOut -> Switching to windows')
             driver.switch_to_window(driver.current_window_handle)
 
+        try:
+            driver.find_element_by_id('ctrlBanner_lnkUserMenu').click()
+        except Exception as e:
+            driver.find_element_by_id('PageBanner1_lnkUserMenu').click()    
         logger.debug('logOut -> User options displayed')
-        driver.find_element_by_id('ctrlBanner_lnkUserMenu').click()
-        logger.debug('logOut -> Clicking the "Sing Out" button')
+        
         sign_out = driver.find_element_by_id("lnkSignOut")
         while True:
             if sign_out.is_displayed():
                 break
         sign_out.click()
+        logger.debug('logOut -> Clicking the "Sing Out" button')
 
-        elem = driver.find_element_by_xpath("//body[@id='documentBody']/div[9]/div/div/div/h4")
+        #elem = driver.find_element_by_xpath("//body[@id='documentBody']/div[9]/div/div/div/h4")
+        #elem = driver.find_element_by_class_name("modal-title")
 
+        #WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CLASS_NAME,"btn-log-off")));
+
+        logout = driver.find_element_by_class_name('btn-log-off')
         while True:
-            if elem.text == 'Sign Out?':
+            if logout.is_displayed():
                 break
 
-        if elem.text == 'Sign Out?':
-            logger.debug('logOut -> Inline Pop up was displayed.')
-            logger.debug('logOut -> Inline pop up title: ' + elem.text)
-            driver.find_element_by_class_name('btn-log-off').click()
-            logger.info('logOut -> Sign Out completed')
-        else:
-            msg = 'Inline Pop up was not displayed'
-            logger.error('logOut -> ' + msg)
-            raise IgoCommonException('logOut', None, msg)
+        # if elem.text == 'Sign Out?':
+        logger.debug('logOut -> Inline Pop up was displayed.')
+        #logger.debug('logOut -> Inline pop up title: ' + elem.text)
+        driver.find_element_by_class_name('btn-log-off').click()
+        logger.info('logOut -> Sign Out completed')
+        
+        #else:
+        #    msg = 'Inline Pop up was not displayed'
+        #    logger.error('logOut -> ' + msg)
+        #    raise IgoCommonException('logOut', None, msg)
     except Exception as e:
         msg = 'LogOut Failed. An unknown exception has occured. More details: ' + repr(e)
         logger.error('logOut -> ' + msg)
@@ -282,13 +292,16 @@ def viewMyCases(driver, verbose=False):
             if driver.find_elements_by_id('mycases-button'):
                 logger.debug('viewMyCases -> Driver is in the "Welcome" screen')
                 driver.find_element_by_id('mycases-button').click()
-            elif driver.find_elements_by_partial_link_text('My Cases'):
-                logger.debug('viewMyCases -> Driver is in the Existing ')
-                driver.find_element_by_partial_link_text('My Cases').clik()
+            elif driver.find_elements_by_id('PageBanner1_lnkMyCasesLink'):
+                logger.debug('viewMyCases -> Driver is in the "Existing Case" screen')
+                driver.find_element_by_id('PageBanner1_lnkMyCasesLink').clik()
             else:
-                logger.error('viewMyCases -> Driver is in an unkonw screen.')
+                logger.error('viewMyCases -> Driver is in an unkonwn screen.')
+                msg = '"viewMyCases" procedure failed. The driver is at an unknown screen and the "View My Cases" screen can not be loaded'
+                logger.error('viewMyCases -> ' + msg)
+                raise IgoCommonException('viewMyCases', None, msg)
 
-            WebDriverWait(driver, 30).until(lambda x: x.find_element_by_id("btnNewCase"))
+            WebDriverWait(driver, 10).until(lambda x: x.find_element_by_id("btnNewCase"))
             logger.info('viewMyCases -> Navigating to "View My Cases" - Completed')
 
     except TimeoutException as e:
@@ -515,25 +528,24 @@ def importCase(driver, carrier, product, state, plan, verbose=False):
     if carrier not in config_values['carriers']:
         msg = 'importCase Failed - Invalid Carrier: ' + carrier
         logger.error('importCase -> ' + msg)
-        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+        raise Exception #IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
     logger.debug('Carrier value "' + carrier + '" is valid')
     if product not in config_values[carrier]['products']:
         msg = 'importCase Failed - Invalid product: ' + product
         logger.error('importCase -> ' + msg)
-        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+        raise Exception #raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
     logger.debug('Product value "' + product + '" is valid')
-    if plan not in config_values[carrier][product]['plans']:
-        msg = 'importCase Failed - Invalid plan: ' + plan
-        logger.error('importCase -> ' + msg)
-        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
-    logger.debug('Plan value "' + plan + '" is valid')
     state = state.upper()
     if state not in config_values[carrier][product]['states']:
         msg = 'importCase Failed - Invalid State "' + state + '") for product: "' + product + '".'
         logger.error('importCase -> ' + msg)
-        raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+        raise Exception #raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
     logger.debug('importCase -> State value "' + state + '" is valid')
-
+    if plan not in config_values[carrier][product]['states'][state]['plans']:
+        msg = 'importCase Failed - Invalid plan: ' + plan
+        logger.error('importCase -> ' + msg)
+        raise Exception #raise IgoCommonException('importCase', [('carrier',carrier),('product',product),('state',state),('plan',plan)], msg)
+    logger.debug('Plan value "' + plan + '" is valid')
     try:
         logger.debug('importCase -> Calling to createXML(carrier, product, state, plan, verbose)...')
         file_full_path = createXML(carrier, product, state, plan, verbose)
@@ -855,6 +867,7 @@ def get_screen_name(driver):
     headers = driver.find_elements_by_tag_name('h1')
     while not headers:
         headers = driver.find_elements_by_tag_name('h1')
+        # logger.debug('get_screen_name -> headers: ' + str(headers))
     screen_name = headers[0].text.lower().strip()
     while not screen_name:
         screen_name = headers[0].text.lower().strip()
@@ -904,7 +917,6 @@ def lockCase(driver, case_name, verbose=False):
                 elem.click()
                 logger.debug('lockCase -> Switch to windows: ' + str(wh))
                 driver.switch_to_window(wh)
-                WebDriverWait(driver, 30).until(lambda  x: x.find_element_by_id('tab1').get_attribute('class').lower() == 'active')
         if driver.find_element_by_id('tab1').text.lower().strip() == 'application' and driver.find_element_by_id('tab1').get_attribute('class').lower() == 'active':
             #Application:
             logger.debug('lockCase -> "Applicaiton" Tab.')

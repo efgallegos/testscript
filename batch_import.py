@@ -6,7 +6,7 @@ from utilities.browser import config_browsers, getWebDriver
 from igo.igo_common import logIn, viewMyCases, importCase, logOut
 from config_entries import config_values
 
-LOG_FILENAME = 'run_bankers.log'
+LOG_FILENAME = 'batch_import_bankers.log'
 
 # create logger with __name__
 logger = logging.getLogger('testscript')
@@ -133,18 +133,18 @@ def batch_import(arguments):
         sys.exit(1)
 
     # Validate the state parameter to match on of the valid states.
-    if arguments[6] in config_values[carrier][product]['states']:
-        state = arguments[6]
+    if arguments[6].upper() in config_values[carrier][product]['states']:
+        state = arguments[6].upper()
     else:
         # logger.debuging exception for LOG
         logger.error('batch_import -> Invalid State for Product - ' + \
               config_values[carrier][product]['name'] + \
-              ': ' + arguments[6])
+              ': ' + arguments[6].upper())
         # Exiting batch with status failed.
         sys.exit(1)
 
     # Validate the plan parameter to match on of the valid plans.
-    if arguments[7] in config_values[carrier][product]['plans']:
+    if arguments[7] in config_values[carrier][product]['states'][state]['plans']::
         plan = arguments[7]
     else:
         # logger.debuging exception for LOG

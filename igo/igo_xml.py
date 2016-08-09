@@ -27,27 +27,32 @@ def createXML(carrier, product, state, plan, verbose=False):
     logger.debug('createXML -> \t"State": ' + state)
     logger.debug('createXML -> \t"Plan" : '+ plan)
     try:
-        input_xml_path = config_values['base_path'] + \
-                         config_values[carrier]['carrier_path'] + \
-                         config_values['os_path_separator'] + \
-                         config_values[carrier][product]['product_path'] + \
-                         config_values['os_path_separator'] + \
-                         config_values[carrier][product]['xml_input_path'] + \
-                         config_values['os_path_separator'] + \
+        # input_xml_path = config_values['base_path'] + \
+        #                  config_values[carrier]['carrier_path'] + \
+        #                  config_values['os_path_separator'] + \
+        #                  config_values[carrier][product]['product_path'] + \
+        #                  config_values['os_path_separator'] + \
+        #                  config_values[carrier][product]['xml_input_path'] + \
+        #                  config_values['os_path_separator'] + \
+        #                  config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
+
+        input_xml_path = config_values[carrier][product]['xml_input_path'] + \
                          config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
 
-        output_xml_folder = config_values['base_path'] + \
-                            config_values[carrier]['carrier_path'] + \
-                            config_values['os_path_separator'] + \
-                            config_values[carrier][product]['product_path'] + \
-                            config_values['os_path_separator'] + \
-                            config_values[carrier][product]['xml_output_path']
+        # output_xml_folder = config_values['base_path'] + \
+        #                     config_values[carrier]['carrier_path'] + \
+        #                     config_values['os_path_separator'] + \
+        #                     config_values[carrier][product]['product_path'] + \
+        #                     config_values['os_path_separator'] + \
+        #                     config_values[carrier][product]['xml_output_path']
+
+        output_xml_folder = config_values[carrier][product]['xml_output_path']
 
         file_name = state + '_' + config_values[carrier][product]['plans'][plan]['file_name'] + '.xml'
 
         output_xml_path = output_xml_folder + \
-                          config_values['os_path_separator'] + \
                           file_name
+
         logger.debug('createXML -> Files paths:')
         logger.debug('createXML -> \tInput file path: ' + input_xml_path)
         logger.debug('createXML -> \tOutput file path: ' + output_xml_path)
@@ -58,7 +63,7 @@ def createXML(carrier, product, state, plan, verbose=False):
             logger.debug('createXML -> Changed currect directory to: ' + output_xml_folder)
 
         if os.path.isfile(file_name):
-            logger.info('createXML -> XML file exists and it is at: ' + output_xml_folder + config_values['os_path_separator'] + file_name)
+            logger.info('createXML -> XML file exists and it is at: ' + output_xml_folder + file_name)
             logger.info('createXML -> Skipping CREATE XML process...')
             return output_xml_path
 

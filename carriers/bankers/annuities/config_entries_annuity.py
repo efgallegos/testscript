@@ -87,9 +87,9 @@ plans = {
                      'file_name': 'LA07C_SP'},
         'LA07G_PBIA': {'full_name': 'LA-07G - PBIA',
                          'file_name': 'LA07G_PBIA'},
-        'LA07G_GLIA_Q': {'full_name': 'LA-07G - PBIA',
+        'LA07G_GLIA_Q': {'full_name': 'LA-07G - GLIA',
                          'file_name': 'LA07G_GLIA_Q'},
-        'LA07G_GLIA_NQ': {'full_name': 'LA-07G - PBIA',
+        'LA07G_GLIA_NQ': {'full_name': 'LA-07G - GLIA',
                           'file_name': 'LA07G_GLIA_NQ'},
         'LA07G_PTP': {'full_name': 'LA-07G - PTP With Cap',
                       'file_name': 'LA07G_PTP'},
@@ -122,10 +122,5 @@ annuity_config = {
         'runs': 'Runs',
         'xml_input_path': 'Input',
         'xml_output_path': 'Output',
-        'xml_export_path': 'Export',
-        # Forms created for each Run:
-        'form_path': 'Forms',
-        'images_path': 'Images',
-        'xml_run_import_path': 'XML_Import',
-        'xml_run_export_path': 'XML_Export'
+        'xml_export_path': 'Export'
         }

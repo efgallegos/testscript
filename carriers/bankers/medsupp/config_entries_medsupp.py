@@ -75,7 +75,7 @@ states = {
 
 plans = {
     'MEDSUPP': {'full_name': 'Medicare Supplement',
-                'file_name': 'MedSupp'},
+                'file_name': 'MEDSUPP'},
     'CPL-GR-A830': {'full_name': 'Medicare Supplement',
                 'file_name': 'CPL-GR-A830'},
     'CPL-GR-A820': {'full_name': 'Medicare Supplement',
