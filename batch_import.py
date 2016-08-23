@@ -144,7 +144,7 @@ def batch_import(arguments):
         sys.exit(1)
 
     # Validate the plan parameter to match on of the valid plans.
-    if arguments[7] in config_values[carrier][product]['states'][state]['plans']::
+    if arguments[7] in config_values[carrier][product]['states'][state]['plans']:
         plan = arguments[7]
     else:
         # logger.debuging exception for LOG

@@ -121,4 +121,3 @@ def load(config):
         logger.debug('testscript.config.load_config.load -> Starting building process')
         create(config)
         logger.debug('testscript.config.load_config.load -> Building process finished successfully')
-

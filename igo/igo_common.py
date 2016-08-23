@@ -915,6 +915,7 @@ def lockCase(driver, case_name, verbose=False):
                 logger.debug('lockCase -> Click on selected Product-Plan option.')
                 elem = driver.find_element_by_id('GridView1_ctl02_btnIgo1')
                 elem.click()
+                elem = WebDriverWait(driver,30).until(lambda x: x.find_element_by_xpath("//button[starts-with(@alt_id, 'btnNext')]"))
                 logger.debug('lockCase -> Switch to windows: ' + str(wh))
                 driver.switch_to_window(wh)
         if driver.find_element_by_id('tab1').text.lower().strip() == 'application' and driver.find_element_by_id('tab1').get_attribute('class').lower() == 'active':
@@ -953,6 +954,7 @@ def lockCase(driver, case_name, verbose=False):
             driver.switch_to_window(wh)
         else:
             logger.error('lockCase -> "Application" tab is not active')
+
     except IgoCommonException as e:
         msg = 'Case Name "' + case_name + '" was not found or could not be opened to be locked'
         logger.error('lockCase -> '+ msg)
