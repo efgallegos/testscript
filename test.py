@@ -23,13 +23,16 @@ try:
     driver = getWebDriver('Firefox', verbose=True)
     logIn(driver, 'bankers', 'qd4', 'Eduardo', 'Eduardo1', verbose=True)
     
-    states = ['NV','NJ']
+    states = ['AK']
     logger.debug('testscript -> start process')
     logger.debug('testscript -> list of states:' + str(states))
     
     for state in states:
         viewMyCases(driver)
-        importCase(driver, 'bankers','annuity', state, 'LA07G_PBIA', verbose=True)
+        if state == 'NY':
+            importCase(driver, 'bankers','annuity', state, 'BLNY-LA-06T', verbose=True)
+        else:
+            importCase(driver, 'bankers','cb', state, 'GR-G220', verbose=True)
         
         # try:
         #     logger.info('batch_lock_case -> Starting work for state: ' + state)

@@ -71,9 +71,9 @@ def create_app():
     @app.route('/igo/create/<name>/<product>/<state>/<plan>', methods=['GET'])
     def create_case(name, product, state, plan):
         b = request.args.get('browser', 'Firefox')
-        e = request.args.get('env', 'qd3')
-        u = request.args.get('usr', 'tombqd5')
-        p = request.args.get('pass', 'password1')
+        e = request.args.get('env', 'qd5')
+        u = request.args.get('usr', 'Eduardo')
+        p = request.args.get('pass', 'Eduardo1')
 
         try:
             result = {}

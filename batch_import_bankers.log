@@ -1,0 +1,238 @@
+2016-11-11 17:32:50,639 - testscript - INFO - batch_import -> ################################################################################
+2016-11-11 17:32:50,640 - testscript - INFO - batch_import -> Start time:2016-11-11 17:32:50.639818
+2016-11-11 17:32:50,640 - testscript - INFO - batch_import -> Parameters list:
+2016-11-11 17:32:50,640 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-11 17:32:50,640 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-11 17:32:50,640 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-11 17:32:50,640 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-11 17:32:50,640 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-11 17:32:50,641 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-11 17:32:50,641 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-11 17:32:50,641 - testscript - INFO - batch_import -> 	State: HI
+2016-11-11 17:32:50,641 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-11 17:32:50,648 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-11 17:32:50,648 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-11 17:32:50,656 - testscript - INFO - batch_import -> ################################################################################
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> Start time:2016-11-11 17:32:50.656929
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> Parameters list:
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> 	State: HI
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-11 17:32:50,657 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-11 17:32:50,657 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-11 17:32:50,707 - testscript - INFO - batch_import -> ################################################################################
+2016-11-11 17:32:50,707 - testscript - INFO - batch_import -> Start time:2016-11-11 17:32:50.707696
+2016-11-11 17:32:50,708 - testscript - INFO - batch_import -> Parameters list:
+2016-11-11 17:32:50,708 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-11 17:32:50,708 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-11 17:32:50,708 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-11 17:32:50,708 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-11 17:32:50,708 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-11 17:32:50,708 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-11 17:32:50,708 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-11 17:32:50,708 - testscript - INFO - batch_import -> 	State: HI
+2016-11-11 17:32:50,709 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-11 17:32:50,709 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-11 17:32:50,709 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-11 17:32:55,719 - testscript - INFO - batch_import -> ################################################################################
+2016-11-11 17:32:55,719 - testscript - INFO - batch_import -> Start time:2016-11-11 17:32:55.719109
+2016-11-11 17:32:55,719 - testscript - INFO - batch_import -> Parameters list:
+2016-11-11 17:32:55,719 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-11 17:32:55,719 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-11 17:32:55,719 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-11 17:32:55,719 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-11 17:32:55,719 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-11 17:32:55,719 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-11 17:32:55,719 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-11 17:32:55,720 - testscript - INFO - batch_import -> 	State: HI
+2016-11-11 17:32:55,720 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-11 17:32:55,720 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-11 17:32:55,720 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-11 17:33:25,396 - testscript - INFO - batch_import -> ################################################################################
+2016-11-11 17:33:25,396 - testscript - INFO - batch_import -> Start time:2016-11-11 17:33:25.396482
+2016-11-11 17:33:25,396 - testscript - INFO - batch_import -> Parameters list:
+2016-11-11 17:33:25,396 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-11 17:33:25,397 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-11 17:33:25,397 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-11 17:33:25,397 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-11 17:33:25,397 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-11 17:33:25,397 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-11 17:33:25,397 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-11 17:33:25,397 - testscript - INFO - batch_import -> 	State: HI
+2016-11-11 17:33:25,397 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-11 17:33:25,398 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-11 17:33:25,398 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-11 17:33:25,401 - testscript - INFO - batch_import -> ################################################################################
+2016-11-11 17:33:25,402 - testscript - INFO - batch_import -> Start time:2016-11-11 17:33:25.401876
+2016-11-11 17:33:25,402 - testscript - INFO - batch_import -> Parameters list:
+2016-11-11 17:33:25,402 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-11 17:33:25,402 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-11 17:33:25,402 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-11 17:33:25,402 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-11 17:33:25,402 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-11 17:33:25,402 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-11 17:33:25,402 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-11 17:33:25,403 - testscript - INFO - batch_import -> 	State: HI
+2016-11-11 17:33:25,403 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-11 17:33:25,403 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-11 17:33:25,403 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-11 17:33:25,443 - testscript - INFO - batch_import -> ################################################################################
+2016-11-11 17:33:25,443 - testscript - INFO - batch_import -> Start time:2016-11-11 17:33:25.443517
+2016-11-11 17:33:25,443 - testscript - INFO - batch_import -> Parameters list:
+2016-11-11 17:33:25,443 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-11 17:33:25,444 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-11 17:33:25,444 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-11 17:33:25,444 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-11 17:33:25,444 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-11 17:33:25,444 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-11 17:33:25,444 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-11 17:33:25,444 - testscript - INFO - batch_import -> 	State: HI
+2016-11-11 17:33:25,445 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-11 17:33:25,446 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-11 17:33:25,446 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-11 17:33:30,459 - testscript - INFO - batch_import -> ################################################################################
+2016-11-11 17:33:30,459 - testscript - INFO - batch_import -> Start time:2016-11-11 17:33:30.459641
+2016-11-11 17:33:30,460 - testscript - INFO - batch_import -> Parameters list:
+2016-11-11 17:33:30,460 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-11 17:33:30,460 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-11 17:33:30,460 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-11 17:33:30,460 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-11 17:33:30,460 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-11 17:33:30,460 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-11 17:33:30,460 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-11 17:33:30,460 - testscript - INFO - batch_import -> 	State: HI
+2016-11-11 17:33:30,461 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-11 17:33:30,461 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-11 17:33:30,461 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-11 17:34:00,469 - testscript - INFO - batch_import -> ################################################################################
+2016-11-11 17:34:00,470 - testscript - INFO - batch_import -> Start time:2016-11-11 17:34:00.469812
+2016-11-11 17:34:00,470 - testscript - INFO - batch_import -> Parameters list:
+2016-11-11 17:34:00,470 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-11 17:34:00,470 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-11 17:34:00,470 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-11 17:34:00,470 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-11 17:34:00,471 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-11 17:34:00,471 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-11 17:34:00,471 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-11 17:34:00,471 - testscript - INFO - batch_import -> 	State: HI
+2016-11-11 17:34:00,471 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-11 17:34:00,471 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-11 17:34:00,472 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-12 12:01:11,834 - testscript - INFO - batch_import -> ################################################################################
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> Start time:2016-11-12 12:01:11.834661
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> Parameters list:
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> 	State: HI
+2016-11-12 12:01:11,835 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-12 12:01:11,836 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-12 12:01:11,836 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-12 12:01:11,840 - testscript - INFO - batch_import -> ################################################################################
+2016-11-12 12:01:11,840 - testscript - INFO - batch_import -> Start time:2016-11-12 12:01:11.840461
+2016-11-12 12:01:11,840 - testscript - INFO - batch_import -> Parameters list:
+2016-11-12 12:01:11,840 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-12 12:01:11,840 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-12 12:01:11,840 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-12 12:01:11,841 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-12 12:01:11,841 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-12 12:01:11,841 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-12 12:01:11,841 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-12 12:01:11,841 - testscript - INFO - batch_import -> 	State: HI
+2016-11-12 12:01:11,841 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-12 12:01:11,841 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-12 12:01:11,841 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-12 12:01:11,842 - testscript - INFO - batch_import -> ################################################################################
+2016-11-12 12:01:11,842 - testscript - INFO - batch_import -> Start time:2016-11-12 12:01:11.842573
+2016-11-12 12:01:11,842 - testscript - INFO - batch_import -> Parameters list:
+2016-11-12 12:01:11,842 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-12 12:01:11,842 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-12 12:01:11,843 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-12 12:01:11,843 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-12 12:01:11,843 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-12 12:01:11,843 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-12 12:01:11,843 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-12 12:01:11,843 - testscript - INFO - batch_import -> 	State: HI
+2016-11-12 12:01:11,843 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-12 12:01:11,843 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-12 12:01:11,843 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-12 12:01:11,844 - testscript - INFO - batch_import -> ################################################################################
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> Start time:2016-11-12 12:01:11.844788
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> Parameters list:
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> 	State: HI
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-12 12:01:11,845 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-12 12:01:11,845 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-12 12:01:11,905 - testscript - INFO - batch_import -> ################################################################################
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> Start time:2016-11-12 12:01:11.905907
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> Parameters list:
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> 	State: HI
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-12 12:01:11,906 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-12 12:01:11,906 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-12 12:01:16,922 - testscript - INFO - batch_import -> ################################################################################
+2016-11-12 12:01:16,922 - testscript - INFO - batch_import -> Start time:2016-11-12 12:01:16.922549
+2016-11-12 12:01:16,922 - testscript - INFO - batch_import -> Parameters list:
+2016-11-12 12:01:16,922 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-12 12:01:16,923 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-12 12:01:16,923 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-12 12:01:16,923 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-12 12:01:16,923 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-12 12:01:16,923 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-12 12:01:16,923 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-12 12:01:16,923 - testscript - INFO - batch_import -> 	State: HI
+2016-11-12 12:01:16,923 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-12 12:01:16,923 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-12 12:01:16,923 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-12 12:01:46,934 - testscript - INFO - batch_import -> ################################################################################
+2016-11-12 12:01:46,934 - testscript - INFO - batch_import -> Start time:2016-11-12 12:01:46.934097
+2016-11-12 12:01:46,934 - testscript - INFO - batch_import -> Parameters list:
+2016-11-12 12:01:46,934 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-12 12:01:46,934 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-12 12:01:46,934 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-12 12:01:46,934 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-12 12:01:46,934 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-12 12:01:46,934 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-12 12:01:46,935 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-12 12:01:46,935 - testscript - INFO - batch_import -> 	State: HI
+2016-11-12 12:01:46,935 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-12 12:01:46,935 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-12 12:01:46,935 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
+2016-11-12 12:02:46,941 - testscript - INFO - batch_import -> ################################################################################
+2016-11-12 12:02:46,941 - testscript - INFO - batch_import -> Start time:2016-11-12 12:02:46.941147
+2016-11-12 12:02:46,941 - testscript - INFO - batch_import -> Parameters list:
+2016-11-12 12:02:46,941 - testscript - INFO - batch_import -> 	Action: Import Case
+2016-11-12 12:02:46,941 - testscript - INFO - batch_import -> 	Browser: Firefox
+2016-11-12 12:02:46,941 - testscript - INFO - batch_import -> 	Carrier: bankers
+2016-11-12 12:02:46,941 - testscript - INFO - batch_import -> 	Environment: qd3
+2016-11-12 12:02:46,942 - testscript - INFO - batch_import -> 	User: tombqd5
+2016-11-12 12:02:46,942 - testscript - INFO - batch_import -> 	Pass: password1
+2016-11-12 12:02:46,942 - testscript - INFO - batch_import -> 	Product: stc
+2016-11-12 12:02:46,942 - testscript - INFO - batch_import -> 	State: HI
+2016-11-12 12:02:46,942 - testscript - INFO - batch_import -> 	Plan: GR-N320
+2016-11-12 12:02:46,942 - testscript - INFO - batch_import -> --------------------------------------------------------------------------------
+2016-11-12 12:02:46,942 - testscript - ERROR - batch_import -> Invalid Plan for Product - STC: GR-N320
